@@ -1,0 +1,5397 @@
+<sdf version="1.7">
+	<world name="default">
+		<light name="sun" type="directional">
+			<cast_shadows>1</cast_shadows>
+			<pose>0 0 10 0 -0 0</pose>
+			<diffuse>0.8 0.8 0.8 1</diffuse>
+			<specular>0.2 0.2 0.2 1</specular>
+			<attenuation>
+				<range>1000</range>
+				<constant>0.9</constant>
+				<linear>0.01</linear>
+				<quadratic>0.001</quadratic>
+			</attenuation>
+			<direction>-0.5 0.1 -0.9</direction>
+			<spot>
+				<inner_angle>0</inner_angle>
+				<outer_angle>0</outer_angle>
+				<falloff>0</falloff>
+			</spot>
+		</light>
+		<model name="ground_plane">
+			<static>1</static>
+			<link name="link">
+				<collision name="collision">
+					<geometry>
+						<plane>
+							<normal>0 0 1</normal>
+							<size>100 100</size>
+						</plane>
+					</geometry>
+					<surface>
+						<contact>
+							<collide_bitmask>65535</collide_bitmask>
+							<ode />
+						</contact>
+						<friction>
+							<ode>
+								<mu>100</mu>
+								<mu2>50</mu2>
+							</ode>
+							<torsional>
+								<ode />
+							</torsional>
+						</friction>
+						<bounce />
+					</surface>
+					<max_contacts>10</max_contacts>
+				</collision>
+				<visual name="visual">
+					<cast_shadows>0</cast_shadows>
+					<geometry>
+						<plane>
+							<normal>0 0 1</normal>
+							<size>100 100</size>
+						</plane>
+					</geometry>
+					<material>
+						<script>
+							<uri>file://media/materials/scripts/gazebo.material</uri>
+							<name>Gazebo/Grey</name>
+						</script>
+					</material>
+				</visual>
+				<self_collide>0</self_collide>
+				<enable_wind>0</enable_wind>
+				<kinematic>0</kinematic>
+			</link>
+		</model>
+		<gravity>0 0 -9.8</gravity>
+		<magnetic_field>6e-06 2.3e-05 -4.2e-05</magnetic_field>
+		<atmosphere type="adiabatic" />
+		<physics type="ode">
+			<max_step_size>0.001</max_step_size>
+			<real_time_factor>1</real_time_factor>
+			<real_time_update_rate>1000</real_time_update_rate>
+		</physics>
+		<scene>
+			<ambient>0.4 0.4 0.4 1</ambient>
+			<background>0.7 0.7 0.7 1</background>
+			<shadows>1</shadows>
+		</scene>
+		<wind />
+		<spherical_coordinates>
+			<surface_model>EARTH_WGS84</surface_model>
+			<latitude_deg>0</latitude_deg>
+			<longitude_deg>0</longitude_deg>
+			<elevation>0</elevation>
+			<heading_deg>0</heading_deg>
+		</spherical_coordinates>
+		<model name="bush_1_nc_0">
+			<static>1</static>
+			<link name="link">
+				<visual name="visual">
+					<geometry>
+						<mesh>
+							<uri>model://bush_1_nc/meshes/Bush_31.obj</uri>
+							<scale>0.0001 0.0001 0.0001</scale>
+						</mesh>
+					</geometry>
+					<material>
+						<script>
+							<uri>file://media/materials/scripts/gazebo.material</uri>
+							<name>Gazebo/Grass</name>
+						</script>
+					</material>
+				</visual>
+				<self_collide>0</self_collide>
+				<enable_wind>0</enable_wind>
+				<kinematic>0</kinematic>
+			</link>
+			<pose>0.0 0.0 0.171977 0 -0 0</pose>
+		</model>
+		<model name="bush_1_nc_1">
+			<static>1</static>
+			<link name="link">
+				<visual name="visual">
+					<geometry>
+						<mesh>
+							<uri>model://bush_1_nc/meshes/Bush_31.obj</uri>
+							<scale>0.0001 0.0001 0.0001</scale>
+						</mesh>
+					</geometry>
+					<material>
+						<script>
+							<uri>file://media/materials/scripts/gazebo.material</uri>
+							<name>Gazebo/Grass</name>
+						</script>
+					</material>
+				</visual>
+				<self_collide>0</self_collide>
+				<enable_wind>0</enable_wind>
+				<kinematic>0</kinematic>
+			</link>
+			<pose>0.5 0.0 0.171977 0 -0 0</pose>
+		</model>
+		<model name="bush_1_nc_2">
+			<static>1</static>
+			<link name="link">
+				<visual name="visual">
+					<geometry>
+						<mesh>
+							<uri>model://bush_1_nc/meshes/Bush_31.obj</uri>
+							<scale>0.0001 0.0001 0.0001</scale>
+						</mesh>
+					</geometry>
+					<material>
+						<script>
+							<uri>file://media/materials/scripts/gazebo.material</uri>
+							<name>Gazebo/Grass</name>
+						</script>
+					</material>
+				</visual>
+				<self_collide>0</self_collide>
+				<enable_wind>0</enable_wind>
+				<kinematic>0</kinematic>
+			</link>
+			<pose>1.0 0.0 0.171977 0 -0 0</pose>
+		</model>
+		<model name="bush_1_nc_3">
+			<static>1</static>
+			<link name="link">
+				<visual name="visual">
+					<geometry>
+						<mesh>
+							<uri>model://bush_1_nc/meshes/Bush_31.obj</uri>
+							<scale>0.0001 0.0001 0.0001</scale>
+						</mesh>
+					</geometry>
+					<material>
+						<script>
+							<uri>file://media/materials/scripts/gazebo.material</uri>
+							<name>Gazebo/Grass</name>
+						</script>
+					</material>
+				</visual>
+				<self_collide>0</self_collide>
+				<enable_wind>0</enable_wind>
+				<kinematic>0</kinematic>
+			</link>
+			<pose>1.5 0.0 0.171977 0 -0 0</pose>
+		</model>
+		<model name="bush_1_nc_4">
+			<static>1</static>
+			<link name="link">
+				<visual name="visual">
+					<geometry>
+						<mesh>
+							<uri>model://bush_1_nc/meshes/Bush_31.obj</uri>
+							<scale>0.0001 0.0001 0.0001</scale>
+						</mesh>
+					</geometry>
+					<material>
+						<script>
+							<uri>file://media/materials/scripts/gazebo.material</uri>
+							<name>Gazebo/Grass</name>
+						</script>
+					</material>
+				</visual>
+				<self_collide>0</self_collide>
+				<enable_wind>0</enable_wind>
+				<kinematic>0</kinematic>
+			</link>
+			<pose>2.0 0.0 0.171977 0 -0 0</pose>
+		</model>
+		<model name="bush_1_nc_5">
+			<static>1</static>
+			<link name="link">
+				<visual name="visual">
+					<geometry>
+						<mesh>
+							<uri>model://bush_1_nc/meshes/Bush_31.obj</uri>
+							<scale>0.0001 0.0001 0.0001</scale>
+						</mesh>
+					</geometry>
+					<material>
+						<script>
+							<uri>file://media/materials/scripts/gazebo.material</uri>
+							<name>Gazebo/Grass</name>
+						</script>
+					</material>
+				</visual>
+				<self_collide>0</self_collide>
+				<enable_wind>0</enable_wind>
+				<kinematic>0</kinematic>
+			</link>
+			<pose>2.5 0.0 0.171977 0 -0 0</pose>
+		</model>
+		<model name="bush_1_nc_6">
+			<static>1</static>
+			<link name="link">
+				<visual name="visual">
+					<geometry>
+						<mesh>
+							<uri>model://bush_1_nc/meshes/Bush_31.obj</uri>
+							<scale>0.0001 0.0001 0.0001</scale>
+						</mesh>
+					</geometry>
+					<material>
+						<script>
+							<uri>file://media/materials/scripts/gazebo.material</uri>
+							<name>Gazebo/Grass</name>
+						</script>
+					</material>
+				</visual>
+				<self_collide>0</self_collide>
+				<enable_wind>0</enable_wind>
+				<kinematic>0</kinematic>
+			</link>
+			<pose>3.0 0.0 0.171977 0 -0 0</pose>
+		</model>
+		<model name="bush_1_nc_7">
+			<static>1</static>
+			<link name="link">
+				<visual name="visual">
+					<geometry>
+						<mesh>
+							<uri>model://bush_1_nc/meshes/Bush_31.obj</uri>
+							<scale>0.0001 0.0001 0.0001</scale>
+						</mesh>
+					</geometry>
+					<material>
+						<script>
+							<uri>file://media/materials/scripts/gazebo.material</uri>
+							<name>Gazebo/Grass</name>
+						</script>
+					</material>
+				</visual>
+				<self_collide>0</self_collide>
+				<enable_wind>0</enable_wind>
+				<kinematic>0</kinematic>
+			</link>
+			<pose>3.5 0.0 0.171977 0 -0 0</pose>
+		</model>
+		<model name="bush_1_nc_8">
+			<static>1</static>
+			<link name="link">
+				<visual name="visual">
+					<geometry>
+						<mesh>
+							<uri>model://bush_1_nc/meshes/Bush_31.obj</uri>
+							<scale>0.0001 0.0001 0.0001</scale>
+						</mesh>
+					</geometry>
+					<material>
+						<script>
+							<uri>file://media/materials/scripts/gazebo.material</uri>
+							<name>Gazebo/Grass</name>
+						</script>
+					</material>
+				</visual>
+				<self_collide>0</self_collide>
+				<enable_wind>0</enable_wind>
+				<kinematic>0</kinematic>
+			</link>
+			<pose>4.0 0.0 0.171977 0 -0 0</pose>
+		</model>
+		<model name="bush_1_nc_9">
+			<static>1</static>
+			<link name="link">
+				<visual name="visual">
+					<geometry>
+						<mesh>
+							<uri>model://bush_1_nc/meshes/Bush_31.obj</uri>
+							<scale>0.0001 0.0001 0.0001</scale>
+						</mesh>
+					</geometry>
+					<material>
+						<script>
+							<uri>file://media/materials/scripts/gazebo.material</uri>
+							<name>Gazebo/Grass</name>
+						</script>
+					</material>
+				</visual>
+				<self_collide>0</self_collide>
+				<enable_wind>0</enable_wind>
+				<kinematic>0</kinematic>
+			</link>
+			<pose>4.5 0.0 0.171977 0 -0 0</pose>
+		</model>
+		<model name="bush_1_nc_10">
+			<static>1</static>
+			<link name="link">
+				<visual name="visual">
+					<geometry>
+						<mesh>
+							<uri>model://bush_1_nc/meshes/Bush_31.obj</uri>
+							<scale>0.0001 0.0001 0.0001</scale>
+						</mesh>
+					</geometry>
+					<material>
+						<script>
+							<uri>file://media/materials/scripts/gazebo.material</uri>
+							<name>Gazebo/Grass</name>
+						</script>
+					</material>
+				</visual>
+				<self_collide>0</self_collide>
+				<enable_wind>0</enable_wind>
+				<kinematic>0</kinematic>
+			</link>
+			<pose>5.0 0.0 0.171977 0 -0 0</pose>
+		</model>
+		<model name="bush_1_nc_11">
+			<static>1</static>
+			<link name="link">
+				<visual name="visual">
+					<geometry>
+						<mesh>
+							<uri>model://bush_1_nc/meshes/Bush_31.obj</uri>
+							<scale>0.0001 0.0001 0.0001</scale>
+						</mesh>
+					</geometry>
+					<material>
+						<script>
+							<uri>file://media/materials/scripts/gazebo.material</uri>
+							<name>Gazebo/Grass</name>
+						</script>
+					</material>
+				</visual>
+				<self_collide>0</self_collide>
+				<enable_wind>0</enable_wind>
+				<kinematic>0</kinematic>
+			</link>
+			<pose>5.5 0.0 0.171977 0 -0 0</pose>
+		</model>
+		<model name="bush_1_nc_12">
+			<static>1</static>
+			<link name="link">
+				<visual name="visual">
+					<geometry>
+						<mesh>
+							<uri>model://bush_1_nc/meshes/Bush_31.obj</uri>
+							<scale>0.0001 0.0001 0.0001</scale>
+						</mesh>
+					</geometry>
+					<material>
+						<script>
+							<uri>file://media/materials/scripts/gazebo.material</uri>
+							<name>Gazebo/Grass</name>
+						</script>
+					</material>
+				</visual>
+				<self_collide>0</self_collide>
+				<enable_wind>0</enable_wind>
+				<kinematic>0</kinematic>
+			</link>
+			<pose>6.0 0.0 0.171977 0 -0 0</pose>
+		</model>
+		<model name="bush_1_nc_13">
+			<static>1</static>
+			<link name="link">
+				<visual name="visual">
+					<geometry>
+						<mesh>
+							<uri>model://bush_1_nc/meshes/Bush_31.obj</uri>
+							<scale>0.0001 0.0001 0.0001</scale>
+						</mesh>
+					</geometry>
+					<material>
+						<script>
+							<uri>file://media/materials/scripts/gazebo.material</uri>
+							<name>Gazebo/Grass</name>
+						</script>
+					</material>
+				</visual>
+				<self_collide>0</self_collide>
+				<enable_wind>0</enable_wind>
+				<kinematic>0</kinematic>
+			</link>
+			<pose>6.5 0.0 0.171977 0 -0 0</pose>
+		</model>
+		<model name="bush_1_nc_14">
+			<static>1</static>
+			<link name="link">
+				<visual name="visual">
+					<geometry>
+						<mesh>
+							<uri>model://bush_1_nc/meshes/Bush_31.obj</uri>
+							<scale>0.0001 0.0001 0.0001</scale>
+						</mesh>
+					</geometry>
+					<material>
+						<script>
+							<uri>file://media/materials/scripts/gazebo.material</uri>
+							<name>Gazebo/Grass</name>
+						</script>
+					</material>
+				</visual>
+				<self_collide>0</self_collide>
+				<enable_wind>0</enable_wind>
+				<kinematic>0</kinematic>
+			</link>
+			<pose>7.0 0.0 0.171977 0 -0 0</pose>
+		</model>
+		<model name="bush_1_nc_15">
+			<static>1</static>
+			<link name="link">
+				<visual name="visual">
+					<geometry>
+						<mesh>
+							<uri>model://bush_1_nc/meshes/Bush_31.obj</uri>
+							<scale>0.0001 0.0001 0.0001</scale>
+						</mesh>
+					</geometry>
+					<material>
+						<script>
+							<uri>file://media/materials/scripts/gazebo.material</uri>
+							<name>Gazebo/Grass</name>
+						</script>
+					</material>
+				</visual>
+				<self_collide>0</self_collide>
+				<enable_wind>0</enable_wind>
+				<kinematic>0</kinematic>
+			</link>
+			<pose>7.5 0.0 0.171977 0 -0 0</pose>
+		</model>
+		<model name="bush_1_nc_16">
+			<static>1</static>
+			<link name="link">
+				<visual name="visual">
+					<geometry>
+						<mesh>
+							<uri>model://bush_1_nc/meshes/Bush_31.obj</uri>
+							<scale>0.0001 0.0001 0.0001</scale>
+						</mesh>
+					</geometry>
+					<material>
+						<script>
+							<uri>file://media/materials/scripts/gazebo.material</uri>
+							<name>Gazebo/Grass</name>
+						</script>
+					</material>
+				</visual>
+				<self_collide>0</self_collide>
+				<enable_wind>0</enable_wind>
+				<kinematic>0</kinematic>
+			</link>
+			<pose>8.0 0.0 0.171977 0 -0 0</pose>
+		</model>
+		<model name="bush_1_nc_17">
+			<static>1</static>
+			<link name="link">
+				<visual name="visual">
+					<geometry>
+						<mesh>
+							<uri>model://bush_1_nc/meshes/Bush_31.obj</uri>
+							<scale>0.0001 0.0001 0.0001</scale>
+						</mesh>
+					</geometry>
+					<material>
+						<script>
+							<uri>file://media/materials/scripts/gazebo.material</uri>
+							<name>Gazebo/Grass</name>
+						</script>
+					</material>
+				</visual>
+				<self_collide>0</self_collide>
+				<enable_wind>0</enable_wind>
+				<kinematic>0</kinematic>
+			</link>
+			<pose>8.5 0.0 0.171977 0 -0 0</pose>
+		</model>
+		<model name="bush_1_nc_18">
+			<static>1</static>
+			<link name="link">
+				<visual name="visual">
+					<geometry>
+						<mesh>
+							<uri>model://bush_1_nc/meshes/Bush_31.obj</uri>
+							<scale>0.0001 0.0001 0.0001</scale>
+						</mesh>
+					</geometry>
+					<material>
+						<script>
+							<uri>file://media/materials/scripts/gazebo.material</uri>
+							<name>Gazebo/Grass</name>
+						</script>
+					</material>
+				</visual>
+				<self_collide>0</self_collide>
+				<enable_wind>0</enable_wind>
+				<kinematic>0</kinematic>
+			</link>
+			<pose>9.0 0.0 0.171977 0 -0 0</pose>
+		</model>
+		<model name="bush_1_nc_19">
+			<static>1</static>
+			<link name="link">
+				<visual name="visual">
+					<geometry>
+						<mesh>
+							<uri>model://bush_1_nc/meshes/Bush_31.obj</uri>
+							<scale>0.0001 0.0001 0.0001</scale>
+						</mesh>
+					</geometry>
+					<material>
+						<script>
+							<uri>file://media/materials/scripts/gazebo.material</uri>
+							<name>Gazebo/Grass</name>
+						</script>
+					</material>
+				</visual>
+				<self_collide>0</self_collide>
+				<enable_wind>0</enable_wind>
+				<kinematic>0</kinematic>
+			</link>
+			<pose>9.5 0.0 0.171977 0 -0 0</pose>
+		</model>
+		<model name="bush_1_nc_20">
+			<static>1</static>
+			<link name="link">
+				<visual name="visual">
+					<geometry>
+						<mesh>
+							<uri>model://bush_1_nc/meshes/Bush_31.obj</uri>
+							<scale>0.0001 0.0001 0.0001</scale>
+						</mesh>
+					</geometry>
+					<material>
+						<script>
+							<uri>file://media/materials/scripts/gazebo.material</uri>
+							<name>Gazebo/Grass</name>
+						</script>
+					</material>
+				</visual>
+				<self_collide>0</self_collide>
+				<enable_wind>0</enable_wind>
+				<kinematic>0</kinematic>
+			</link>
+			<pose>10.0 0.0 0.171977 0 -0 0</pose>
+		</model>
+		<model name="bush_1_nc_21">
+			<static>1</static>
+			<link name="link">
+				<visual name="visual">
+					<geometry>
+						<mesh>
+							<uri>model://bush_1_nc/meshes/Bush_31.obj</uri>
+							<scale>0.0001 0.0001 0.0001</scale>
+						</mesh>
+					</geometry>
+					<material>
+						<script>
+							<uri>file://media/materials/scripts/gazebo.material</uri>
+							<name>Gazebo/Grass</name>
+						</script>
+					</material>
+				</visual>
+				<self_collide>0</self_collide>
+				<enable_wind>0</enable_wind>
+				<kinematic>0</kinematic>
+			</link>
+			<pose>10.5 0.0 0.171977 0 -0 0</pose>
+		</model>
+		<model name="bush_1_nc_22">
+			<static>1</static>
+			<link name="link">
+				<visual name="visual">
+					<geometry>
+						<mesh>
+							<uri>model://bush_1_nc/meshes/Bush_31.obj</uri>
+							<scale>0.0001 0.0001 0.0001</scale>
+						</mesh>
+					</geometry>
+					<material>
+						<script>
+							<uri>file://media/materials/scripts/gazebo.material</uri>
+							<name>Gazebo/Grass</name>
+						</script>
+					</material>
+				</visual>
+				<self_collide>0</self_collide>
+				<enable_wind>0</enable_wind>
+				<kinematic>0</kinematic>
+			</link>
+			<pose>11.0 0.0 0.171977 0 -0 0</pose>
+		</model>
+		<model name="bush_1_nc_23">
+			<static>1</static>
+			<link name="link">
+				<visual name="visual">
+					<geometry>
+						<mesh>
+							<uri>model://bush_1_nc/meshes/Bush_31.obj</uri>
+							<scale>0.0001 0.0001 0.0001</scale>
+						</mesh>
+					</geometry>
+					<material>
+						<script>
+							<uri>file://media/materials/scripts/gazebo.material</uri>
+							<name>Gazebo/Grass</name>
+						</script>
+					</material>
+				</visual>
+				<self_collide>0</self_collide>
+				<enable_wind>0</enable_wind>
+				<kinematic>0</kinematic>
+			</link>
+			<pose>11.5 0.0 0.171977 0 -0 0</pose>
+		</model>
+		<model name="bush_1_nc_24">
+			<static>1</static>
+			<link name="link">
+				<visual name="visual">
+					<geometry>
+						<mesh>
+							<uri>model://bush_1_nc/meshes/Bush_31.obj</uri>
+							<scale>0.0001 0.0001 0.0001</scale>
+						</mesh>
+					</geometry>
+					<material>
+						<script>
+							<uri>file://media/materials/scripts/gazebo.material</uri>
+							<name>Gazebo/Grass</name>
+						</script>
+					</material>
+				</visual>
+				<self_collide>0</self_collide>
+				<enable_wind>0</enable_wind>
+				<kinematic>0</kinematic>
+			</link>
+			<pose>12.0 0.0 0.171977 0 -0 0</pose>
+		</model>
+		<model name="bush_1_nc_25">
+			<static>1</static>
+			<link name="link">
+				<visual name="visual">
+					<geometry>
+						<mesh>
+							<uri>model://bush_1_nc/meshes/Bush_31.obj</uri>
+							<scale>0.0001 0.0001 0.0001</scale>
+						</mesh>
+					</geometry>
+					<material>
+						<script>
+							<uri>file://media/materials/scripts/gazebo.material</uri>
+							<name>Gazebo/Grass</name>
+						</script>
+					</material>
+				</visual>
+				<self_collide>0</self_collide>
+				<enable_wind>0</enable_wind>
+				<kinematic>0</kinematic>
+			</link>
+			<pose>12.5 0.0 0.171977 0 -0 0</pose>
+		</model>
+		<model name="bush_1_nc_26">
+			<static>1</static>
+			<link name="link">
+				<visual name="visual">
+					<geometry>
+						<mesh>
+							<uri>model://bush_1_nc/meshes/Bush_31.obj</uri>
+							<scale>0.0001 0.0001 0.0001</scale>
+						</mesh>
+					</geometry>
+					<material>
+						<script>
+							<uri>file://media/materials/scripts/gazebo.material</uri>
+							<name>Gazebo/Grass</name>
+						</script>
+					</material>
+				</visual>
+				<self_collide>0</self_collide>
+				<enable_wind>0</enable_wind>
+				<kinematic>0</kinematic>
+			</link>
+			<pose>13.0 0.0 0.171977 0 -0 0</pose>
+		</model>
+		<model name="bush_1_nc_27">
+			<static>1</static>
+			<link name="link">
+				<visual name="visual">
+					<geometry>
+						<mesh>
+							<uri>model://bush_1_nc/meshes/Bush_31.obj</uri>
+							<scale>0.0001 0.0001 0.0001</scale>
+						</mesh>
+					</geometry>
+					<material>
+						<script>
+							<uri>file://media/materials/scripts/gazebo.material</uri>
+							<name>Gazebo/Grass</name>
+						</script>
+					</material>
+				</visual>
+				<self_collide>0</self_collide>
+				<enable_wind>0</enable_wind>
+				<kinematic>0</kinematic>
+			</link>
+			<pose>13.5 0.0 0.171977 0 -0 0</pose>
+		</model>
+		<model name="bush_1_nc_28">
+			<static>1</static>
+			<link name="link">
+				<visual name="visual">
+					<geometry>
+						<mesh>
+							<uri>model://bush_1_nc/meshes/Bush_31.obj</uri>
+							<scale>0.0001 0.0001 0.0001</scale>
+						</mesh>
+					</geometry>
+					<material>
+						<script>
+							<uri>file://media/materials/scripts/gazebo.material</uri>
+							<name>Gazebo/Grass</name>
+						</script>
+					</material>
+				</visual>
+				<self_collide>0</self_collide>
+				<enable_wind>0</enable_wind>
+				<kinematic>0</kinematic>
+			</link>
+			<pose>14.0 0.0 0.171977 0 -0 0</pose>
+		</model>
+		<model name="bush_1_nc_29">
+			<static>1</static>
+			<link name="link">
+				<visual name="visual">
+					<geometry>
+						<mesh>
+							<uri>model://bush_1_nc/meshes/Bush_31.obj</uri>
+							<scale>0.0001 0.0001 0.0001</scale>
+						</mesh>
+					</geometry>
+					<material>
+						<script>
+							<uri>file://media/materials/scripts/gazebo.material</uri>
+							<name>Gazebo/Grass</name>
+						</script>
+					</material>
+				</visual>
+				<self_collide>0</self_collide>
+				<enable_wind>0</enable_wind>
+				<kinematic>0</kinematic>
+			</link>
+			<pose>14.5 0.0 0.171977 0 -0 0</pose>
+		</model>
+		<model name="bush_1_nc_30">
+			<static>1</static>
+			<link name="link">
+				<visual name="visual">
+					<geometry>
+						<mesh>
+							<uri>model://bush_1_nc/meshes/Bush_31.obj</uri>
+							<scale>0.0001 0.0001 0.0001</scale>
+						</mesh>
+					</geometry>
+					<material>
+						<script>
+							<uri>file://media/materials/scripts/gazebo.material</uri>
+							<name>Gazebo/Grass</name>
+						</script>
+					</material>
+				</visual>
+				<self_collide>0</self_collide>
+				<enable_wind>0</enable_wind>
+				<kinematic>0</kinematic>
+			</link>
+			<pose>15.0 0.0 0.171977 0 -0 0</pose>
+		</model>
+		<model name="bush_1_nc_31">
+			<static>1</static>
+			<link name="link">
+				<visual name="visual">
+					<geometry>
+						<mesh>
+							<uri>model://bush_1_nc/meshes/Bush_31.obj</uri>
+							<scale>0.0001 0.0001 0.0001</scale>
+						</mesh>
+					</geometry>
+					<material>
+						<script>
+							<uri>file://media/materials/scripts/gazebo.material</uri>
+							<name>Gazebo/Grass</name>
+						</script>
+					</material>
+				</visual>
+				<self_collide>0</self_collide>
+				<enable_wind>0</enable_wind>
+				<kinematic>0</kinematic>
+			</link>
+			<pose>15.5 0.0 0.171977 0 -0 0</pose>
+		</model>
+		<model name="bush_1_nc_32">
+			<static>1</static>
+			<link name="link">
+				<visual name="visual">
+					<geometry>
+						<mesh>
+							<uri>model://bush_1_nc/meshes/Bush_31.obj</uri>
+							<scale>0.0001 0.0001 0.0001</scale>
+						</mesh>
+					</geometry>
+					<material>
+						<script>
+							<uri>file://media/materials/scripts/gazebo.material</uri>
+							<name>Gazebo/Grass</name>
+						</script>
+					</material>
+				</visual>
+				<self_collide>0</self_collide>
+				<enable_wind>0</enable_wind>
+				<kinematic>0</kinematic>
+			</link>
+			<pose>16.0 0.0 0.171977 0 -0 0</pose>
+		</model>
+		<model name="bush_1_nc_33">
+			<static>1</static>
+			<link name="link">
+				<visual name="visual">
+					<geometry>
+						<mesh>
+							<uri>model://bush_1_nc/meshes/Bush_31.obj</uri>
+							<scale>0.0001 0.0001 0.0001</scale>
+						</mesh>
+					</geometry>
+					<material>
+						<script>
+							<uri>file://media/materials/scripts/gazebo.material</uri>
+							<name>Gazebo/Grass</name>
+						</script>
+					</material>
+				</visual>
+				<self_collide>0</self_collide>
+				<enable_wind>0</enable_wind>
+				<kinematic>0</kinematic>
+			</link>
+			<pose>16.5 0.0 0.171977 0 -0 0</pose>
+		</model>
+		<model name="bush_1_nc_34">
+			<static>1</static>
+			<link name="link">
+				<visual name="visual">
+					<geometry>
+						<mesh>
+							<uri>model://bush_1_nc/meshes/Bush_31.obj</uri>
+							<scale>0.0001 0.0001 0.0001</scale>
+						</mesh>
+					</geometry>
+					<material>
+						<script>
+							<uri>file://media/materials/scripts/gazebo.material</uri>
+							<name>Gazebo/Grass</name>
+						</script>
+					</material>
+				</visual>
+				<self_collide>0</self_collide>
+				<enable_wind>0</enable_wind>
+				<kinematic>0</kinematic>
+			</link>
+			<pose>17.0 0.0 0.171977 0 -0 0</pose>
+		</model>
+		<model name="bush_1_nc_35">
+			<static>1</static>
+			<link name="link">
+				<visual name="visual">
+					<geometry>
+						<mesh>
+							<uri>model://bush_1_nc/meshes/Bush_31.obj</uri>
+							<scale>0.0001 0.0001 0.0001</scale>
+						</mesh>
+					</geometry>
+					<material>
+						<script>
+							<uri>file://media/materials/scripts/gazebo.material</uri>
+							<name>Gazebo/Grass</name>
+						</script>
+					</material>
+				</visual>
+				<self_collide>0</self_collide>
+				<enable_wind>0</enable_wind>
+				<kinematic>0</kinematic>
+			</link>
+			<pose>17.5 0.0 0.171977 0 -0 0</pose>
+		</model>
+		<model name="bush_1_nc_36">
+			<static>1</static>
+			<link name="link">
+				<visual name="visual">
+					<geometry>
+						<mesh>
+							<uri>model://bush_1_nc/meshes/Bush_31.obj</uri>
+							<scale>0.0001 0.0001 0.0001</scale>
+						</mesh>
+					</geometry>
+					<material>
+						<script>
+							<uri>file://media/materials/scripts/gazebo.material</uri>
+							<name>Gazebo/Grass</name>
+						</script>
+					</material>
+				</visual>
+				<self_collide>0</self_collide>
+				<enable_wind>0</enable_wind>
+				<kinematic>0</kinematic>
+			</link>
+			<pose>18.0 0.0 0.171977 0 -0 0</pose>
+		</model>
+		<model name="bush_1_nc_37">
+			<static>1</static>
+			<link name="link">
+				<visual name="visual">
+					<geometry>
+						<mesh>
+							<uri>model://bush_1_nc/meshes/Bush_31.obj</uri>
+							<scale>0.0001 0.0001 0.0001</scale>
+						</mesh>
+					</geometry>
+					<material>
+						<script>
+							<uri>file://media/materials/scripts/gazebo.material</uri>
+							<name>Gazebo/Grass</name>
+						</script>
+					</material>
+				</visual>
+				<self_collide>0</self_collide>
+				<enable_wind>0</enable_wind>
+				<kinematic>0</kinematic>
+			</link>
+			<pose>18.5 0.0 0.171977 0 -0 0</pose>
+		</model>
+		<model name="bush_1_nc_38">
+			<static>1</static>
+			<link name="link">
+				<visual name="visual">
+					<geometry>
+						<mesh>
+							<uri>model://bush_1_nc/meshes/Bush_31.obj</uri>
+							<scale>0.0001 0.0001 0.0001</scale>
+						</mesh>
+					</geometry>
+					<material>
+						<script>
+							<uri>file://media/materials/scripts/gazebo.material</uri>
+							<name>Gazebo/Grass</name>
+						</script>
+					</material>
+				</visual>
+				<self_collide>0</self_collide>
+				<enable_wind>0</enable_wind>
+				<kinematic>0</kinematic>
+			</link>
+			<pose>19.0 0.0 0.171977 0 -0 0</pose>
+		</model>
+		<model name="bush_1_nc_39">
+			<static>1</static>
+			<link name="link">
+				<visual name="visual">
+					<geometry>
+						<mesh>
+							<uri>model://bush_1_nc/meshes/Bush_31.obj</uri>
+							<scale>0.0001 0.0001 0.0001</scale>
+						</mesh>
+					</geometry>
+					<material>
+						<script>
+							<uri>file://media/materials/scripts/gazebo.material</uri>
+							<name>Gazebo/Grass</name>
+						</script>
+					</material>
+				</visual>
+				<self_collide>0</self_collide>
+				<enable_wind>0</enable_wind>
+				<kinematic>0</kinematic>
+			</link>
+			<pose>19.5 0.0 0.171977 0 -0 0</pose>
+		</model>
+		<model name="bush_1_nc_40">
+			<static>1</static>
+			<link name="link">
+				<visual name="visual">
+					<geometry>
+						<mesh>
+							<uri>model://bush_1_nc/meshes/Bush_31.obj</uri>
+							<scale>0.0001 0.0001 0.0001</scale>
+						</mesh>
+					</geometry>
+					<material>
+						<script>
+							<uri>file://media/materials/scripts/gazebo.material</uri>
+							<name>Gazebo/Grass</name>
+						</script>
+					</material>
+				</visual>
+				<self_collide>0</self_collide>
+				<enable_wind>0</enable_wind>
+				<kinematic>0</kinematic>
+			</link>
+			<pose>0.0 0.5 0.171977 0 -0 0</pose>
+		</model>
+		<model name="bush_1_nc_41">
+			<static>1</static>
+			<link name="link">
+				<visual name="visual">
+					<geometry>
+						<mesh>
+							<uri>model://bush_1_nc/meshes/Bush_31.obj</uri>
+							<scale>0.0001 0.0001 0.0001</scale>
+						</mesh>
+					</geometry>
+					<material>
+						<script>
+							<uri>file://media/materials/scripts/gazebo.material</uri>
+							<name>Gazebo/Grass</name>
+						</script>
+					</material>
+				</visual>
+				<self_collide>0</self_collide>
+				<enable_wind>0</enable_wind>
+				<kinematic>0</kinematic>
+			</link>
+			<pose>0.5 0.5 0.171977 0 -0 0</pose>
+		</model>
+		<model name="bush_1_nc_42">
+			<static>1</static>
+			<link name="link">
+				<visual name="visual">
+					<geometry>
+						<mesh>
+							<uri>model://bush_1_nc/meshes/Bush_31.obj</uri>
+							<scale>0.0001 0.0001 0.0001</scale>
+						</mesh>
+					</geometry>
+					<material>
+						<script>
+							<uri>file://media/materials/scripts/gazebo.material</uri>
+							<name>Gazebo/Grass</name>
+						</script>
+					</material>
+				</visual>
+				<self_collide>0</self_collide>
+				<enable_wind>0</enable_wind>
+				<kinematic>0</kinematic>
+			</link>
+			<pose>1.0 0.5 0.171977 0 -0 0</pose>
+		</model>
+		<model name="bush_1_nc_43">
+			<static>1</static>
+			<link name="link">
+				<visual name="visual">
+					<geometry>
+						<mesh>
+							<uri>model://bush_1_nc/meshes/Bush_31.obj</uri>
+							<scale>0.0001 0.0001 0.0001</scale>
+						</mesh>
+					</geometry>
+					<material>
+						<script>
+							<uri>file://media/materials/scripts/gazebo.material</uri>
+							<name>Gazebo/Grass</name>
+						</script>
+					</material>
+				</visual>
+				<self_collide>0</self_collide>
+				<enable_wind>0</enable_wind>
+				<kinematic>0</kinematic>
+			</link>
+			<pose>1.5 0.5 0.171977 0 -0 0</pose>
+		</model>
+		<model name="bush_1_nc_44">
+			<static>1</static>
+			<link name="link">
+				<visual name="visual">
+					<geometry>
+						<mesh>
+							<uri>model://bush_1_nc/meshes/Bush_31.obj</uri>
+							<scale>0.0001 0.0001 0.0001</scale>
+						</mesh>
+					</geometry>
+					<material>
+						<script>
+							<uri>file://media/materials/scripts/gazebo.material</uri>
+							<name>Gazebo/Grass</name>
+						</script>
+					</material>
+				</visual>
+				<self_collide>0</self_collide>
+				<enable_wind>0</enable_wind>
+				<kinematic>0</kinematic>
+			</link>
+			<pose>2.0 0.5 0.171977 0 -0 0</pose>
+		</model>
+		<model name="bush_1_nc_45">
+			<static>1</static>
+			<link name="link">
+				<visual name="visual">
+					<geometry>
+						<mesh>
+							<uri>model://bush_1_nc/meshes/Bush_31.obj</uri>
+							<scale>0.0001 0.0001 0.0001</scale>
+						</mesh>
+					</geometry>
+					<material>
+						<script>
+							<uri>file://media/materials/scripts/gazebo.material</uri>
+							<name>Gazebo/Grass</name>
+						</script>
+					</material>
+				</visual>
+				<self_collide>0</self_collide>
+				<enable_wind>0</enable_wind>
+				<kinematic>0</kinematic>
+			</link>
+			<pose>2.5 0.5 0.171977 0 -0 0</pose>
+		</model>
+		<model name="bush_1_nc_46">
+			<static>1</static>
+			<link name="link">
+				<visual name="visual">
+					<geometry>
+						<mesh>
+							<uri>model://bush_1_nc/meshes/Bush_31.obj</uri>
+							<scale>0.0001 0.0001 0.0001</scale>
+						</mesh>
+					</geometry>
+					<material>
+						<script>
+							<uri>file://media/materials/scripts/gazebo.material</uri>
+							<name>Gazebo/Grass</name>
+						</script>
+					</material>
+				</visual>
+				<self_collide>0</self_collide>
+				<enable_wind>0</enable_wind>
+				<kinematic>0</kinematic>
+			</link>
+			<pose>3.0 0.5 0.171977 0 -0 0</pose>
+		</model>
+		<model name="bush_1_nc_47">
+			<static>1</static>
+			<link name="link">
+				<visual name="visual">
+					<geometry>
+						<mesh>
+							<uri>model://bush_1_nc/meshes/Bush_31.obj</uri>
+							<scale>0.0001 0.0001 0.0001</scale>
+						</mesh>
+					</geometry>
+					<material>
+						<script>
+							<uri>file://media/materials/scripts/gazebo.material</uri>
+							<name>Gazebo/Grass</name>
+						</script>
+					</material>
+				</visual>
+				<self_collide>0</self_collide>
+				<enable_wind>0</enable_wind>
+				<kinematic>0</kinematic>
+			</link>
+			<pose>3.5 0.5 0.171977 0 -0 0</pose>
+		</model>
+		<model name="bush_1_nc_48">
+			<static>1</static>
+			<link name="link">
+				<visual name="visual">
+					<geometry>
+						<mesh>
+							<uri>model://bush_1_nc/meshes/Bush_31.obj</uri>
+							<scale>0.0001 0.0001 0.0001</scale>
+						</mesh>
+					</geometry>
+					<material>
+						<script>
+							<uri>file://media/materials/scripts/gazebo.material</uri>
+							<name>Gazebo/Grass</name>
+						</script>
+					</material>
+				</visual>
+				<self_collide>0</self_collide>
+				<enable_wind>0</enable_wind>
+				<kinematic>0</kinematic>
+			</link>
+			<pose>4.0 0.5 0.171977 0 -0 0</pose>
+		</model>
+		<model name="bush_1_nc_49">
+			<static>1</static>
+			<link name="link">
+				<visual name="visual">
+					<geometry>
+						<mesh>
+							<uri>model://bush_1_nc/meshes/Bush_31.obj</uri>
+							<scale>0.0001 0.0001 0.0001</scale>
+						</mesh>
+					</geometry>
+					<material>
+						<script>
+							<uri>file://media/materials/scripts/gazebo.material</uri>
+							<name>Gazebo/Grass</name>
+						</script>
+					</material>
+				</visual>
+				<self_collide>0</self_collide>
+				<enable_wind>0</enable_wind>
+				<kinematic>0</kinematic>
+			</link>
+			<pose>4.5 0.5 0.171977 0 -0 0</pose>
+		</model>
+		<model name="bush_1_nc_50">
+			<static>1</static>
+			<link name="link">
+				<visual name="visual">
+					<geometry>
+						<mesh>
+							<uri>model://bush_1_nc/meshes/Bush_31.obj</uri>
+							<scale>0.0001 0.0001 0.0001</scale>
+						</mesh>
+					</geometry>
+					<material>
+						<script>
+							<uri>file://media/materials/scripts/gazebo.material</uri>
+							<name>Gazebo/Grass</name>
+						</script>
+					</material>
+				</visual>
+				<self_collide>0</self_collide>
+				<enable_wind>0</enable_wind>
+				<kinematic>0</kinematic>
+			</link>
+			<pose>5.0 0.5 0.171977 0 -0 0</pose>
+		</model>
+		<model name="bush_1_nc_51">
+			<static>1</static>
+			<link name="link">
+				<visual name="visual">
+					<geometry>
+						<mesh>
+							<uri>model://bush_1_nc/meshes/Bush_31.obj</uri>
+							<scale>0.0001 0.0001 0.0001</scale>
+						</mesh>
+					</geometry>
+					<material>
+						<script>
+							<uri>file://media/materials/scripts/gazebo.material</uri>
+							<name>Gazebo/Grass</name>
+						</script>
+					</material>
+				</visual>
+				<self_collide>0</self_collide>
+				<enable_wind>0</enable_wind>
+				<kinematic>0</kinematic>
+			</link>
+			<pose>5.5 0.5 0.171977 0 -0 0</pose>
+		</model>
+		<model name="bush_1_nc_52">
+			<static>1</static>
+			<link name="link">
+				<visual name="visual">
+					<geometry>
+						<mesh>
+							<uri>model://bush_1_nc/meshes/Bush_31.obj</uri>
+							<scale>0.0001 0.0001 0.0001</scale>
+						</mesh>
+					</geometry>
+					<material>
+						<script>
+							<uri>file://media/materials/scripts/gazebo.material</uri>
+							<name>Gazebo/Grass</name>
+						</script>
+					</material>
+				</visual>
+				<self_collide>0</self_collide>
+				<enable_wind>0</enable_wind>
+				<kinematic>0</kinematic>
+			</link>
+			<pose>6.0 0.5 0.171977 0 -0 0</pose>
+		</model>
+		<model name="bush_1_nc_53">
+			<static>1</static>
+			<link name="link">
+				<visual name="visual">
+					<geometry>
+						<mesh>
+							<uri>model://bush_1_nc/meshes/Bush_31.obj</uri>
+							<scale>0.0001 0.0001 0.0001</scale>
+						</mesh>
+					</geometry>
+					<material>
+						<script>
+							<uri>file://media/materials/scripts/gazebo.material</uri>
+							<name>Gazebo/Grass</name>
+						</script>
+					</material>
+				</visual>
+				<self_collide>0</self_collide>
+				<enable_wind>0</enable_wind>
+				<kinematic>0</kinematic>
+			</link>
+			<pose>6.5 0.5 0.171977 0 -0 0</pose>
+		</model>
+		<model name="bush_1_nc_54">
+			<static>1</static>
+			<link name="link">
+				<visual name="visual">
+					<geometry>
+						<mesh>
+							<uri>model://bush_1_nc/meshes/Bush_31.obj</uri>
+							<scale>0.0001 0.0001 0.0001</scale>
+						</mesh>
+					</geometry>
+					<material>
+						<script>
+							<uri>file://media/materials/scripts/gazebo.material</uri>
+							<name>Gazebo/Grass</name>
+						</script>
+					</material>
+				</visual>
+				<self_collide>0</self_collide>
+				<enable_wind>0</enable_wind>
+				<kinematic>0</kinematic>
+			</link>
+			<pose>7.0 0.5 0.171977 0 -0 0</pose>
+		</model>
+		<model name="bush_1_nc_55">
+			<static>1</static>
+			<link name="link">
+				<visual name="visual">
+					<geometry>
+						<mesh>
+							<uri>model://bush_1_nc/meshes/Bush_31.obj</uri>
+							<scale>0.0001 0.0001 0.0001</scale>
+						</mesh>
+					</geometry>
+					<material>
+						<script>
+							<uri>file://media/materials/scripts/gazebo.material</uri>
+							<name>Gazebo/Grass</name>
+						</script>
+					</material>
+				</visual>
+				<self_collide>0</self_collide>
+				<enable_wind>0</enable_wind>
+				<kinematic>0</kinematic>
+			</link>
+			<pose>7.5 0.5 0.171977 0 -0 0</pose>
+		</model>
+		<model name="bush_1_nc_56">
+			<static>1</static>
+			<link name="link">
+				<visual name="visual">
+					<geometry>
+						<mesh>
+							<uri>model://bush_1_nc/meshes/Bush_31.obj</uri>
+							<scale>0.0001 0.0001 0.0001</scale>
+						</mesh>
+					</geometry>
+					<material>
+						<script>
+							<uri>file://media/materials/scripts/gazebo.material</uri>
+							<name>Gazebo/Grass</name>
+						</script>
+					</material>
+				</visual>
+				<self_collide>0</self_collide>
+				<enable_wind>0</enable_wind>
+				<kinematic>0</kinematic>
+			</link>
+			<pose>8.0 0.5 0.171977 0 -0 0</pose>
+		</model>
+		<model name="bush_1_nc_57">
+			<static>1</static>
+			<link name="link">
+				<visual name="visual">
+					<geometry>
+						<mesh>
+							<uri>model://bush_1_nc/meshes/Bush_31.obj</uri>
+							<scale>0.0001 0.0001 0.0001</scale>
+						</mesh>
+					</geometry>
+					<material>
+						<script>
+							<uri>file://media/materials/scripts/gazebo.material</uri>
+							<name>Gazebo/Grass</name>
+						</script>
+					</material>
+				</visual>
+				<self_collide>0</self_collide>
+				<enable_wind>0</enable_wind>
+				<kinematic>0</kinematic>
+			</link>
+			<pose>8.5 0.5 0.171977 0 -0 0</pose>
+		</model>
+		<model name="bush_1_nc_58">
+			<static>1</static>
+			<link name="link">
+				<visual name="visual">
+					<geometry>
+						<mesh>
+							<uri>model://bush_1_nc/meshes/Bush_31.obj</uri>
+							<scale>0.0001 0.0001 0.0001</scale>
+						</mesh>
+					</geometry>
+					<material>
+						<script>
+							<uri>file://media/materials/scripts/gazebo.material</uri>
+							<name>Gazebo/Grass</name>
+						</script>
+					</material>
+				</visual>
+				<self_collide>0</self_collide>
+				<enable_wind>0</enable_wind>
+				<kinematic>0</kinematic>
+			</link>
+			<pose>9.0 0.5 0.171977 0 -0 0</pose>
+		</model>
+		<model name="bush_1_nc_59">
+			<static>1</static>
+			<link name="link">
+				<visual name="visual">
+					<geometry>
+						<mesh>
+							<uri>model://bush_1_nc/meshes/Bush_31.obj</uri>
+							<scale>0.0001 0.0001 0.0001</scale>
+						</mesh>
+					</geometry>
+					<material>
+						<script>
+							<uri>file://media/materials/scripts/gazebo.material</uri>
+							<name>Gazebo/Grass</name>
+						</script>
+					</material>
+				</visual>
+				<self_collide>0</self_collide>
+				<enable_wind>0</enable_wind>
+				<kinematic>0</kinematic>
+			</link>
+			<pose>9.5 0.5 0.171977 0 -0 0</pose>
+		</model>
+		<model name="bush_1_nc_60">
+			<static>1</static>
+			<link name="link">
+				<visual name="visual">
+					<geometry>
+						<mesh>
+							<uri>model://bush_1_nc/meshes/Bush_31.obj</uri>
+							<scale>0.0001 0.0001 0.0001</scale>
+						</mesh>
+					</geometry>
+					<material>
+						<script>
+							<uri>file://media/materials/scripts/gazebo.material</uri>
+							<name>Gazebo/Grass</name>
+						</script>
+					</material>
+				</visual>
+				<self_collide>0</self_collide>
+				<enable_wind>0</enable_wind>
+				<kinematic>0</kinematic>
+			</link>
+			<pose>10.0 0.5 0.171977 0 -0 0</pose>
+		</model>
+		<model name="bush_1_nc_61">
+			<static>1</static>
+			<link name="link">
+				<visual name="visual">
+					<geometry>
+						<mesh>
+							<uri>model://bush_1_nc/meshes/Bush_31.obj</uri>
+							<scale>0.0001 0.0001 0.0001</scale>
+						</mesh>
+					</geometry>
+					<material>
+						<script>
+							<uri>file://media/materials/scripts/gazebo.material</uri>
+							<name>Gazebo/Grass</name>
+						</script>
+					</material>
+				</visual>
+				<self_collide>0</self_collide>
+				<enable_wind>0</enable_wind>
+				<kinematic>0</kinematic>
+			</link>
+			<pose>10.5 0.5 0.171977 0 -0 0</pose>
+		</model>
+		<model name="bush_1_nc_62">
+			<static>1</static>
+			<link name="link">
+				<visual name="visual">
+					<geometry>
+						<mesh>
+							<uri>model://bush_1_nc/meshes/Bush_31.obj</uri>
+							<scale>0.0001 0.0001 0.0001</scale>
+						</mesh>
+					</geometry>
+					<material>
+						<script>
+							<uri>file://media/materials/scripts/gazebo.material</uri>
+							<name>Gazebo/Grass</name>
+						</script>
+					</material>
+				</visual>
+				<self_collide>0</self_collide>
+				<enable_wind>0</enable_wind>
+				<kinematic>0</kinematic>
+			</link>
+			<pose>11.0 0.5 0.171977 0 -0 0</pose>
+		</model>
+		<model name="bush_1_nc_63">
+			<static>1</static>
+			<link name="link">
+				<visual name="visual">
+					<geometry>
+						<mesh>
+							<uri>model://bush_1_nc/meshes/Bush_31.obj</uri>
+							<scale>0.0001 0.0001 0.0001</scale>
+						</mesh>
+					</geometry>
+					<material>
+						<script>
+							<uri>file://media/materials/scripts/gazebo.material</uri>
+							<name>Gazebo/Grass</name>
+						</script>
+					</material>
+				</visual>
+				<self_collide>0</self_collide>
+				<enable_wind>0</enable_wind>
+				<kinematic>0</kinematic>
+			</link>
+			<pose>11.5 0.5 0.171977 0 -0 0</pose>
+		</model>
+		<model name="bush_1_nc_64">
+			<static>1</static>
+			<link name="link">
+				<visual name="visual">
+					<geometry>
+						<mesh>
+							<uri>model://bush_1_nc/meshes/Bush_31.obj</uri>
+							<scale>0.0001 0.0001 0.0001</scale>
+						</mesh>
+					</geometry>
+					<material>
+						<script>
+							<uri>file://media/materials/scripts/gazebo.material</uri>
+							<name>Gazebo/Grass</name>
+						</script>
+					</material>
+				</visual>
+				<self_collide>0</self_collide>
+				<enable_wind>0</enable_wind>
+				<kinematic>0</kinematic>
+			</link>
+			<pose>12.0 0.5 0.171977 0 -0 0</pose>
+		</model>
+		<model name="bush_1_nc_65">
+			<static>1</static>
+			<link name="link">
+				<visual name="visual">
+					<geometry>
+						<mesh>
+							<uri>model://bush_1_nc/meshes/Bush_31.obj</uri>
+							<scale>0.0001 0.0001 0.0001</scale>
+						</mesh>
+					</geometry>
+					<material>
+						<script>
+							<uri>file://media/materials/scripts/gazebo.material</uri>
+							<name>Gazebo/Grass</name>
+						</script>
+					</material>
+				</visual>
+				<self_collide>0</self_collide>
+				<enable_wind>0</enable_wind>
+				<kinematic>0</kinematic>
+			</link>
+			<pose>12.5 0.5 0.171977 0 -0 0</pose>
+		</model>
+		<model name="bush_1_nc_66">
+			<static>1</static>
+			<link name="link">
+				<visual name="visual">
+					<geometry>
+						<mesh>
+							<uri>model://bush_1_nc/meshes/Bush_31.obj</uri>
+							<scale>0.0001 0.0001 0.0001</scale>
+						</mesh>
+					</geometry>
+					<material>
+						<script>
+							<uri>file://media/materials/scripts/gazebo.material</uri>
+							<name>Gazebo/Grass</name>
+						</script>
+					</material>
+				</visual>
+				<self_collide>0</self_collide>
+				<enable_wind>0</enable_wind>
+				<kinematic>0</kinematic>
+			</link>
+			<pose>13.0 0.5 0.171977 0 -0 0</pose>
+		</model>
+		<model name="bush_1_nc_67">
+			<static>1</static>
+			<link name="link">
+				<visual name="visual">
+					<geometry>
+						<mesh>
+							<uri>model://bush_1_nc/meshes/Bush_31.obj</uri>
+							<scale>0.0001 0.0001 0.0001</scale>
+						</mesh>
+					</geometry>
+					<material>
+						<script>
+							<uri>file://media/materials/scripts/gazebo.material</uri>
+							<name>Gazebo/Grass</name>
+						</script>
+					</material>
+				</visual>
+				<self_collide>0</self_collide>
+				<enable_wind>0</enable_wind>
+				<kinematic>0</kinematic>
+			</link>
+			<pose>13.5 0.5 0.171977 0 -0 0</pose>
+		</model>
+		<model name="bush_1_nc_68">
+			<static>1</static>
+			<link name="link">
+				<visual name="visual">
+					<geometry>
+						<mesh>
+							<uri>model://bush_1_nc/meshes/Bush_31.obj</uri>
+							<scale>0.0001 0.0001 0.0001</scale>
+						</mesh>
+					</geometry>
+					<material>
+						<script>
+							<uri>file://media/materials/scripts/gazebo.material</uri>
+							<name>Gazebo/Grass</name>
+						</script>
+					</material>
+				</visual>
+				<self_collide>0</self_collide>
+				<enable_wind>0</enable_wind>
+				<kinematic>0</kinematic>
+			</link>
+			<pose>14.0 0.5 0.171977 0 -0 0</pose>
+		</model>
+		<model name="bush_1_nc_69">
+			<static>1</static>
+			<link name="link">
+				<visual name="visual">
+					<geometry>
+						<mesh>
+							<uri>model://bush_1_nc/meshes/Bush_31.obj</uri>
+							<scale>0.0001 0.0001 0.0001</scale>
+						</mesh>
+					</geometry>
+					<material>
+						<script>
+							<uri>file://media/materials/scripts/gazebo.material</uri>
+							<name>Gazebo/Grass</name>
+						</script>
+					</material>
+				</visual>
+				<self_collide>0</self_collide>
+				<enable_wind>0</enable_wind>
+				<kinematic>0</kinematic>
+			</link>
+			<pose>14.5 0.5 0.171977 0 -0 0</pose>
+		</model>
+		<model name="bush_1_nc_70">
+			<static>1</static>
+			<link name="link">
+				<visual name="visual">
+					<geometry>
+						<mesh>
+							<uri>model://bush_1_nc/meshes/Bush_31.obj</uri>
+							<scale>0.0001 0.0001 0.0001</scale>
+						</mesh>
+					</geometry>
+					<material>
+						<script>
+							<uri>file://media/materials/scripts/gazebo.material</uri>
+							<name>Gazebo/Grass</name>
+						</script>
+					</material>
+				</visual>
+				<self_collide>0</self_collide>
+				<enable_wind>0</enable_wind>
+				<kinematic>0</kinematic>
+			</link>
+			<pose>15.0 0.5 0.171977 0 -0 0</pose>
+		</model>
+		<model name="bush_1_nc_71">
+			<static>1</static>
+			<link name="link">
+				<visual name="visual">
+					<geometry>
+						<mesh>
+							<uri>model://bush_1_nc/meshes/Bush_31.obj</uri>
+							<scale>0.0001 0.0001 0.0001</scale>
+						</mesh>
+					</geometry>
+					<material>
+						<script>
+							<uri>file://media/materials/scripts/gazebo.material</uri>
+							<name>Gazebo/Grass</name>
+						</script>
+					</material>
+				</visual>
+				<self_collide>0</self_collide>
+				<enable_wind>0</enable_wind>
+				<kinematic>0</kinematic>
+			</link>
+			<pose>15.5 0.5 0.171977 0 -0 0</pose>
+		</model>
+		<model name="bush_1_nc_72">
+			<static>1</static>
+			<link name="link">
+				<visual name="visual">
+					<geometry>
+						<mesh>
+							<uri>model://bush_1_nc/meshes/Bush_31.obj</uri>
+							<scale>0.0001 0.0001 0.0001</scale>
+						</mesh>
+					</geometry>
+					<material>
+						<script>
+							<uri>file://media/materials/scripts/gazebo.material</uri>
+							<name>Gazebo/Grass</name>
+						</script>
+					</material>
+				</visual>
+				<self_collide>0</self_collide>
+				<enable_wind>0</enable_wind>
+				<kinematic>0</kinematic>
+			</link>
+			<pose>16.0 0.5 0.171977 0 -0 0</pose>
+		</model>
+		<model name="bush_1_nc_73">
+			<static>1</static>
+			<link name="link">
+				<visual name="visual">
+					<geometry>
+						<mesh>
+							<uri>model://bush_1_nc/meshes/Bush_31.obj</uri>
+							<scale>0.0001 0.0001 0.0001</scale>
+						</mesh>
+					</geometry>
+					<material>
+						<script>
+							<uri>file://media/materials/scripts/gazebo.material</uri>
+							<name>Gazebo/Grass</name>
+						</script>
+					</material>
+				</visual>
+				<self_collide>0</self_collide>
+				<enable_wind>0</enable_wind>
+				<kinematic>0</kinematic>
+			</link>
+			<pose>16.5 0.5 0.171977 0 -0 0</pose>
+		</model>
+		<model name="bush_1_nc_74">
+			<static>1</static>
+			<link name="link">
+				<visual name="visual">
+					<geometry>
+						<mesh>
+							<uri>model://bush_1_nc/meshes/Bush_31.obj</uri>
+							<scale>0.0001 0.0001 0.0001</scale>
+						</mesh>
+					</geometry>
+					<material>
+						<script>
+							<uri>file://media/materials/scripts/gazebo.material</uri>
+							<name>Gazebo/Grass</name>
+						</script>
+					</material>
+				</visual>
+				<self_collide>0</self_collide>
+				<enable_wind>0</enable_wind>
+				<kinematic>0</kinematic>
+			</link>
+			<pose>17.0 0.5 0.171977 0 -0 0</pose>
+		</model>
+		<model name="bush_1_nc_75">
+			<static>1</static>
+			<link name="link">
+				<visual name="visual">
+					<geometry>
+						<mesh>
+							<uri>model://bush_1_nc/meshes/Bush_31.obj</uri>
+							<scale>0.0001 0.0001 0.0001</scale>
+						</mesh>
+					</geometry>
+					<material>
+						<script>
+							<uri>file://media/materials/scripts/gazebo.material</uri>
+							<name>Gazebo/Grass</name>
+						</script>
+					</material>
+				</visual>
+				<self_collide>0</self_collide>
+				<enable_wind>0</enable_wind>
+				<kinematic>0</kinematic>
+			</link>
+			<pose>17.5 0.5 0.171977 0 -0 0</pose>
+		</model>
+		<model name="bush_1_nc_76">
+			<static>1</static>
+			<link name="link">
+				<visual name="visual">
+					<geometry>
+						<mesh>
+							<uri>model://bush_1_nc/meshes/Bush_31.obj</uri>
+							<scale>0.0001 0.0001 0.0001</scale>
+						</mesh>
+					</geometry>
+					<material>
+						<script>
+							<uri>file://media/materials/scripts/gazebo.material</uri>
+							<name>Gazebo/Grass</name>
+						</script>
+					</material>
+				</visual>
+				<self_collide>0</self_collide>
+				<enable_wind>0</enable_wind>
+				<kinematic>0</kinematic>
+			</link>
+			<pose>18.0 0.5 0.171977 0 -0 0</pose>
+		</model>
+		<model name="bush_1_nc_77">
+			<static>1</static>
+			<link name="link">
+				<visual name="visual">
+					<geometry>
+						<mesh>
+							<uri>model://bush_1_nc/meshes/Bush_31.obj</uri>
+							<scale>0.0001 0.0001 0.0001</scale>
+						</mesh>
+					</geometry>
+					<material>
+						<script>
+							<uri>file://media/materials/scripts/gazebo.material</uri>
+							<name>Gazebo/Grass</name>
+						</script>
+					</material>
+				</visual>
+				<self_collide>0</self_collide>
+				<enable_wind>0</enable_wind>
+				<kinematic>0</kinematic>
+			</link>
+			<pose>18.5 0.5 0.171977 0 -0 0</pose>
+		</model>
+		<model name="bush_1_nc_78">
+			<static>1</static>
+			<link name="link">
+				<visual name="visual">
+					<geometry>
+						<mesh>
+							<uri>model://bush_1_nc/meshes/Bush_31.obj</uri>
+							<scale>0.0001 0.0001 0.0001</scale>
+						</mesh>
+					</geometry>
+					<material>
+						<script>
+							<uri>file://media/materials/scripts/gazebo.material</uri>
+							<name>Gazebo/Grass</name>
+						</script>
+					</material>
+				</visual>
+				<self_collide>0</self_collide>
+				<enable_wind>0</enable_wind>
+				<kinematic>0</kinematic>
+			</link>
+			<pose>19.0 0.5 0.171977 0 -0 0</pose>
+		</model>
+		<model name="bush_1_nc_79">
+			<static>1</static>
+			<link name="link">
+				<visual name="visual">
+					<geometry>
+						<mesh>
+							<uri>model://bush_1_nc/meshes/Bush_31.obj</uri>
+							<scale>0.0001 0.0001 0.0001</scale>
+						</mesh>
+					</geometry>
+					<material>
+						<script>
+							<uri>file://media/materials/scripts/gazebo.material</uri>
+							<name>Gazebo/Grass</name>
+						</script>
+					</material>
+				</visual>
+				<self_collide>0</self_collide>
+				<enable_wind>0</enable_wind>
+				<kinematic>0</kinematic>
+			</link>
+			<pose>19.5 0.5 0.171977 0 -0 0</pose>
+		</model>
+		<model name="bush_1_nc_80">
+			<static>1</static>
+			<link name="link">
+				<visual name="visual">
+					<geometry>
+						<mesh>
+							<uri>model://bush_1_nc/meshes/Bush_31.obj</uri>
+							<scale>0.0001 0.0001 0.0001</scale>
+						</mesh>
+					</geometry>
+					<material>
+						<script>
+							<uri>file://media/materials/scripts/gazebo.material</uri>
+							<name>Gazebo/Grass</name>
+						</script>
+					</material>
+				</visual>
+				<self_collide>0</self_collide>
+				<enable_wind>0</enable_wind>
+				<kinematic>0</kinematic>
+			</link>
+			<pose>0.0 1.0 0.171977 0 -0 0</pose>
+		</model>
+		<model name="bush_1_nc_81">
+			<static>1</static>
+			<link name="link">
+				<visual name="visual">
+					<geometry>
+						<mesh>
+							<uri>model://bush_1_nc/meshes/Bush_31.obj</uri>
+							<scale>0.0001 0.0001 0.0001</scale>
+						</mesh>
+					</geometry>
+					<material>
+						<script>
+							<uri>file://media/materials/scripts/gazebo.material</uri>
+							<name>Gazebo/Grass</name>
+						</script>
+					</material>
+				</visual>
+				<self_collide>0</self_collide>
+				<enable_wind>0</enable_wind>
+				<kinematic>0</kinematic>
+			</link>
+			<pose>0.5 1.0 0.171977 0 -0 0</pose>
+		</model>
+		<model name="bush_1_nc_82">
+			<static>1</static>
+			<link name="link">
+				<visual name="visual">
+					<geometry>
+						<mesh>
+							<uri>model://bush_1_nc/meshes/Bush_31.obj</uri>
+							<scale>0.0001 0.0001 0.0001</scale>
+						</mesh>
+					</geometry>
+					<material>
+						<script>
+							<uri>file://media/materials/scripts/gazebo.material</uri>
+							<name>Gazebo/Grass</name>
+						</script>
+					</material>
+				</visual>
+				<self_collide>0</self_collide>
+				<enable_wind>0</enable_wind>
+				<kinematic>0</kinematic>
+			</link>
+			<pose>1.0 1.0 0.171977 0 -0 0</pose>
+		</model>
+		<model name="bush_1_nc_83">
+			<static>1</static>
+			<link name="link">
+				<visual name="visual">
+					<geometry>
+						<mesh>
+							<uri>model://bush_1_nc/meshes/Bush_31.obj</uri>
+							<scale>0.0001 0.0001 0.0001</scale>
+						</mesh>
+					</geometry>
+					<material>
+						<script>
+							<uri>file://media/materials/scripts/gazebo.material</uri>
+							<name>Gazebo/Grass</name>
+						</script>
+					</material>
+				</visual>
+				<self_collide>0</self_collide>
+				<enable_wind>0</enable_wind>
+				<kinematic>0</kinematic>
+			</link>
+			<pose>1.5 1.0 0.171977 0 -0 0</pose>
+		</model>
+		<model name="bush_1_nc_84">
+			<static>1</static>
+			<link name="link">
+				<visual name="visual">
+					<geometry>
+						<mesh>
+							<uri>model://bush_1_nc/meshes/Bush_31.obj</uri>
+							<scale>0.0001 0.0001 0.0001</scale>
+						</mesh>
+					</geometry>
+					<material>
+						<script>
+							<uri>file://media/materials/scripts/gazebo.material</uri>
+							<name>Gazebo/Grass</name>
+						</script>
+					</material>
+				</visual>
+				<self_collide>0</self_collide>
+				<enable_wind>0</enable_wind>
+				<kinematic>0</kinematic>
+			</link>
+			<pose>2.0 1.0 0.171977 0 -0 0</pose>
+		</model>
+		<model name="bush_1_nc_85">
+			<static>1</static>
+			<link name="link">
+				<visual name="visual">
+					<geometry>
+						<mesh>
+							<uri>model://bush_1_nc/meshes/Bush_31.obj</uri>
+							<scale>0.0001 0.0001 0.0001</scale>
+						</mesh>
+					</geometry>
+					<material>
+						<script>
+							<uri>file://media/materials/scripts/gazebo.material</uri>
+							<name>Gazebo/Grass</name>
+						</script>
+					</material>
+				</visual>
+				<self_collide>0</self_collide>
+				<enable_wind>0</enable_wind>
+				<kinematic>0</kinematic>
+			</link>
+			<pose>2.5 1.0 0.171977 0 -0 0</pose>
+		</model>
+		<model name="bush_1_nc_86">
+			<static>1</static>
+			<link name="link">
+				<visual name="visual">
+					<geometry>
+						<mesh>
+							<uri>model://bush_1_nc/meshes/Bush_31.obj</uri>
+							<scale>0.0001 0.0001 0.0001</scale>
+						</mesh>
+					</geometry>
+					<material>
+						<script>
+							<uri>file://media/materials/scripts/gazebo.material</uri>
+							<name>Gazebo/Grass</name>
+						</script>
+					</material>
+				</visual>
+				<self_collide>0</self_collide>
+				<enable_wind>0</enable_wind>
+				<kinematic>0</kinematic>
+			</link>
+			<pose>3.0 1.0 0.171977 0 -0 0</pose>
+		</model>
+		<model name="bush_1_nc_87">
+			<static>1</static>
+			<link name="link">
+				<visual name="visual">
+					<geometry>
+						<mesh>
+							<uri>model://bush_1_nc/meshes/Bush_31.obj</uri>
+							<scale>0.0001 0.0001 0.0001</scale>
+						</mesh>
+					</geometry>
+					<material>
+						<script>
+							<uri>file://media/materials/scripts/gazebo.material</uri>
+							<name>Gazebo/Grass</name>
+						</script>
+					</material>
+				</visual>
+				<self_collide>0</self_collide>
+				<enable_wind>0</enable_wind>
+				<kinematic>0</kinematic>
+			</link>
+			<pose>3.5 1.0 0.171977 0 -0 0</pose>
+		</model>
+		<model name="bush_1_nc_88">
+			<static>1</static>
+			<link name="link">
+				<visual name="visual">
+					<geometry>
+						<mesh>
+							<uri>model://bush_1_nc/meshes/Bush_31.obj</uri>
+							<scale>0.0001 0.0001 0.0001</scale>
+						</mesh>
+					</geometry>
+					<material>
+						<script>
+							<uri>file://media/materials/scripts/gazebo.material</uri>
+							<name>Gazebo/Grass</name>
+						</script>
+					</material>
+				</visual>
+				<self_collide>0</self_collide>
+				<enable_wind>0</enable_wind>
+				<kinematic>0</kinematic>
+			</link>
+			<pose>4.0 1.0 0.171977 0 -0 0</pose>
+		</model>
+		<model name="bush_1_nc_89">
+			<static>1</static>
+			<link name="link">
+				<visual name="visual">
+					<geometry>
+						<mesh>
+							<uri>model://bush_1_nc/meshes/Bush_31.obj</uri>
+							<scale>0.0001 0.0001 0.0001</scale>
+						</mesh>
+					</geometry>
+					<material>
+						<script>
+							<uri>file://media/materials/scripts/gazebo.material</uri>
+							<name>Gazebo/Grass</name>
+						</script>
+					</material>
+				</visual>
+				<self_collide>0</self_collide>
+				<enable_wind>0</enable_wind>
+				<kinematic>0</kinematic>
+			</link>
+			<pose>4.5 1.0 0.171977 0 -0 0</pose>
+		</model>
+		<model name="bush_1_nc_90">
+			<static>1</static>
+			<link name="link">
+				<visual name="visual">
+					<geometry>
+						<mesh>
+							<uri>model://bush_1_nc/meshes/Bush_31.obj</uri>
+							<scale>0.0001 0.0001 0.0001</scale>
+						</mesh>
+					</geometry>
+					<material>
+						<script>
+							<uri>file://media/materials/scripts/gazebo.material</uri>
+							<name>Gazebo/Grass</name>
+						</script>
+					</material>
+				</visual>
+				<self_collide>0</self_collide>
+				<enable_wind>0</enable_wind>
+				<kinematic>0</kinematic>
+			</link>
+			<pose>5.0 1.0 0.171977 0 -0 0</pose>
+		</model>
+		<model name="bush_1_nc_91">
+			<static>1</static>
+			<link name="link">
+				<visual name="visual">
+					<geometry>
+						<mesh>
+							<uri>model://bush_1_nc/meshes/Bush_31.obj</uri>
+							<scale>0.0001 0.0001 0.0001</scale>
+						</mesh>
+					</geometry>
+					<material>
+						<script>
+							<uri>file://media/materials/scripts/gazebo.material</uri>
+							<name>Gazebo/Grass</name>
+						</script>
+					</material>
+				</visual>
+				<self_collide>0</self_collide>
+				<enable_wind>0</enable_wind>
+				<kinematic>0</kinematic>
+			</link>
+			<pose>5.5 1.0 0.171977 0 -0 0</pose>
+		</model>
+		<model name="bush_1_nc_92">
+			<static>1</static>
+			<link name="link">
+				<visual name="visual">
+					<geometry>
+						<mesh>
+							<uri>model://bush_1_nc/meshes/Bush_31.obj</uri>
+							<scale>0.0001 0.0001 0.0001</scale>
+						</mesh>
+					</geometry>
+					<material>
+						<script>
+							<uri>file://media/materials/scripts/gazebo.material</uri>
+							<name>Gazebo/Grass</name>
+						</script>
+					</material>
+				</visual>
+				<self_collide>0</self_collide>
+				<enable_wind>0</enable_wind>
+				<kinematic>0</kinematic>
+			</link>
+			<pose>6.0 1.0 0.171977 0 -0 0</pose>
+		</model>
+		<model name="bush_1_nc_93">
+			<static>1</static>
+			<link name="link">
+				<visual name="visual">
+					<geometry>
+						<mesh>
+							<uri>model://bush_1_nc/meshes/Bush_31.obj</uri>
+							<scale>0.0001 0.0001 0.0001</scale>
+						</mesh>
+					</geometry>
+					<material>
+						<script>
+							<uri>file://media/materials/scripts/gazebo.material</uri>
+							<name>Gazebo/Grass</name>
+						</script>
+					</material>
+				</visual>
+				<self_collide>0</self_collide>
+				<enable_wind>0</enable_wind>
+				<kinematic>0</kinematic>
+			</link>
+			<pose>6.5 1.0 0.171977 0 -0 0</pose>
+		</model>
+		<model name="bush_1_nc_94">
+			<static>1</static>
+			<link name="link">
+				<visual name="visual">
+					<geometry>
+						<mesh>
+							<uri>model://bush_1_nc/meshes/Bush_31.obj</uri>
+							<scale>0.0001 0.0001 0.0001</scale>
+						</mesh>
+					</geometry>
+					<material>
+						<script>
+							<uri>file://media/materials/scripts/gazebo.material</uri>
+							<name>Gazebo/Grass</name>
+						</script>
+					</material>
+				</visual>
+				<self_collide>0</self_collide>
+				<enable_wind>0</enable_wind>
+				<kinematic>0</kinematic>
+			</link>
+			<pose>7.0 1.0 0.171977 0 -0 0</pose>
+		</model>
+		<model name="bush_1_nc_95">
+			<static>1</static>
+			<link name="link">
+				<visual name="visual">
+					<geometry>
+						<mesh>
+							<uri>model://bush_1_nc/meshes/Bush_31.obj</uri>
+							<scale>0.0001 0.0001 0.0001</scale>
+						</mesh>
+					</geometry>
+					<material>
+						<script>
+							<uri>file://media/materials/scripts/gazebo.material</uri>
+							<name>Gazebo/Grass</name>
+						</script>
+					</material>
+				</visual>
+				<self_collide>0</self_collide>
+				<enable_wind>0</enable_wind>
+				<kinematic>0</kinematic>
+			</link>
+			<pose>7.5 1.0 0.171977 0 -0 0</pose>
+		</model>
+		<model name="bush_1_nc_96">
+			<static>1</static>
+			<link name="link">
+				<visual name="visual">
+					<geometry>
+						<mesh>
+							<uri>model://bush_1_nc/meshes/Bush_31.obj</uri>
+							<scale>0.0001 0.0001 0.0001</scale>
+						</mesh>
+					</geometry>
+					<material>
+						<script>
+							<uri>file://media/materials/scripts/gazebo.material</uri>
+							<name>Gazebo/Grass</name>
+						</script>
+					</material>
+				</visual>
+				<self_collide>0</self_collide>
+				<enable_wind>0</enable_wind>
+				<kinematic>0</kinematic>
+			</link>
+			<pose>8.0 1.0 0.171977 0 -0 0</pose>
+		</model>
+		<model name="bush_1_nc_97">
+			<static>1</static>
+			<link name="link">
+				<visual name="visual">
+					<geometry>
+						<mesh>
+							<uri>model://bush_1_nc/meshes/Bush_31.obj</uri>
+							<scale>0.0001 0.0001 0.0001</scale>
+						</mesh>
+					</geometry>
+					<material>
+						<script>
+							<uri>file://media/materials/scripts/gazebo.material</uri>
+							<name>Gazebo/Grass</name>
+						</script>
+					</material>
+				</visual>
+				<self_collide>0</self_collide>
+				<enable_wind>0</enable_wind>
+				<kinematic>0</kinematic>
+			</link>
+			<pose>8.5 1.0 0.171977 0 -0 0</pose>
+		</model>
+		<model name="bush_1_nc_98">
+			<static>1</static>
+			<link name="link">
+				<visual name="visual">
+					<geometry>
+						<mesh>
+							<uri>model://bush_1_nc/meshes/Bush_31.obj</uri>
+							<scale>0.0001 0.0001 0.0001</scale>
+						</mesh>
+					</geometry>
+					<material>
+						<script>
+							<uri>file://media/materials/scripts/gazebo.material</uri>
+							<name>Gazebo/Grass</name>
+						</script>
+					</material>
+				</visual>
+				<self_collide>0</self_collide>
+				<enable_wind>0</enable_wind>
+				<kinematic>0</kinematic>
+			</link>
+			<pose>9.0 1.0 0.171977 0 -0 0</pose>
+		</model>
+		<model name="bush_1_nc_99">
+			<static>1</static>
+			<link name="link">
+				<visual name="visual">
+					<geometry>
+						<mesh>
+							<uri>model://bush_1_nc/meshes/Bush_31.obj</uri>
+							<scale>0.0001 0.0001 0.0001</scale>
+						</mesh>
+					</geometry>
+					<material>
+						<script>
+							<uri>file://media/materials/scripts/gazebo.material</uri>
+							<name>Gazebo/Grass</name>
+						</script>
+					</material>
+				</visual>
+				<self_collide>0</self_collide>
+				<enable_wind>0</enable_wind>
+				<kinematic>0</kinematic>
+			</link>
+			<pose>9.5 1.0 0.171977 0 -0 0</pose>
+		</model>
+		<model name="bush_1_nc_100">
+			<static>1</static>
+			<link name="link">
+				<visual name="visual">
+					<geometry>
+						<mesh>
+							<uri>model://bush_1_nc/meshes/Bush_31.obj</uri>
+							<scale>0.0001 0.0001 0.0001</scale>
+						</mesh>
+					</geometry>
+					<material>
+						<script>
+							<uri>file://media/materials/scripts/gazebo.material</uri>
+							<name>Gazebo/Grass</name>
+						</script>
+					</material>
+				</visual>
+				<self_collide>0</self_collide>
+				<enable_wind>0</enable_wind>
+				<kinematic>0</kinematic>
+			</link>
+			<pose>10.0 1.0 0.171977 0 -0 0</pose>
+		</model>
+		<model name="bush_1_nc_101">
+			<static>1</static>
+			<link name="link">
+				<visual name="visual">
+					<geometry>
+						<mesh>
+							<uri>model://bush_1_nc/meshes/Bush_31.obj</uri>
+							<scale>0.0001 0.0001 0.0001</scale>
+						</mesh>
+					</geometry>
+					<material>
+						<script>
+							<uri>file://media/materials/scripts/gazebo.material</uri>
+							<name>Gazebo/Grass</name>
+						</script>
+					</material>
+				</visual>
+				<self_collide>0</self_collide>
+				<enable_wind>0</enable_wind>
+				<kinematic>0</kinematic>
+			</link>
+			<pose>10.5 1.0 0.171977 0 -0 0</pose>
+		</model>
+		<model name="bush_1_nc_102">
+			<static>1</static>
+			<link name="link">
+				<visual name="visual">
+					<geometry>
+						<mesh>
+							<uri>model://bush_1_nc/meshes/Bush_31.obj</uri>
+							<scale>0.0001 0.0001 0.0001</scale>
+						</mesh>
+					</geometry>
+					<material>
+						<script>
+							<uri>file://media/materials/scripts/gazebo.material</uri>
+							<name>Gazebo/Grass</name>
+						</script>
+					</material>
+				</visual>
+				<self_collide>0</self_collide>
+				<enable_wind>0</enable_wind>
+				<kinematic>0</kinematic>
+			</link>
+			<pose>11.0 1.0 0.171977 0 -0 0</pose>
+		</model>
+		<model name="bush_1_nc_103">
+			<static>1</static>
+			<link name="link">
+				<visual name="visual">
+					<geometry>
+						<mesh>
+							<uri>model://bush_1_nc/meshes/Bush_31.obj</uri>
+							<scale>0.0001 0.0001 0.0001</scale>
+						</mesh>
+					</geometry>
+					<material>
+						<script>
+							<uri>file://media/materials/scripts/gazebo.material</uri>
+							<name>Gazebo/Grass</name>
+						</script>
+					</material>
+				</visual>
+				<self_collide>0</self_collide>
+				<enable_wind>0</enable_wind>
+				<kinematic>0</kinematic>
+			</link>
+			<pose>11.5 1.0 0.171977 0 -0 0</pose>
+		</model>
+		<model name="bush_1_nc_104">
+			<static>1</static>
+			<link name="link">
+				<visual name="visual">
+					<geometry>
+						<mesh>
+							<uri>model://bush_1_nc/meshes/Bush_31.obj</uri>
+							<scale>0.0001 0.0001 0.0001</scale>
+						</mesh>
+					</geometry>
+					<material>
+						<script>
+							<uri>file://media/materials/scripts/gazebo.material</uri>
+							<name>Gazebo/Grass</name>
+						</script>
+					</material>
+				</visual>
+				<self_collide>0</self_collide>
+				<enable_wind>0</enable_wind>
+				<kinematic>0</kinematic>
+			</link>
+			<pose>12.0 1.0 0.171977 0 -0 0</pose>
+		</model>
+		<model name="bush_1_nc_105">
+			<static>1</static>
+			<link name="link">
+				<visual name="visual">
+					<geometry>
+						<mesh>
+							<uri>model://bush_1_nc/meshes/Bush_31.obj</uri>
+							<scale>0.0001 0.0001 0.0001</scale>
+						</mesh>
+					</geometry>
+					<material>
+						<script>
+							<uri>file://media/materials/scripts/gazebo.material</uri>
+							<name>Gazebo/Grass</name>
+						</script>
+					</material>
+				</visual>
+				<self_collide>0</self_collide>
+				<enable_wind>0</enable_wind>
+				<kinematic>0</kinematic>
+			</link>
+			<pose>12.5 1.0 0.171977 0 -0 0</pose>
+		</model>
+		<model name="bush_1_nc_106">
+			<static>1</static>
+			<link name="link">
+				<visual name="visual">
+					<geometry>
+						<mesh>
+							<uri>model://bush_1_nc/meshes/Bush_31.obj</uri>
+							<scale>0.0001 0.0001 0.0001</scale>
+						</mesh>
+					</geometry>
+					<material>
+						<script>
+							<uri>file://media/materials/scripts/gazebo.material</uri>
+							<name>Gazebo/Grass</name>
+						</script>
+					</material>
+				</visual>
+				<self_collide>0</self_collide>
+				<enable_wind>0</enable_wind>
+				<kinematic>0</kinematic>
+			</link>
+			<pose>13.0 1.0 0.171977 0 -0 0</pose>
+		</model>
+		<model name="bush_1_nc_107">
+			<static>1</static>
+			<link name="link">
+				<visual name="visual">
+					<geometry>
+						<mesh>
+							<uri>model://bush_1_nc/meshes/Bush_31.obj</uri>
+							<scale>0.0001 0.0001 0.0001</scale>
+						</mesh>
+					</geometry>
+					<material>
+						<script>
+							<uri>file://media/materials/scripts/gazebo.material</uri>
+							<name>Gazebo/Grass</name>
+						</script>
+					</material>
+				</visual>
+				<self_collide>0</self_collide>
+				<enable_wind>0</enable_wind>
+				<kinematic>0</kinematic>
+			</link>
+			<pose>13.5 1.0 0.171977 0 -0 0</pose>
+		</model>
+		<model name="bush_1_nc_108">
+			<static>1</static>
+			<link name="link">
+				<visual name="visual">
+					<geometry>
+						<mesh>
+							<uri>model://bush_1_nc/meshes/Bush_31.obj</uri>
+							<scale>0.0001 0.0001 0.0001</scale>
+						</mesh>
+					</geometry>
+					<material>
+						<script>
+							<uri>file://media/materials/scripts/gazebo.material</uri>
+							<name>Gazebo/Grass</name>
+						</script>
+					</material>
+				</visual>
+				<self_collide>0</self_collide>
+				<enable_wind>0</enable_wind>
+				<kinematic>0</kinematic>
+			</link>
+			<pose>14.0 1.0 0.171977 0 -0 0</pose>
+		</model>
+		<model name="bush_1_nc_109">
+			<static>1</static>
+			<link name="link">
+				<visual name="visual">
+					<geometry>
+						<mesh>
+							<uri>model://bush_1_nc/meshes/Bush_31.obj</uri>
+							<scale>0.0001 0.0001 0.0001</scale>
+						</mesh>
+					</geometry>
+					<material>
+						<script>
+							<uri>file://media/materials/scripts/gazebo.material</uri>
+							<name>Gazebo/Grass</name>
+						</script>
+					</material>
+				</visual>
+				<self_collide>0</self_collide>
+				<enable_wind>0</enable_wind>
+				<kinematic>0</kinematic>
+			</link>
+			<pose>14.5 1.0 0.171977 0 -0 0</pose>
+		</model>
+		<model name="bush_1_nc_110">
+			<static>1</static>
+			<link name="link">
+				<visual name="visual">
+					<geometry>
+						<mesh>
+							<uri>model://bush_1_nc/meshes/Bush_31.obj</uri>
+							<scale>0.0001 0.0001 0.0001</scale>
+						</mesh>
+					</geometry>
+					<material>
+						<script>
+							<uri>file://media/materials/scripts/gazebo.material</uri>
+							<name>Gazebo/Grass</name>
+						</script>
+					</material>
+				</visual>
+				<self_collide>0</self_collide>
+				<enable_wind>0</enable_wind>
+				<kinematic>0</kinematic>
+			</link>
+			<pose>15.0 1.0 0.171977 0 -0 0</pose>
+		</model>
+		<model name="bush_1_nc_111">
+			<static>1</static>
+			<link name="link">
+				<visual name="visual">
+					<geometry>
+						<mesh>
+							<uri>model://bush_1_nc/meshes/Bush_31.obj</uri>
+							<scale>0.0001 0.0001 0.0001</scale>
+						</mesh>
+					</geometry>
+					<material>
+						<script>
+							<uri>file://media/materials/scripts/gazebo.material</uri>
+							<name>Gazebo/Grass</name>
+						</script>
+					</material>
+				</visual>
+				<self_collide>0</self_collide>
+				<enable_wind>0</enable_wind>
+				<kinematic>0</kinematic>
+			</link>
+			<pose>15.5 1.0 0.171977 0 -0 0</pose>
+		</model>
+		<model name="bush_1_nc_112">
+			<static>1</static>
+			<link name="link">
+				<visual name="visual">
+					<geometry>
+						<mesh>
+							<uri>model://bush_1_nc/meshes/Bush_31.obj</uri>
+							<scale>0.0001 0.0001 0.0001</scale>
+						</mesh>
+					</geometry>
+					<material>
+						<script>
+							<uri>file://media/materials/scripts/gazebo.material</uri>
+							<name>Gazebo/Grass</name>
+						</script>
+					</material>
+				</visual>
+				<self_collide>0</self_collide>
+				<enable_wind>0</enable_wind>
+				<kinematic>0</kinematic>
+			</link>
+			<pose>16.0 1.0 0.171977 0 -0 0</pose>
+		</model>
+		<model name="bush_1_nc_113">
+			<static>1</static>
+			<link name="link">
+				<visual name="visual">
+					<geometry>
+						<mesh>
+							<uri>model://bush_1_nc/meshes/Bush_31.obj</uri>
+							<scale>0.0001 0.0001 0.0001</scale>
+						</mesh>
+					</geometry>
+					<material>
+						<script>
+							<uri>file://media/materials/scripts/gazebo.material</uri>
+							<name>Gazebo/Grass</name>
+						</script>
+					</material>
+				</visual>
+				<self_collide>0</self_collide>
+				<enable_wind>0</enable_wind>
+				<kinematic>0</kinematic>
+			</link>
+			<pose>16.5 1.0 0.171977 0 -0 0</pose>
+		</model>
+		<model name="bush_1_nc_114">
+			<static>1</static>
+			<link name="link">
+				<visual name="visual">
+					<geometry>
+						<mesh>
+							<uri>model://bush_1_nc/meshes/Bush_31.obj</uri>
+							<scale>0.0001 0.0001 0.0001</scale>
+						</mesh>
+					</geometry>
+					<material>
+						<script>
+							<uri>file://media/materials/scripts/gazebo.material</uri>
+							<name>Gazebo/Grass</name>
+						</script>
+					</material>
+				</visual>
+				<self_collide>0</self_collide>
+				<enable_wind>0</enable_wind>
+				<kinematic>0</kinematic>
+			</link>
+			<pose>17.0 1.0 0.171977 0 -0 0</pose>
+		</model>
+		<model name="bush_1_nc_115">
+			<static>1</static>
+			<link name="link">
+				<visual name="visual">
+					<geometry>
+						<mesh>
+							<uri>model://bush_1_nc/meshes/Bush_31.obj</uri>
+							<scale>0.0001 0.0001 0.0001</scale>
+						</mesh>
+					</geometry>
+					<material>
+						<script>
+							<uri>file://media/materials/scripts/gazebo.material</uri>
+							<name>Gazebo/Grass</name>
+						</script>
+					</material>
+				</visual>
+				<self_collide>0</self_collide>
+				<enable_wind>0</enable_wind>
+				<kinematic>0</kinematic>
+			</link>
+			<pose>17.5 1.0 0.171977 0 -0 0</pose>
+		</model>
+		<model name="bush_1_nc_116">
+			<static>1</static>
+			<link name="link">
+				<visual name="visual">
+					<geometry>
+						<mesh>
+							<uri>model://bush_1_nc/meshes/Bush_31.obj</uri>
+							<scale>0.0001 0.0001 0.0001</scale>
+						</mesh>
+					</geometry>
+					<material>
+						<script>
+							<uri>file://media/materials/scripts/gazebo.material</uri>
+							<name>Gazebo/Grass</name>
+						</script>
+					</material>
+				</visual>
+				<self_collide>0</self_collide>
+				<enable_wind>0</enable_wind>
+				<kinematic>0</kinematic>
+			</link>
+			<pose>18.0 1.0 0.171977 0 -0 0</pose>
+		</model>
+		<model name="bush_1_nc_117">
+			<static>1</static>
+			<link name="link">
+				<visual name="visual">
+					<geometry>
+						<mesh>
+							<uri>model://bush_1_nc/meshes/Bush_31.obj</uri>
+							<scale>0.0001 0.0001 0.0001</scale>
+						</mesh>
+					</geometry>
+					<material>
+						<script>
+							<uri>file://media/materials/scripts/gazebo.material</uri>
+							<name>Gazebo/Grass</name>
+						</script>
+					</material>
+				</visual>
+				<self_collide>0</self_collide>
+				<enable_wind>0</enable_wind>
+				<kinematic>0</kinematic>
+			</link>
+			<pose>18.5 1.0 0.171977 0 -0 0</pose>
+		</model>
+		<model name="bush_1_nc_118">
+			<static>1</static>
+			<link name="link">
+				<visual name="visual">
+					<geometry>
+						<mesh>
+							<uri>model://bush_1_nc/meshes/Bush_31.obj</uri>
+							<scale>0.0001 0.0001 0.0001</scale>
+						</mesh>
+					</geometry>
+					<material>
+						<script>
+							<uri>file://media/materials/scripts/gazebo.material</uri>
+							<name>Gazebo/Grass</name>
+						</script>
+					</material>
+				</visual>
+				<self_collide>0</self_collide>
+				<enable_wind>0</enable_wind>
+				<kinematic>0</kinematic>
+			</link>
+			<pose>19.0 1.0 0.171977 0 -0 0</pose>
+		</model>
+		<model name="bush_1_nc_119">
+			<static>1</static>
+			<link name="link">
+				<visual name="visual">
+					<geometry>
+						<mesh>
+							<uri>model://bush_1_nc/meshes/Bush_31.obj</uri>
+							<scale>0.0001 0.0001 0.0001</scale>
+						</mesh>
+					</geometry>
+					<material>
+						<script>
+							<uri>file://media/materials/scripts/gazebo.material</uri>
+							<name>Gazebo/Grass</name>
+						</script>
+					</material>
+				</visual>
+				<self_collide>0</self_collide>
+				<enable_wind>0</enable_wind>
+				<kinematic>0</kinematic>
+			</link>
+			<pose>19.5 1.0 0.171977 0 -0 0</pose>
+		</model>
+		<model name="bush_1_nc_120">
+			<static>1</static>
+			<link name="link">
+				<visual name="visual">
+					<geometry>
+						<mesh>
+							<uri>model://bush_1_nc/meshes/Bush_31.obj</uri>
+							<scale>0.0001 0.0001 0.0001</scale>
+						</mesh>
+					</geometry>
+					<material>
+						<script>
+							<uri>file://media/materials/scripts/gazebo.material</uri>
+							<name>Gazebo/Grass</name>
+						</script>
+					</material>
+				</visual>
+				<self_collide>0</self_collide>
+				<enable_wind>0</enable_wind>
+				<kinematic>0</kinematic>
+			</link>
+			<pose>0.0 1.5 0.171977 0 -0 0</pose>
+		</model>
+		<model name="bush_1_nc_121">
+			<static>1</static>
+			<link name="link">
+				<visual name="visual">
+					<geometry>
+						<mesh>
+							<uri>model://bush_1_nc/meshes/Bush_31.obj</uri>
+							<scale>0.0001 0.0001 0.0001</scale>
+						</mesh>
+					</geometry>
+					<material>
+						<script>
+							<uri>file://media/materials/scripts/gazebo.material</uri>
+							<name>Gazebo/Grass</name>
+						</script>
+					</material>
+				</visual>
+				<self_collide>0</self_collide>
+				<enable_wind>0</enable_wind>
+				<kinematic>0</kinematic>
+			</link>
+			<pose>0.5 1.5 0.171977 0 -0 0</pose>
+		</model>
+		<model name="bush_1_nc_122">
+			<static>1</static>
+			<link name="link">
+				<visual name="visual">
+					<geometry>
+						<mesh>
+							<uri>model://bush_1_nc/meshes/Bush_31.obj</uri>
+							<scale>0.0001 0.0001 0.0001</scale>
+						</mesh>
+					</geometry>
+					<material>
+						<script>
+							<uri>file://media/materials/scripts/gazebo.material</uri>
+							<name>Gazebo/Grass</name>
+						</script>
+					</material>
+				</visual>
+				<self_collide>0</self_collide>
+				<enable_wind>0</enable_wind>
+				<kinematic>0</kinematic>
+			</link>
+			<pose>1.0 1.5 0.171977 0 -0 0</pose>
+		</model>
+		<model name="bush_1_nc_123">
+			<static>1</static>
+			<link name="link">
+				<visual name="visual">
+					<geometry>
+						<mesh>
+							<uri>model://bush_1_nc/meshes/Bush_31.obj</uri>
+							<scale>0.0001 0.0001 0.0001</scale>
+						</mesh>
+					</geometry>
+					<material>
+						<script>
+							<uri>file://media/materials/scripts/gazebo.material</uri>
+							<name>Gazebo/Grass</name>
+						</script>
+					</material>
+				</visual>
+				<self_collide>0</self_collide>
+				<enable_wind>0</enable_wind>
+				<kinematic>0</kinematic>
+			</link>
+			<pose>1.5 1.5 0.171977 0 -0 0</pose>
+		</model>
+		<model name="bush_1_nc_124">
+			<static>1</static>
+			<link name="link">
+				<visual name="visual">
+					<geometry>
+						<mesh>
+							<uri>model://bush_1_nc/meshes/Bush_31.obj</uri>
+							<scale>0.0001 0.0001 0.0001</scale>
+						</mesh>
+					</geometry>
+					<material>
+						<script>
+							<uri>file://media/materials/scripts/gazebo.material</uri>
+							<name>Gazebo/Grass</name>
+						</script>
+					</material>
+				</visual>
+				<self_collide>0</self_collide>
+				<enable_wind>0</enable_wind>
+				<kinematic>0</kinematic>
+			</link>
+			<pose>2.0 1.5 0.171977 0 -0 0</pose>
+		</model>
+		<model name="bush_1_nc_125">
+			<static>1</static>
+			<link name="link">
+				<visual name="visual">
+					<geometry>
+						<mesh>
+							<uri>model://bush_1_nc/meshes/Bush_31.obj</uri>
+							<scale>0.0001 0.0001 0.0001</scale>
+						</mesh>
+					</geometry>
+					<material>
+						<script>
+							<uri>file://media/materials/scripts/gazebo.material</uri>
+							<name>Gazebo/Grass</name>
+						</script>
+					</material>
+				</visual>
+				<self_collide>0</self_collide>
+				<enable_wind>0</enable_wind>
+				<kinematic>0</kinematic>
+			</link>
+			<pose>2.5 1.5 0.171977 0 -0 0</pose>
+		</model>
+		<model name="bush_1_nc_126">
+			<static>1</static>
+			<link name="link">
+				<visual name="visual">
+					<geometry>
+						<mesh>
+							<uri>model://bush_1_nc/meshes/Bush_31.obj</uri>
+							<scale>0.0001 0.0001 0.0001</scale>
+						</mesh>
+					</geometry>
+					<material>
+						<script>
+							<uri>file://media/materials/scripts/gazebo.material</uri>
+							<name>Gazebo/Grass</name>
+						</script>
+					</material>
+				</visual>
+				<self_collide>0</self_collide>
+				<enable_wind>0</enable_wind>
+				<kinematic>0</kinematic>
+			</link>
+			<pose>3.0 1.5 0.171977 0 -0 0</pose>
+		</model>
+		<model name="bush_1_nc_127">
+			<static>1</static>
+			<link name="link">
+				<visual name="visual">
+					<geometry>
+						<mesh>
+							<uri>model://bush_1_nc/meshes/Bush_31.obj</uri>
+							<scale>0.0001 0.0001 0.0001</scale>
+						</mesh>
+					</geometry>
+					<material>
+						<script>
+							<uri>file://media/materials/scripts/gazebo.material</uri>
+							<name>Gazebo/Grass</name>
+						</script>
+					</material>
+				</visual>
+				<self_collide>0</self_collide>
+				<enable_wind>0</enable_wind>
+				<kinematic>0</kinematic>
+			</link>
+			<pose>3.5 1.5 0.171977 0 -0 0</pose>
+		</model>
+		<model name="bush_1_nc_128">
+			<static>1</static>
+			<link name="link">
+				<visual name="visual">
+					<geometry>
+						<mesh>
+							<uri>model://bush_1_nc/meshes/Bush_31.obj</uri>
+							<scale>0.0001 0.0001 0.0001</scale>
+						</mesh>
+					</geometry>
+					<material>
+						<script>
+							<uri>file://media/materials/scripts/gazebo.material</uri>
+							<name>Gazebo/Grass</name>
+						</script>
+					</material>
+				</visual>
+				<self_collide>0</self_collide>
+				<enable_wind>0</enable_wind>
+				<kinematic>0</kinematic>
+			</link>
+			<pose>4.0 1.5 0.171977 0 -0 0</pose>
+		</model>
+		<model name="bush_1_nc_129">
+			<static>1</static>
+			<link name="link">
+				<visual name="visual">
+					<geometry>
+						<mesh>
+							<uri>model://bush_1_nc/meshes/Bush_31.obj</uri>
+							<scale>0.0001 0.0001 0.0001</scale>
+						</mesh>
+					</geometry>
+					<material>
+						<script>
+							<uri>file://media/materials/scripts/gazebo.material</uri>
+							<name>Gazebo/Grass</name>
+						</script>
+					</material>
+				</visual>
+				<self_collide>0</self_collide>
+				<enable_wind>0</enable_wind>
+				<kinematic>0</kinematic>
+			</link>
+			<pose>4.5 1.5 0.171977 0 -0 0</pose>
+		</model>
+		<model name="bush_1_nc_130">
+			<static>1</static>
+			<link name="link">
+				<visual name="visual">
+					<geometry>
+						<mesh>
+							<uri>model://bush_1_nc/meshes/Bush_31.obj</uri>
+							<scale>0.0001 0.0001 0.0001</scale>
+						</mesh>
+					</geometry>
+					<material>
+						<script>
+							<uri>file://media/materials/scripts/gazebo.material</uri>
+							<name>Gazebo/Grass</name>
+						</script>
+					</material>
+				</visual>
+				<self_collide>0</self_collide>
+				<enable_wind>0</enable_wind>
+				<kinematic>0</kinematic>
+			</link>
+			<pose>5.0 1.5 0.171977 0 -0 0</pose>
+		</model>
+		<model name="bush_1_nc_131">
+			<static>1</static>
+			<link name="link">
+				<visual name="visual">
+					<geometry>
+						<mesh>
+							<uri>model://bush_1_nc/meshes/Bush_31.obj</uri>
+							<scale>0.0001 0.0001 0.0001</scale>
+						</mesh>
+					</geometry>
+					<material>
+						<script>
+							<uri>file://media/materials/scripts/gazebo.material</uri>
+							<name>Gazebo/Grass</name>
+						</script>
+					</material>
+				</visual>
+				<self_collide>0</self_collide>
+				<enable_wind>0</enable_wind>
+				<kinematic>0</kinematic>
+			</link>
+			<pose>5.5 1.5 0.171977 0 -0 0</pose>
+		</model>
+		<model name="bush_1_nc_132">
+			<static>1</static>
+			<link name="link">
+				<visual name="visual">
+					<geometry>
+						<mesh>
+							<uri>model://bush_1_nc/meshes/Bush_31.obj</uri>
+							<scale>0.0001 0.0001 0.0001</scale>
+						</mesh>
+					</geometry>
+					<material>
+						<script>
+							<uri>file://media/materials/scripts/gazebo.material</uri>
+							<name>Gazebo/Grass</name>
+						</script>
+					</material>
+				</visual>
+				<self_collide>0</self_collide>
+				<enable_wind>0</enable_wind>
+				<kinematic>0</kinematic>
+			</link>
+			<pose>6.0 1.5 0.171977 0 -0 0</pose>
+		</model>
+		<model name="bush_1_nc_133">
+			<static>1</static>
+			<link name="link">
+				<visual name="visual">
+					<geometry>
+						<mesh>
+							<uri>model://bush_1_nc/meshes/Bush_31.obj</uri>
+							<scale>0.0001 0.0001 0.0001</scale>
+						</mesh>
+					</geometry>
+					<material>
+						<script>
+							<uri>file://media/materials/scripts/gazebo.material</uri>
+							<name>Gazebo/Grass</name>
+						</script>
+					</material>
+				</visual>
+				<self_collide>0</self_collide>
+				<enable_wind>0</enable_wind>
+				<kinematic>0</kinematic>
+			</link>
+			<pose>6.5 1.5 0.171977 0 -0 0</pose>
+		</model>
+		<model name="bush_1_nc_134">
+			<static>1</static>
+			<link name="link">
+				<visual name="visual">
+					<geometry>
+						<mesh>
+							<uri>model://bush_1_nc/meshes/Bush_31.obj</uri>
+							<scale>0.0001 0.0001 0.0001</scale>
+						</mesh>
+					</geometry>
+					<material>
+						<script>
+							<uri>file://media/materials/scripts/gazebo.material</uri>
+							<name>Gazebo/Grass</name>
+						</script>
+					</material>
+				</visual>
+				<self_collide>0</self_collide>
+				<enable_wind>0</enable_wind>
+				<kinematic>0</kinematic>
+			</link>
+			<pose>7.0 1.5 0.171977 0 -0 0</pose>
+		</model>
+		<model name="bush_1_nc_135">
+			<static>1</static>
+			<link name="link">
+				<visual name="visual">
+					<geometry>
+						<mesh>
+							<uri>model://bush_1_nc/meshes/Bush_31.obj</uri>
+							<scale>0.0001 0.0001 0.0001</scale>
+						</mesh>
+					</geometry>
+					<material>
+						<script>
+							<uri>file://media/materials/scripts/gazebo.material</uri>
+							<name>Gazebo/Grass</name>
+						</script>
+					</material>
+				</visual>
+				<self_collide>0</self_collide>
+				<enable_wind>0</enable_wind>
+				<kinematic>0</kinematic>
+			</link>
+			<pose>7.5 1.5 0.171977 0 -0 0</pose>
+		</model>
+		<model name="bush_1_nc_136">
+			<static>1</static>
+			<link name="link">
+				<visual name="visual">
+					<geometry>
+						<mesh>
+							<uri>model://bush_1_nc/meshes/Bush_31.obj</uri>
+							<scale>0.0001 0.0001 0.0001</scale>
+						</mesh>
+					</geometry>
+					<material>
+						<script>
+							<uri>file://media/materials/scripts/gazebo.material</uri>
+							<name>Gazebo/Grass</name>
+						</script>
+					</material>
+				</visual>
+				<self_collide>0</self_collide>
+				<enable_wind>0</enable_wind>
+				<kinematic>0</kinematic>
+			</link>
+			<pose>8.0 1.5 0.171977 0 -0 0</pose>
+		</model>
+		<model name="bush_1_nc_137">
+			<static>1</static>
+			<link name="link">
+				<visual name="visual">
+					<geometry>
+						<mesh>
+							<uri>model://bush_1_nc/meshes/Bush_31.obj</uri>
+							<scale>0.0001 0.0001 0.0001</scale>
+						</mesh>
+					</geometry>
+					<material>
+						<script>
+							<uri>file://media/materials/scripts/gazebo.material</uri>
+							<name>Gazebo/Grass</name>
+						</script>
+					</material>
+				</visual>
+				<self_collide>0</self_collide>
+				<enable_wind>0</enable_wind>
+				<kinematic>0</kinematic>
+			</link>
+			<pose>8.5 1.5 0.171977 0 -0 0</pose>
+		</model>
+		<model name="bush_1_nc_138">
+			<static>1</static>
+			<link name="link">
+				<visual name="visual">
+					<geometry>
+						<mesh>
+							<uri>model://bush_1_nc/meshes/Bush_31.obj</uri>
+							<scale>0.0001 0.0001 0.0001</scale>
+						</mesh>
+					</geometry>
+					<material>
+						<script>
+							<uri>file://media/materials/scripts/gazebo.material</uri>
+							<name>Gazebo/Grass</name>
+						</script>
+					</material>
+				</visual>
+				<self_collide>0</self_collide>
+				<enable_wind>0</enable_wind>
+				<kinematic>0</kinematic>
+			</link>
+			<pose>9.0 1.5 0.171977 0 -0 0</pose>
+		</model>
+		<model name="bush_1_nc_139">
+			<static>1</static>
+			<link name="link">
+				<visual name="visual">
+					<geometry>
+						<mesh>
+							<uri>model://bush_1_nc/meshes/Bush_31.obj</uri>
+							<scale>0.0001 0.0001 0.0001</scale>
+						</mesh>
+					</geometry>
+					<material>
+						<script>
+							<uri>file://media/materials/scripts/gazebo.material</uri>
+							<name>Gazebo/Grass</name>
+						</script>
+					</material>
+				</visual>
+				<self_collide>0</self_collide>
+				<enable_wind>0</enable_wind>
+				<kinematic>0</kinematic>
+			</link>
+			<pose>9.5 1.5 0.171977 0 -0 0</pose>
+		</model>
+		<model name="bush_1_nc_140">
+			<static>1</static>
+			<link name="link">
+				<visual name="visual">
+					<geometry>
+						<mesh>
+							<uri>model://bush_1_nc/meshes/Bush_31.obj</uri>
+							<scale>0.0001 0.0001 0.0001</scale>
+						</mesh>
+					</geometry>
+					<material>
+						<script>
+							<uri>file://media/materials/scripts/gazebo.material</uri>
+							<name>Gazebo/Grass</name>
+						</script>
+					</material>
+				</visual>
+				<self_collide>0</self_collide>
+				<enable_wind>0</enable_wind>
+				<kinematic>0</kinematic>
+			</link>
+			<pose>10.0 1.5 0.171977 0 -0 0</pose>
+		</model>
+		<model name="bush_1_nc_141">
+			<static>1</static>
+			<link name="link">
+				<visual name="visual">
+					<geometry>
+						<mesh>
+							<uri>model://bush_1_nc/meshes/Bush_31.obj</uri>
+							<scale>0.0001 0.0001 0.0001</scale>
+						</mesh>
+					</geometry>
+					<material>
+						<script>
+							<uri>file://media/materials/scripts/gazebo.material</uri>
+							<name>Gazebo/Grass</name>
+						</script>
+					</material>
+				</visual>
+				<self_collide>0</self_collide>
+				<enable_wind>0</enable_wind>
+				<kinematic>0</kinematic>
+			</link>
+			<pose>10.5 1.5 0.171977 0 -0 0</pose>
+		</model>
+		<model name="bush_1_nc_142">
+			<static>1</static>
+			<link name="link">
+				<visual name="visual">
+					<geometry>
+						<mesh>
+							<uri>model://bush_1_nc/meshes/Bush_31.obj</uri>
+							<scale>0.0001 0.0001 0.0001</scale>
+						</mesh>
+					</geometry>
+					<material>
+						<script>
+							<uri>file://media/materials/scripts/gazebo.material</uri>
+							<name>Gazebo/Grass</name>
+						</script>
+					</material>
+				</visual>
+				<self_collide>0</self_collide>
+				<enable_wind>0</enable_wind>
+				<kinematic>0</kinematic>
+			</link>
+			<pose>11.0 1.5 0.171977 0 -0 0</pose>
+		</model>
+		<model name="bush_1_nc_143">
+			<static>1</static>
+			<link name="link">
+				<visual name="visual">
+					<geometry>
+						<mesh>
+							<uri>model://bush_1_nc/meshes/Bush_31.obj</uri>
+							<scale>0.0001 0.0001 0.0001</scale>
+						</mesh>
+					</geometry>
+					<material>
+						<script>
+							<uri>file://media/materials/scripts/gazebo.material</uri>
+							<name>Gazebo/Grass</name>
+						</script>
+					</material>
+				</visual>
+				<self_collide>0</self_collide>
+				<enable_wind>0</enable_wind>
+				<kinematic>0</kinematic>
+			</link>
+			<pose>11.5 1.5 0.171977 0 -0 0</pose>
+		</model>
+		<model name="bush_1_nc_144">
+			<static>1</static>
+			<link name="link">
+				<visual name="visual">
+					<geometry>
+						<mesh>
+							<uri>model://bush_1_nc/meshes/Bush_31.obj</uri>
+							<scale>0.0001 0.0001 0.0001</scale>
+						</mesh>
+					</geometry>
+					<material>
+						<script>
+							<uri>file://media/materials/scripts/gazebo.material</uri>
+							<name>Gazebo/Grass</name>
+						</script>
+					</material>
+				</visual>
+				<self_collide>0</self_collide>
+				<enable_wind>0</enable_wind>
+				<kinematic>0</kinematic>
+			</link>
+			<pose>12.0 1.5 0.171977 0 -0 0</pose>
+		</model>
+		<model name="bush_1_nc_145">
+			<static>1</static>
+			<link name="link">
+				<visual name="visual">
+					<geometry>
+						<mesh>
+							<uri>model://bush_1_nc/meshes/Bush_31.obj</uri>
+							<scale>0.0001 0.0001 0.0001</scale>
+						</mesh>
+					</geometry>
+					<material>
+						<script>
+							<uri>file://media/materials/scripts/gazebo.material</uri>
+							<name>Gazebo/Grass</name>
+						</script>
+					</material>
+				</visual>
+				<self_collide>0</self_collide>
+				<enable_wind>0</enable_wind>
+				<kinematic>0</kinematic>
+			</link>
+			<pose>12.5 1.5 0.171977 0 -0 0</pose>
+		</model>
+		<model name="bush_1_nc_146">
+			<static>1</static>
+			<link name="link">
+				<visual name="visual">
+					<geometry>
+						<mesh>
+							<uri>model://bush_1_nc/meshes/Bush_31.obj</uri>
+							<scale>0.0001 0.0001 0.0001</scale>
+						</mesh>
+					</geometry>
+					<material>
+						<script>
+							<uri>file://media/materials/scripts/gazebo.material</uri>
+							<name>Gazebo/Grass</name>
+						</script>
+					</material>
+				</visual>
+				<self_collide>0</self_collide>
+				<enable_wind>0</enable_wind>
+				<kinematic>0</kinematic>
+			</link>
+			<pose>13.0 1.5 0.171977 0 -0 0</pose>
+		</model>
+		<model name="bush_1_nc_147">
+			<static>1</static>
+			<link name="link">
+				<visual name="visual">
+					<geometry>
+						<mesh>
+							<uri>model://bush_1_nc/meshes/Bush_31.obj</uri>
+							<scale>0.0001 0.0001 0.0001</scale>
+						</mesh>
+					</geometry>
+					<material>
+						<script>
+							<uri>file://media/materials/scripts/gazebo.material</uri>
+							<name>Gazebo/Grass</name>
+						</script>
+					</material>
+				</visual>
+				<self_collide>0</self_collide>
+				<enable_wind>0</enable_wind>
+				<kinematic>0</kinematic>
+			</link>
+			<pose>13.5 1.5 0.171977 0 -0 0</pose>
+		</model>
+		<model name="bush_1_nc_148">
+			<static>1</static>
+			<link name="link">
+				<visual name="visual">
+					<geometry>
+						<mesh>
+							<uri>model://bush_1_nc/meshes/Bush_31.obj</uri>
+							<scale>0.0001 0.0001 0.0001</scale>
+						</mesh>
+					</geometry>
+					<material>
+						<script>
+							<uri>file://media/materials/scripts/gazebo.material</uri>
+							<name>Gazebo/Grass</name>
+						</script>
+					</material>
+				</visual>
+				<self_collide>0</self_collide>
+				<enable_wind>0</enable_wind>
+				<kinematic>0</kinematic>
+			</link>
+			<pose>14.0 1.5 0.171977 0 -0 0</pose>
+		</model>
+		<model name="bush_1_nc_149">
+			<static>1</static>
+			<link name="link">
+				<visual name="visual">
+					<geometry>
+						<mesh>
+							<uri>model://bush_1_nc/meshes/Bush_31.obj</uri>
+							<scale>0.0001 0.0001 0.0001</scale>
+						</mesh>
+					</geometry>
+					<material>
+						<script>
+							<uri>file://media/materials/scripts/gazebo.material</uri>
+							<name>Gazebo/Grass</name>
+						</script>
+					</material>
+				</visual>
+				<self_collide>0</self_collide>
+				<enable_wind>0</enable_wind>
+				<kinematic>0</kinematic>
+			</link>
+			<pose>14.5 1.5 0.171977 0 -0 0</pose>
+		</model>
+		<model name="bush_1_nc_150">
+			<static>1</static>
+			<link name="link">
+				<visual name="visual">
+					<geometry>
+						<mesh>
+							<uri>model://bush_1_nc/meshes/Bush_31.obj</uri>
+							<scale>0.0001 0.0001 0.0001</scale>
+						</mesh>
+					</geometry>
+					<material>
+						<script>
+							<uri>file://media/materials/scripts/gazebo.material</uri>
+							<name>Gazebo/Grass</name>
+						</script>
+					</material>
+				</visual>
+				<self_collide>0</self_collide>
+				<enable_wind>0</enable_wind>
+				<kinematic>0</kinematic>
+			</link>
+			<pose>15.0 1.5 0.171977 0 -0 0</pose>
+		</model>
+		<model name="bush_1_nc_151">
+			<static>1</static>
+			<link name="link">
+				<visual name="visual">
+					<geometry>
+						<mesh>
+							<uri>model://bush_1_nc/meshes/Bush_31.obj</uri>
+							<scale>0.0001 0.0001 0.0001</scale>
+						</mesh>
+					</geometry>
+					<material>
+						<script>
+							<uri>file://media/materials/scripts/gazebo.material</uri>
+							<name>Gazebo/Grass</name>
+						</script>
+					</material>
+				</visual>
+				<self_collide>0</self_collide>
+				<enable_wind>0</enable_wind>
+				<kinematic>0</kinematic>
+			</link>
+			<pose>15.5 1.5 0.171977 0 -0 0</pose>
+		</model>
+		<model name="bush_1_nc_152">
+			<static>1</static>
+			<link name="link">
+				<visual name="visual">
+					<geometry>
+						<mesh>
+							<uri>model://bush_1_nc/meshes/Bush_31.obj</uri>
+							<scale>0.0001 0.0001 0.0001</scale>
+						</mesh>
+					</geometry>
+					<material>
+						<script>
+							<uri>file://media/materials/scripts/gazebo.material</uri>
+							<name>Gazebo/Grass</name>
+						</script>
+					</material>
+				</visual>
+				<self_collide>0</self_collide>
+				<enable_wind>0</enable_wind>
+				<kinematic>0</kinematic>
+			</link>
+			<pose>16.0 1.5 0.171977 0 -0 0</pose>
+		</model>
+		<model name="bush_1_nc_153">
+			<static>1</static>
+			<link name="link">
+				<visual name="visual">
+					<geometry>
+						<mesh>
+							<uri>model://bush_1_nc/meshes/Bush_31.obj</uri>
+							<scale>0.0001 0.0001 0.0001</scale>
+						</mesh>
+					</geometry>
+					<material>
+						<script>
+							<uri>file://media/materials/scripts/gazebo.material</uri>
+							<name>Gazebo/Grass</name>
+						</script>
+					</material>
+				</visual>
+				<self_collide>0</self_collide>
+				<enable_wind>0</enable_wind>
+				<kinematic>0</kinematic>
+			</link>
+			<pose>16.5 1.5 0.171977 0 -0 0</pose>
+		</model>
+		<model name="bush_1_nc_154">
+			<static>1</static>
+			<link name="link">
+				<visual name="visual">
+					<geometry>
+						<mesh>
+							<uri>model://bush_1_nc/meshes/Bush_31.obj</uri>
+							<scale>0.0001 0.0001 0.0001</scale>
+						</mesh>
+					</geometry>
+					<material>
+						<script>
+							<uri>file://media/materials/scripts/gazebo.material</uri>
+							<name>Gazebo/Grass</name>
+						</script>
+					</material>
+				</visual>
+				<self_collide>0</self_collide>
+				<enable_wind>0</enable_wind>
+				<kinematic>0</kinematic>
+			</link>
+			<pose>17.0 1.5 0.171977 0 -0 0</pose>
+		</model>
+		<model name="bush_1_nc_155">
+			<static>1</static>
+			<link name="link">
+				<visual name="visual">
+					<geometry>
+						<mesh>
+							<uri>model://bush_1_nc/meshes/Bush_31.obj</uri>
+							<scale>0.0001 0.0001 0.0001</scale>
+						</mesh>
+					</geometry>
+					<material>
+						<script>
+							<uri>file://media/materials/scripts/gazebo.material</uri>
+							<name>Gazebo/Grass</name>
+						</script>
+					</material>
+				</visual>
+				<self_collide>0</self_collide>
+				<enable_wind>0</enable_wind>
+				<kinematic>0</kinematic>
+			</link>
+			<pose>17.5 1.5 0.171977 0 -0 0</pose>
+		</model>
+		<model name="bush_1_nc_156">
+			<static>1</static>
+			<link name="link">
+				<visual name="visual">
+					<geometry>
+						<mesh>
+							<uri>model://bush_1_nc/meshes/Bush_31.obj</uri>
+							<scale>0.0001 0.0001 0.0001</scale>
+						</mesh>
+					</geometry>
+					<material>
+						<script>
+							<uri>file://media/materials/scripts/gazebo.material</uri>
+							<name>Gazebo/Grass</name>
+						</script>
+					</material>
+				</visual>
+				<self_collide>0</self_collide>
+				<enable_wind>0</enable_wind>
+				<kinematic>0</kinematic>
+			</link>
+			<pose>18.0 1.5 0.171977 0 -0 0</pose>
+		</model>
+		<model name="bush_1_nc_157">
+			<static>1</static>
+			<link name="link">
+				<visual name="visual">
+					<geometry>
+						<mesh>
+							<uri>model://bush_1_nc/meshes/Bush_31.obj</uri>
+							<scale>0.0001 0.0001 0.0001</scale>
+						</mesh>
+					</geometry>
+					<material>
+						<script>
+							<uri>file://media/materials/scripts/gazebo.material</uri>
+							<name>Gazebo/Grass</name>
+						</script>
+					</material>
+				</visual>
+				<self_collide>0</self_collide>
+				<enable_wind>0</enable_wind>
+				<kinematic>0</kinematic>
+			</link>
+			<pose>18.5 1.5 0.171977 0 -0 0</pose>
+		</model>
+		<model name="bush_1_nc_158">
+			<static>1</static>
+			<link name="link">
+				<visual name="visual">
+					<geometry>
+						<mesh>
+							<uri>model://bush_1_nc/meshes/Bush_31.obj</uri>
+							<scale>0.0001 0.0001 0.0001</scale>
+						</mesh>
+					</geometry>
+					<material>
+						<script>
+							<uri>file://media/materials/scripts/gazebo.material</uri>
+							<name>Gazebo/Grass</name>
+						</script>
+					</material>
+				</visual>
+				<self_collide>0</self_collide>
+				<enable_wind>0</enable_wind>
+				<kinematic>0</kinematic>
+			</link>
+			<pose>19.0 1.5 0.171977 0 -0 0</pose>
+		</model>
+		<model name="bush_1_nc_159">
+			<static>1</static>
+			<link name="link">
+				<visual name="visual">
+					<geometry>
+						<mesh>
+							<uri>model://bush_1_nc/meshes/Bush_31.obj</uri>
+							<scale>0.0001 0.0001 0.0001</scale>
+						</mesh>
+					</geometry>
+					<material>
+						<script>
+							<uri>file://media/materials/scripts/gazebo.material</uri>
+							<name>Gazebo/Grass</name>
+						</script>
+					</material>
+				</visual>
+				<self_collide>0</self_collide>
+				<enable_wind>0</enable_wind>
+				<kinematic>0</kinematic>
+			</link>
+			<pose>19.5 1.5 0.171977 0 -0 0</pose>
+		</model>
+		<state world_name="default">
+			<sim_time>44 154000000</sim_time>
+			<real_time>44 571842198</real_time>
+			<wall_time>1699303547 287877280</wall_time>
+			<iterations>44154</iterations>
+			<model name="bush_1_nc_0">
+				<pose>0.0 0.0 0.171977 0 -0 0</pose>
+				<scale>1 1 1</scale>
+				<link name="link">
+					<pose>0.0 0.0 0.171977 0 -0 0</pose>
+					<velocity>0 0 0 0 -0 0</velocity>
+					<acceleration>0 0 0 0 -0 0</acceleration>
+					<wrench>0 0 0 0 -0 0</wrench>
+				</link>
+			</model>
+			<model name="bush_1_nc_1">
+				<pose>0.5 0.0 0.171977 0 -0 0</pose>
+				<scale>1 1 1</scale>
+				<link name="link">
+					<pose>0.5 0.0 0.171977 0 -0 0</pose>
+					<velocity>0 0 0 0 -0 0</velocity>
+					<acceleration>0 0 0 0 -0 0</acceleration>
+					<wrench>0 0 0 0 -0 0</wrench>
+				</link>
+			</model>
+			<model name="bush_1_nc_2">
+				<pose>1.0 0.0 0.171977 0 -0 0</pose>
+				<scale>1 1 1</scale>
+				<link name="link">
+					<pose>1.0 0.0 0.171977 0 -0 0</pose>
+					<velocity>0 0 0 0 -0 0</velocity>
+					<acceleration>0 0 0 0 -0 0</acceleration>
+					<wrench>0 0 0 0 -0 0</wrench>
+				</link>
+			</model>
+			<model name="bush_1_nc_3">
+				<pose>1.5 0.0 0.171977 0 -0 0</pose>
+				<scale>1 1 1</scale>
+				<link name="link">
+					<pose>1.5 0.0 0.171977 0 -0 0</pose>
+					<velocity>0 0 0 0 -0 0</velocity>
+					<acceleration>0 0 0 0 -0 0</acceleration>
+					<wrench>0 0 0 0 -0 0</wrench>
+				</link>
+			</model>
+			<model name="bush_1_nc_4">
+				<pose>2.0 0.0 0.171977 0 -0 0</pose>
+				<scale>1 1 1</scale>
+				<link name="link">
+					<pose>2.0 0.0 0.171977 0 -0 0</pose>
+					<velocity>0 0 0 0 -0 0</velocity>
+					<acceleration>0 0 0 0 -0 0</acceleration>
+					<wrench>0 0 0 0 -0 0</wrench>
+				</link>
+			</model>
+			<model name="bush_1_nc_5">
+				<pose>2.5 0.0 0.171977 0 -0 0</pose>
+				<scale>1 1 1</scale>
+				<link name="link">
+					<pose>2.5 0.0 0.171977 0 -0 0</pose>
+					<velocity>0 0 0 0 -0 0</velocity>
+					<acceleration>0 0 0 0 -0 0</acceleration>
+					<wrench>0 0 0 0 -0 0</wrench>
+				</link>
+			</model>
+			<model name="bush_1_nc_6">
+				<pose>3.0 0.0 0.171977 0 -0 0</pose>
+				<scale>1 1 1</scale>
+				<link name="link">
+					<pose>3.0 0.0 0.171977 0 -0 0</pose>
+					<velocity>0 0 0 0 -0 0</velocity>
+					<acceleration>0 0 0 0 -0 0</acceleration>
+					<wrench>0 0 0 0 -0 0</wrench>
+				</link>
+			</model>
+			<model name="bush_1_nc_7">
+				<pose>3.5 0.0 0.171977 0 -0 0</pose>
+				<scale>1 1 1</scale>
+				<link name="link">
+					<pose>3.5 0.0 0.171977 0 -0 0</pose>
+					<velocity>0 0 0 0 -0 0</velocity>
+					<acceleration>0 0 0 0 -0 0</acceleration>
+					<wrench>0 0 0 0 -0 0</wrench>
+				</link>
+			</model>
+			<model name="bush_1_nc_8">
+				<pose>4.0 0.0 0.171977 0 -0 0</pose>
+				<scale>1 1 1</scale>
+				<link name="link">
+					<pose>4.0 0.0 0.171977 0 -0 0</pose>
+					<velocity>0 0 0 0 -0 0</velocity>
+					<acceleration>0 0 0 0 -0 0</acceleration>
+					<wrench>0 0 0 0 -0 0</wrench>
+				</link>
+			</model>
+			<model name="bush_1_nc_9">
+				<pose>4.5 0.0 0.171977 0 -0 0</pose>
+				<scale>1 1 1</scale>
+				<link name="link">
+					<pose>4.5 0.0 0.171977 0 -0 0</pose>
+					<velocity>0 0 0 0 -0 0</velocity>
+					<acceleration>0 0 0 0 -0 0</acceleration>
+					<wrench>0 0 0 0 -0 0</wrench>
+				</link>
+			</model>
+			<model name="bush_1_nc_10">
+				<pose>5.0 0.0 0.171977 0 -0 0</pose>
+				<scale>1 1 1</scale>
+				<link name="link">
+					<pose>5.0 0.0 0.171977 0 -0 0</pose>
+					<velocity>0 0 0 0 -0 0</velocity>
+					<acceleration>0 0 0 0 -0 0</acceleration>
+					<wrench>0 0 0 0 -0 0</wrench>
+				</link>
+			</model>
+			<model name="bush_1_nc_11">
+				<pose>5.5 0.0 0.171977 0 -0 0</pose>
+				<scale>1 1 1</scale>
+				<link name="link">
+					<pose>5.5 0.0 0.171977 0 -0 0</pose>
+					<velocity>0 0 0 0 -0 0</velocity>
+					<acceleration>0 0 0 0 -0 0</acceleration>
+					<wrench>0 0 0 0 -0 0</wrench>
+				</link>
+			</model>
+			<model name="bush_1_nc_12">
+				<pose>6.0 0.0 0.171977 0 -0 0</pose>
+				<scale>1 1 1</scale>
+				<link name="link">
+					<pose>6.0 0.0 0.171977 0 -0 0</pose>
+					<velocity>0 0 0 0 -0 0</velocity>
+					<acceleration>0 0 0 0 -0 0</acceleration>
+					<wrench>0 0 0 0 -0 0</wrench>
+				</link>
+			</model>
+			<model name="bush_1_nc_13">
+				<pose>6.5 0.0 0.171977 0 -0 0</pose>
+				<scale>1 1 1</scale>
+				<link name="link">
+					<pose>6.5 0.0 0.171977 0 -0 0</pose>
+					<velocity>0 0 0 0 -0 0</velocity>
+					<acceleration>0 0 0 0 -0 0</acceleration>
+					<wrench>0 0 0 0 -0 0</wrench>
+				</link>
+			</model>
+			<model name="bush_1_nc_14">
+				<pose>7.0 0.0 0.171977 0 -0 0</pose>
+				<scale>1 1 1</scale>
+				<link name="link">
+					<pose>7.0 0.0 0.171977 0 -0 0</pose>
+					<velocity>0 0 0 0 -0 0</velocity>
+					<acceleration>0 0 0 0 -0 0</acceleration>
+					<wrench>0 0 0 0 -0 0</wrench>
+				</link>
+			</model>
+			<model name="bush_1_nc_15">
+				<pose>7.5 0.0 0.171977 0 -0 0</pose>
+				<scale>1 1 1</scale>
+				<link name="link">
+					<pose>7.5 0.0 0.171977 0 -0 0</pose>
+					<velocity>0 0 0 0 -0 0</velocity>
+					<acceleration>0 0 0 0 -0 0</acceleration>
+					<wrench>0 0 0 0 -0 0</wrench>
+				</link>
+			</model>
+			<model name="bush_1_nc_16">
+				<pose>8.0 0.0 0.171977 0 -0 0</pose>
+				<scale>1 1 1</scale>
+				<link name="link">
+					<pose>8.0 0.0 0.171977 0 -0 0</pose>
+					<velocity>0 0 0 0 -0 0</velocity>
+					<acceleration>0 0 0 0 -0 0</acceleration>
+					<wrench>0 0 0 0 -0 0</wrench>
+				</link>
+			</model>
+			<model name="bush_1_nc_17">
+				<pose>8.5 0.0 0.171977 0 -0 0</pose>
+				<scale>1 1 1</scale>
+				<link name="link">
+					<pose>8.5 0.0 0.171977 0 -0 0</pose>
+					<velocity>0 0 0 0 -0 0</velocity>
+					<acceleration>0 0 0 0 -0 0</acceleration>
+					<wrench>0 0 0 0 -0 0</wrench>
+				</link>
+			</model>
+			<model name="bush_1_nc_18">
+				<pose>9.0 0.0 0.171977 0 -0 0</pose>
+				<scale>1 1 1</scale>
+				<link name="link">
+					<pose>9.0 0.0 0.171977 0 -0 0</pose>
+					<velocity>0 0 0 0 -0 0</velocity>
+					<acceleration>0 0 0 0 -0 0</acceleration>
+					<wrench>0 0 0 0 -0 0</wrench>
+				</link>
+			</model>
+			<model name="bush_1_nc_19">
+				<pose>9.5 0.0 0.171977 0 -0 0</pose>
+				<scale>1 1 1</scale>
+				<link name="link">
+					<pose>9.5 0.0 0.171977 0 -0 0</pose>
+					<velocity>0 0 0 0 -0 0</velocity>
+					<acceleration>0 0 0 0 -0 0</acceleration>
+					<wrench>0 0 0 0 -0 0</wrench>
+				</link>
+			</model>
+			<model name="bush_1_nc_20">
+				<pose>10.0 0.0 0.171977 0 -0 0</pose>
+				<scale>1 1 1</scale>
+				<link name="link">
+					<pose>10.0 0.0 0.171977 0 -0 0</pose>
+					<velocity>0 0 0 0 -0 0</velocity>
+					<acceleration>0 0 0 0 -0 0</acceleration>
+					<wrench>0 0 0 0 -0 0</wrench>
+				</link>
+			</model>
+			<model name="bush_1_nc_21">
+				<pose>10.5 0.0 0.171977 0 -0 0</pose>
+				<scale>1 1 1</scale>
+				<link name="link">
+					<pose>10.5 0.0 0.171977 0 -0 0</pose>
+					<velocity>0 0 0 0 -0 0</velocity>
+					<acceleration>0 0 0 0 -0 0</acceleration>
+					<wrench>0 0 0 0 -0 0</wrench>
+				</link>
+			</model>
+			<model name="bush_1_nc_22">
+				<pose>11.0 0.0 0.171977 0 -0 0</pose>
+				<scale>1 1 1</scale>
+				<link name="link">
+					<pose>11.0 0.0 0.171977 0 -0 0</pose>
+					<velocity>0 0 0 0 -0 0</velocity>
+					<acceleration>0 0 0 0 -0 0</acceleration>
+					<wrench>0 0 0 0 -0 0</wrench>
+				</link>
+			</model>
+			<model name="bush_1_nc_23">
+				<pose>11.5 0.0 0.171977 0 -0 0</pose>
+				<scale>1 1 1</scale>
+				<link name="link">
+					<pose>11.5 0.0 0.171977 0 -0 0</pose>
+					<velocity>0 0 0 0 -0 0</velocity>
+					<acceleration>0 0 0 0 -0 0</acceleration>
+					<wrench>0 0 0 0 -0 0</wrench>
+				</link>
+			</model>
+			<model name="bush_1_nc_24">
+				<pose>12.0 0.0 0.171977 0 -0 0</pose>
+				<scale>1 1 1</scale>
+				<link name="link">
+					<pose>12.0 0.0 0.171977 0 -0 0</pose>
+					<velocity>0 0 0 0 -0 0</velocity>
+					<acceleration>0 0 0 0 -0 0</acceleration>
+					<wrench>0 0 0 0 -0 0</wrench>
+				</link>
+			</model>
+			<model name="bush_1_nc_25">
+				<pose>12.5 0.0 0.171977 0 -0 0</pose>
+				<scale>1 1 1</scale>
+				<link name="link">
+					<pose>12.5 0.0 0.171977 0 -0 0</pose>
+					<velocity>0 0 0 0 -0 0</velocity>
+					<acceleration>0 0 0 0 -0 0</acceleration>
+					<wrench>0 0 0 0 -0 0</wrench>
+				</link>
+			</model>
+			<model name="bush_1_nc_26">
+				<pose>13.0 0.0 0.171977 0 -0 0</pose>
+				<scale>1 1 1</scale>
+				<link name="link">
+					<pose>13.0 0.0 0.171977 0 -0 0</pose>
+					<velocity>0 0 0 0 -0 0</velocity>
+					<acceleration>0 0 0 0 -0 0</acceleration>
+					<wrench>0 0 0 0 -0 0</wrench>
+				</link>
+			</model>
+			<model name="bush_1_nc_27">
+				<pose>13.5 0.0 0.171977 0 -0 0</pose>
+				<scale>1 1 1</scale>
+				<link name="link">
+					<pose>13.5 0.0 0.171977 0 -0 0</pose>
+					<velocity>0 0 0 0 -0 0</velocity>
+					<acceleration>0 0 0 0 -0 0</acceleration>
+					<wrench>0 0 0 0 -0 0</wrench>
+				</link>
+			</model>
+			<model name="bush_1_nc_28">
+				<pose>14.0 0.0 0.171977 0 -0 0</pose>
+				<scale>1 1 1</scale>
+				<link name="link">
+					<pose>14.0 0.0 0.171977 0 -0 0</pose>
+					<velocity>0 0 0 0 -0 0</velocity>
+					<acceleration>0 0 0 0 -0 0</acceleration>
+					<wrench>0 0 0 0 -0 0</wrench>
+				</link>
+			</model>
+			<model name="bush_1_nc_29">
+				<pose>14.5 0.0 0.171977 0 -0 0</pose>
+				<scale>1 1 1</scale>
+				<link name="link">
+					<pose>14.5 0.0 0.171977 0 -0 0</pose>
+					<velocity>0 0 0 0 -0 0</velocity>
+					<acceleration>0 0 0 0 -0 0</acceleration>
+					<wrench>0 0 0 0 -0 0</wrench>
+				</link>
+			</model>
+			<model name="bush_1_nc_30">
+				<pose>15.0 0.0 0.171977 0 -0 0</pose>
+				<scale>1 1 1</scale>
+				<link name="link">
+					<pose>15.0 0.0 0.171977 0 -0 0</pose>
+					<velocity>0 0 0 0 -0 0</velocity>
+					<acceleration>0 0 0 0 -0 0</acceleration>
+					<wrench>0 0 0 0 -0 0</wrench>
+				</link>
+			</model>
+			<model name="bush_1_nc_31">
+				<pose>15.5 0.0 0.171977 0 -0 0</pose>
+				<scale>1 1 1</scale>
+				<link name="link">
+					<pose>15.5 0.0 0.171977 0 -0 0</pose>
+					<velocity>0 0 0 0 -0 0</velocity>
+					<acceleration>0 0 0 0 -0 0</acceleration>
+					<wrench>0 0 0 0 -0 0</wrench>
+				</link>
+			</model>
+			<model name="bush_1_nc_32">
+				<pose>16.0 0.0 0.171977 0 -0 0</pose>
+				<scale>1 1 1</scale>
+				<link name="link">
+					<pose>16.0 0.0 0.171977 0 -0 0</pose>
+					<velocity>0 0 0 0 -0 0</velocity>
+					<acceleration>0 0 0 0 -0 0</acceleration>
+					<wrench>0 0 0 0 -0 0</wrench>
+				</link>
+			</model>
+			<model name="bush_1_nc_33">
+				<pose>16.5 0.0 0.171977 0 -0 0</pose>
+				<scale>1 1 1</scale>
+				<link name="link">
+					<pose>16.5 0.0 0.171977 0 -0 0</pose>
+					<velocity>0 0 0 0 -0 0</velocity>
+					<acceleration>0 0 0 0 -0 0</acceleration>
+					<wrench>0 0 0 0 -0 0</wrench>
+				</link>
+			</model>
+			<model name="bush_1_nc_34">
+				<pose>17.0 0.0 0.171977 0 -0 0</pose>
+				<scale>1 1 1</scale>
+				<link name="link">
+					<pose>17.0 0.0 0.171977 0 -0 0</pose>
+					<velocity>0 0 0 0 -0 0</velocity>
+					<acceleration>0 0 0 0 -0 0</acceleration>
+					<wrench>0 0 0 0 -0 0</wrench>
+				</link>
+			</model>
+			<model name="bush_1_nc_35">
+				<pose>17.5 0.0 0.171977 0 -0 0</pose>
+				<scale>1 1 1</scale>
+				<link name="link">
+					<pose>17.5 0.0 0.171977 0 -0 0</pose>
+					<velocity>0 0 0 0 -0 0</velocity>
+					<acceleration>0 0 0 0 -0 0</acceleration>
+					<wrench>0 0 0 0 -0 0</wrench>
+				</link>
+			</model>
+			<model name="bush_1_nc_36">
+				<pose>18.0 0.0 0.171977 0 -0 0</pose>
+				<scale>1 1 1</scale>
+				<link name="link">
+					<pose>18.0 0.0 0.171977 0 -0 0</pose>
+					<velocity>0 0 0 0 -0 0</velocity>
+					<acceleration>0 0 0 0 -0 0</acceleration>
+					<wrench>0 0 0 0 -0 0</wrench>
+				</link>
+			</model>
+			<model name="bush_1_nc_37">
+				<pose>18.5 0.0 0.171977 0 -0 0</pose>
+				<scale>1 1 1</scale>
+				<link name="link">
+					<pose>18.5 0.0 0.171977 0 -0 0</pose>
+					<velocity>0 0 0 0 -0 0</velocity>
+					<acceleration>0 0 0 0 -0 0</acceleration>
+					<wrench>0 0 0 0 -0 0</wrench>
+				</link>
+			</model>
+			<model name="bush_1_nc_38">
+				<pose>19.0 0.0 0.171977 0 -0 0</pose>
+				<scale>1 1 1</scale>
+				<link name="link">
+					<pose>19.0 0.0 0.171977 0 -0 0</pose>
+					<velocity>0 0 0 0 -0 0</velocity>
+					<acceleration>0 0 0 0 -0 0</acceleration>
+					<wrench>0 0 0 0 -0 0</wrench>
+				</link>
+			</model>
+			<model name="bush_1_nc_39">
+				<pose>19.5 0.0 0.171977 0 -0 0</pose>
+				<scale>1 1 1</scale>
+				<link name="link">
+					<pose>19.5 0.0 0.171977 0 -0 0</pose>
+					<velocity>0 0 0 0 -0 0</velocity>
+					<acceleration>0 0 0 0 -0 0</acceleration>
+					<wrench>0 0 0 0 -0 0</wrench>
+				</link>
+			</model>
+			<model name="bush_1_nc_40">
+				<pose>0.0 0.5 0.171977 0 -0 0</pose>
+				<scale>1 1 1</scale>
+				<link name="link">
+					<pose>0.0 0.5 0.171977 0 -0 0</pose>
+					<velocity>0 0 0 0 -0 0</velocity>
+					<acceleration>0 0 0 0 -0 0</acceleration>
+					<wrench>0 0 0 0 -0 0</wrench>
+				</link>
+			</model>
+			<model name="bush_1_nc_41">
+				<pose>0.5 0.5 0.171977 0 -0 0</pose>
+				<scale>1 1 1</scale>
+				<link name="link">
+					<pose>0.5 0.5 0.171977 0 -0 0</pose>
+					<velocity>0 0 0 0 -0 0</velocity>
+					<acceleration>0 0 0 0 -0 0</acceleration>
+					<wrench>0 0 0 0 -0 0</wrench>
+				</link>
+			</model>
+			<model name="bush_1_nc_42">
+				<pose>1.0 0.5 0.171977 0 -0 0</pose>
+				<scale>1 1 1</scale>
+				<link name="link">
+					<pose>1.0 0.5 0.171977 0 -0 0</pose>
+					<velocity>0 0 0 0 -0 0</velocity>
+					<acceleration>0 0 0 0 -0 0</acceleration>
+					<wrench>0 0 0 0 -0 0</wrench>
+				</link>
+			</model>
+			<model name="bush_1_nc_43">
+				<pose>1.5 0.5 0.171977 0 -0 0</pose>
+				<scale>1 1 1</scale>
+				<link name="link">
+					<pose>1.5 0.5 0.171977 0 -0 0</pose>
+					<velocity>0 0 0 0 -0 0</velocity>
+					<acceleration>0 0 0 0 -0 0</acceleration>
+					<wrench>0 0 0 0 -0 0</wrench>
+				</link>
+			</model>
+			<model name="bush_1_nc_44">
+				<pose>2.0 0.5 0.171977 0 -0 0</pose>
+				<scale>1 1 1</scale>
+				<link name="link">
+					<pose>2.0 0.5 0.171977 0 -0 0</pose>
+					<velocity>0 0 0 0 -0 0</velocity>
+					<acceleration>0 0 0 0 -0 0</acceleration>
+					<wrench>0 0 0 0 -0 0</wrench>
+				</link>
+			</model>
+			<model name="bush_1_nc_45">
+				<pose>2.5 0.5 0.171977 0 -0 0</pose>
+				<scale>1 1 1</scale>
+				<link name="link">
+					<pose>2.5 0.5 0.171977 0 -0 0</pose>
+					<velocity>0 0 0 0 -0 0</velocity>
+					<acceleration>0 0 0 0 -0 0</acceleration>
+					<wrench>0 0 0 0 -0 0</wrench>
+				</link>
+			</model>
+			<model name="bush_1_nc_46">
+				<pose>3.0 0.5 0.171977 0 -0 0</pose>
+				<scale>1 1 1</scale>
+				<link name="link">
+					<pose>3.0 0.5 0.171977 0 -0 0</pose>
+					<velocity>0 0 0 0 -0 0</velocity>
+					<acceleration>0 0 0 0 -0 0</acceleration>
+					<wrench>0 0 0 0 -0 0</wrench>
+				</link>
+			</model>
+			<model name="bush_1_nc_47">
+				<pose>3.5 0.5 0.171977 0 -0 0</pose>
+				<scale>1 1 1</scale>
+				<link name="link">
+					<pose>3.5 0.5 0.171977 0 -0 0</pose>
+					<velocity>0 0 0 0 -0 0</velocity>
+					<acceleration>0 0 0 0 -0 0</acceleration>
+					<wrench>0 0 0 0 -0 0</wrench>
+				</link>
+			</model>
+			<model name="bush_1_nc_48">
+				<pose>4.0 0.5 0.171977 0 -0 0</pose>
+				<scale>1 1 1</scale>
+				<link name="link">
+					<pose>4.0 0.5 0.171977 0 -0 0</pose>
+					<velocity>0 0 0 0 -0 0</velocity>
+					<acceleration>0 0 0 0 -0 0</acceleration>
+					<wrench>0 0 0 0 -0 0</wrench>
+				</link>
+			</model>
+			<model name="bush_1_nc_49">
+				<pose>4.5 0.5 0.171977 0 -0 0</pose>
+				<scale>1 1 1</scale>
+				<link name="link">
+					<pose>4.5 0.5 0.171977 0 -0 0</pose>
+					<velocity>0 0 0 0 -0 0</velocity>
+					<acceleration>0 0 0 0 -0 0</acceleration>
+					<wrench>0 0 0 0 -0 0</wrench>
+				</link>
+			</model>
+			<model name="bush_1_nc_50">
+				<pose>5.0 0.5 0.171977 0 -0 0</pose>
+				<scale>1 1 1</scale>
+				<link name="link">
+					<pose>5.0 0.5 0.171977 0 -0 0</pose>
+					<velocity>0 0 0 0 -0 0</velocity>
+					<acceleration>0 0 0 0 -0 0</acceleration>
+					<wrench>0 0 0 0 -0 0</wrench>
+				</link>
+			</model>
+			<model name="bush_1_nc_51">
+				<pose>5.5 0.5 0.171977 0 -0 0</pose>
+				<scale>1 1 1</scale>
+				<link name="link">
+					<pose>5.5 0.5 0.171977 0 -0 0</pose>
+					<velocity>0 0 0 0 -0 0</velocity>
+					<acceleration>0 0 0 0 -0 0</acceleration>
+					<wrench>0 0 0 0 -0 0</wrench>
+				</link>
+			</model>
+			<model name="bush_1_nc_52">
+				<pose>6.0 0.5 0.171977 0 -0 0</pose>
+				<scale>1 1 1</scale>
+				<link name="link">
+					<pose>6.0 0.5 0.171977 0 -0 0</pose>
+					<velocity>0 0 0 0 -0 0</velocity>
+					<acceleration>0 0 0 0 -0 0</acceleration>
+					<wrench>0 0 0 0 -0 0</wrench>
+				</link>
+			</model>
+			<model name="bush_1_nc_53">
+				<pose>6.5 0.5 0.171977 0 -0 0</pose>
+				<scale>1 1 1</scale>
+				<link name="link">
+					<pose>6.5 0.5 0.171977 0 -0 0</pose>
+					<velocity>0 0 0 0 -0 0</velocity>
+					<acceleration>0 0 0 0 -0 0</acceleration>
+					<wrench>0 0 0 0 -0 0</wrench>
+				</link>
+			</model>
+			<model name="bush_1_nc_54">
+				<pose>7.0 0.5 0.171977 0 -0 0</pose>
+				<scale>1 1 1</scale>
+				<link name="link">
+					<pose>7.0 0.5 0.171977 0 -0 0</pose>
+					<velocity>0 0 0 0 -0 0</velocity>
+					<acceleration>0 0 0 0 -0 0</acceleration>
+					<wrench>0 0 0 0 -0 0</wrench>
+				</link>
+			</model>
+			<model name="bush_1_nc_55">
+				<pose>7.5 0.5 0.171977 0 -0 0</pose>
+				<scale>1 1 1</scale>
+				<link name="link">
+					<pose>7.5 0.5 0.171977 0 -0 0</pose>
+					<velocity>0 0 0 0 -0 0</velocity>
+					<acceleration>0 0 0 0 -0 0</acceleration>
+					<wrench>0 0 0 0 -0 0</wrench>
+				</link>
+			</model>
+			<model name="bush_1_nc_56">
+				<pose>8.0 0.5 0.171977 0 -0 0</pose>
+				<scale>1 1 1</scale>
+				<link name="link">
+					<pose>8.0 0.5 0.171977 0 -0 0</pose>
+					<velocity>0 0 0 0 -0 0</velocity>
+					<acceleration>0 0 0 0 -0 0</acceleration>
+					<wrench>0 0 0 0 -0 0</wrench>
+				</link>
+			</model>
+			<model name="bush_1_nc_57">
+				<pose>8.5 0.5 0.171977 0 -0 0</pose>
+				<scale>1 1 1</scale>
+				<link name="link">
+					<pose>8.5 0.5 0.171977 0 -0 0</pose>
+					<velocity>0 0 0 0 -0 0</velocity>
+					<acceleration>0 0 0 0 -0 0</acceleration>
+					<wrench>0 0 0 0 -0 0</wrench>
+				</link>
+			</model>
+			<model name="bush_1_nc_58">
+				<pose>9.0 0.5 0.171977 0 -0 0</pose>
+				<scale>1 1 1</scale>
+				<link name="link">
+					<pose>9.0 0.5 0.171977 0 -0 0</pose>
+					<velocity>0 0 0 0 -0 0</velocity>
+					<acceleration>0 0 0 0 -0 0</acceleration>
+					<wrench>0 0 0 0 -0 0</wrench>
+				</link>
+			</model>
+			<model name="bush_1_nc_59">
+				<pose>9.5 0.5 0.171977 0 -0 0</pose>
+				<scale>1 1 1</scale>
+				<link name="link">
+					<pose>9.5 0.5 0.171977 0 -0 0</pose>
+					<velocity>0 0 0 0 -0 0</velocity>
+					<acceleration>0 0 0 0 -0 0</acceleration>
+					<wrench>0 0 0 0 -0 0</wrench>
+				</link>
+			</model>
+			<model name="bush_1_nc_60">
+				<pose>10.0 0.5 0.171977 0 -0 0</pose>
+				<scale>1 1 1</scale>
+				<link name="link">
+					<pose>10.0 0.5 0.171977 0 -0 0</pose>
+					<velocity>0 0 0 0 -0 0</velocity>
+					<acceleration>0 0 0 0 -0 0</acceleration>
+					<wrench>0 0 0 0 -0 0</wrench>
+				</link>
+			</model>
+			<model name="bush_1_nc_61">
+				<pose>10.5 0.5 0.171977 0 -0 0</pose>
+				<scale>1 1 1</scale>
+				<link name="link">
+					<pose>10.5 0.5 0.171977 0 -0 0</pose>
+					<velocity>0 0 0 0 -0 0</velocity>
+					<acceleration>0 0 0 0 -0 0</acceleration>
+					<wrench>0 0 0 0 -0 0</wrench>
+				</link>
+			</model>
+			<model name="bush_1_nc_62">
+				<pose>11.0 0.5 0.171977 0 -0 0</pose>
+				<scale>1 1 1</scale>
+				<link name="link">
+					<pose>11.0 0.5 0.171977 0 -0 0</pose>
+					<velocity>0 0 0 0 -0 0</velocity>
+					<acceleration>0 0 0 0 -0 0</acceleration>
+					<wrench>0 0 0 0 -0 0</wrench>
+				</link>
+			</model>
+			<model name="bush_1_nc_63">
+				<pose>11.5 0.5 0.171977 0 -0 0</pose>
+				<scale>1 1 1</scale>
+				<link name="link">
+					<pose>11.5 0.5 0.171977 0 -0 0</pose>
+					<velocity>0 0 0 0 -0 0</velocity>
+					<acceleration>0 0 0 0 -0 0</acceleration>
+					<wrench>0 0 0 0 -0 0</wrench>
+				</link>
+			</model>
+			<model name="bush_1_nc_64">
+				<pose>12.0 0.5 0.171977 0 -0 0</pose>
+				<scale>1 1 1</scale>
+				<link name="link">
+					<pose>12.0 0.5 0.171977 0 -0 0</pose>
+					<velocity>0 0 0 0 -0 0</velocity>
+					<acceleration>0 0 0 0 -0 0</acceleration>
+					<wrench>0 0 0 0 -0 0</wrench>
+				</link>
+			</model>
+			<model name="bush_1_nc_65">
+				<pose>12.5 0.5 0.171977 0 -0 0</pose>
+				<scale>1 1 1</scale>
+				<link name="link">
+					<pose>12.5 0.5 0.171977 0 -0 0</pose>
+					<velocity>0 0 0 0 -0 0</velocity>
+					<acceleration>0 0 0 0 -0 0</acceleration>
+					<wrench>0 0 0 0 -0 0</wrench>
+				</link>
+			</model>
+			<model name="bush_1_nc_66">
+				<pose>13.0 0.5 0.171977 0 -0 0</pose>
+				<scale>1 1 1</scale>
+				<link name="link">
+					<pose>13.0 0.5 0.171977 0 -0 0</pose>
+					<velocity>0 0 0 0 -0 0</velocity>
+					<acceleration>0 0 0 0 -0 0</acceleration>
+					<wrench>0 0 0 0 -0 0</wrench>
+				</link>
+			</model>
+			<model name="bush_1_nc_67">
+				<pose>13.5 0.5 0.171977 0 -0 0</pose>
+				<scale>1 1 1</scale>
+				<link name="link">
+					<pose>13.5 0.5 0.171977 0 -0 0</pose>
+					<velocity>0 0 0 0 -0 0</velocity>
+					<acceleration>0 0 0 0 -0 0</acceleration>
+					<wrench>0 0 0 0 -0 0</wrench>
+				</link>
+			</model>
+			<model name="bush_1_nc_68">
+				<pose>14.0 0.5 0.171977 0 -0 0</pose>
+				<scale>1 1 1</scale>
+				<link name="link">
+					<pose>14.0 0.5 0.171977 0 -0 0</pose>
+					<velocity>0 0 0 0 -0 0</velocity>
+					<acceleration>0 0 0 0 -0 0</acceleration>
+					<wrench>0 0 0 0 -0 0</wrench>
+				</link>
+			</model>
+			<model name="bush_1_nc_69">
+				<pose>14.5 0.5 0.171977 0 -0 0</pose>
+				<scale>1 1 1</scale>
+				<link name="link">
+					<pose>14.5 0.5 0.171977 0 -0 0</pose>
+					<velocity>0 0 0 0 -0 0</velocity>
+					<acceleration>0 0 0 0 -0 0</acceleration>
+					<wrench>0 0 0 0 -0 0</wrench>
+				</link>
+			</model>
+			<model name="bush_1_nc_70">
+				<pose>15.0 0.5 0.171977 0 -0 0</pose>
+				<scale>1 1 1</scale>
+				<link name="link">
+					<pose>15.0 0.5 0.171977 0 -0 0</pose>
+					<velocity>0 0 0 0 -0 0</velocity>
+					<acceleration>0 0 0 0 -0 0</acceleration>
+					<wrench>0 0 0 0 -0 0</wrench>
+				</link>
+			</model>
+			<model name="bush_1_nc_71">
+				<pose>15.5 0.5 0.171977 0 -0 0</pose>
+				<scale>1 1 1</scale>
+				<link name="link">
+					<pose>15.5 0.5 0.171977 0 -0 0</pose>
+					<velocity>0 0 0 0 -0 0</velocity>
+					<acceleration>0 0 0 0 -0 0</acceleration>
+					<wrench>0 0 0 0 -0 0</wrench>
+				</link>
+			</model>
+			<model name="bush_1_nc_72">
+				<pose>16.0 0.5 0.171977 0 -0 0</pose>
+				<scale>1 1 1</scale>
+				<link name="link">
+					<pose>16.0 0.5 0.171977 0 -0 0</pose>
+					<velocity>0 0 0 0 -0 0</velocity>
+					<acceleration>0 0 0 0 -0 0</acceleration>
+					<wrench>0 0 0 0 -0 0</wrench>
+				</link>
+			</model>
+			<model name="bush_1_nc_73">
+				<pose>16.5 0.5 0.171977 0 -0 0</pose>
+				<scale>1 1 1</scale>
+				<link name="link">
+					<pose>16.5 0.5 0.171977 0 -0 0</pose>
+					<velocity>0 0 0 0 -0 0</velocity>
+					<acceleration>0 0 0 0 -0 0</acceleration>
+					<wrench>0 0 0 0 -0 0</wrench>
+				</link>
+			</model>
+			<model name="bush_1_nc_74">
+				<pose>17.0 0.5 0.171977 0 -0 0</pose>
+				<scale>1 1 1</scale>
+				<link name="link">
+					<pose>17.0 0.5 0.171977 0 -0 0</pose>
+					<velocity>0 0 0 0 -0 0</velocity>
+					<acceleration>0 0 0 0 -0 0</acceleration>
+					<wrench>0 0 0 0 -0 0</wrench>
+				</link>
+			</model>
+			<model name="bush_1_nc_75">
+				<pose>17.5 0.5 0.171977 0 -0 0</pose>
+				<scale>1 1 1</scale>
+				<link name="link">
+					<pose>17.5 0.5 0.171977 0 -0 0</pose>
+					<velocity>0 0 0 0 -0 0</velocity>
+					<acceleration>0 0 0 0 -0 0</acceleration>
+					<wrench>0 0 0 0 -0 0</wrench>
+				</link>
+			</model>
+			<model name="bush_1_nc_76">
+				<pose>18.0 0.5 0.171977 0 -0 0</pose>
+				<scale>1 1 1</scale>
+				<link name="link">
+					<pose>18.0 0.5 0.171977 0 -0 0</pose>
+					<velocity>0 0 0 0 -0 0</velocity>
+					<acceleration>0 0 0 0 -0 0</acceleration>
+					<wrench>0 0 0 0 -0 0</wrench>
+				</link>
+			</model>
+			<model name="bush_1_nc_77">
+				<pose>18.5 0.5 0.171977 0 -0 0</pose>
+				<scale>1 1 1</scale>
+				<link name="link">
+					<pose>18.5 0.5 0.171977 0 -0 0</pose>
+					<velocity>0 0 0 0 -0 0</velocity>
+					<acceleration>0 0 0 0 -0 0</acceleration>
+					<wrench>0 0 0 0 -0 0</wrench>
+				</link>
+			</model>
+			<model name="bush_1_nc_78">
+				<pose>19.0 0.5 0.171977 0 -0 0</pose>
+				<scale>1 1 1</scale>
+				<link name="link">
+					<pose>19.0 0.5 0.171977 0 -0 0</pose>
+					<velocity>0 0 0 0 -0 0</velocity>
+					<acceleration>0 0 0 0 -0 0</acceleration>
+					<wrench>0 0 0 0 -0 0</wrench>
+				</link>
+			</model>
+			<model name="bush_1_nc_79">
+				<pose>19.5 0.5 0.171977 0 -0 0</pose>
+				<scale>1 1 1</scale>
+				<link name="link">
+					<pose>19.5 0.5 0.171977 0 -0 0</pose>
+					<velocity>0 0 0 0 -0 0</velocity>
+					<acceleration>0 0 0 0 -0 0</acceleration>
+					<wrench>0 0 0 0 -0 0</wrench>
+				</link>
+			</model>
+			<model name="bush_1_nc_80">
+				<pose>0.0 1.0 0.171977 0 -0 0</pose>
+				<scale>1 1 1</scale>
+				<link name="link">
+					<pose>0.0 1.0 0.171977 0 -0 0</pose>
+					<velocity>0 0 0 0 -0 0</velocity>
+					<acceleration>0 0 0 0 -0 0</acceleration>
+					<wrench>0 0 0 0 -0 0</wrench>
+				</link>
+			</model>
+			<model name="bush_1_nc_81">
+				<pose>0.5 1.0 0.171977 0 -0 0</pose>
+				<scale>1 1 1</scale>
+				<link name="link">
+					<pose>0.5 1.0 0.171977 0 -0 0</pose>
+					<velocity>0 0 0 0 -0 0</velocity>
+					<acceleration>0 0 0 0 -0 0</acceleration>
+					<wrench>0 0 0 0 -0 0</wrench>
+				</link>
+			</model>
+			<model name="bush_1_nc_82">
+				<pose>1.0 1.0 0.171977 0 -0 0</pose>
+				<scale>1 1 1</scale>
+				<link name="link">
+					<pose>1.0 1.0 0.171977 0 -0 0</pose>
+					<velocity>0 0 0 0 -0 0</velocity>
+					<acceleration>0 0 0 0 -0 0</acceleration>
+					<wrench>0 0 0 0 -0 0</wrench>
+				</link>
+			</model>
+			<model name="bush_1_nc_83">
+				<pose>1.5 1.0 0.171977 0 -0 0</pose>
+				<scale>1 1 1</scale>
+				<link name="link">
+					<pose>1.5 1.0 0.171977 0 -0 0</pose>
+					<velocity>0 0 0 0 -0 0</velocity>
+					<acceleration>0 0 0 0 -0 0</acceleration>
+					<wrench>0 0 0 0 -0 0</wrench>
+				</link>
+			</model>
+			<model name="bush_1_nc_84">
+				<pose>2.0 1.0 0.171977 0 -0 0</pose>
+				<scale>1 1 1</scale>
+				<link name="link">
+					<pose>2.0 1.0 0.171977 0 -0 0</pose>
+					<velocity>0 0 0 0 -0 0</velocity>
+					<acceleration>0 0 0 0 -0 0</acceleration>
+					<wrench>0 0 0 0 -0 0</wrench>
+				</link>
+			</model>
+			<model name="bush_1_nc_85">
+				<pose>2.5 1.0 0.171977 0 -0 0</pose>
+				<scale>1 1 1</scale>
+				<link name="link">
+					<pose>2.5 1.0 0.171977 0 -0 0</pose>
+					<velocity>0 0 0 0 -0 0</velocity>
+					<acceleration>0 0 0 0 -0 0</acceleration>
+					<wrench>0 0 0 0 -0 0</wrench>
+				</link>
+			</model>
+			<model name="bush_1_nc_86">
+				<pose>3.0 1.0 0.171977 0 -0 0</pose>
+				<scale>1 1 1</scale>
+				<link name="link">
+					<pose>3.0 1.0 0.171977 0 -0 0</pose>
+					<velocity>0 0 0 0 -0 0</velocity>
+					<acceleration>0 0 0 0 -0 0</acceleration>
+					<wrench>0 0 0 0 -0 0</wrench>
+				</link>
+			</model>
+			<model name="bush_1_nc_87">
+				<pose>3.5 1.0 0.171977 0 -0 0</pose>
+				<scale>1 1 1</scale>
+				<link name="link">
+					<pose>3.5 1.0 0.171977 0 -0 0</pose>
+					<velocity>0 0 0 0 -0 0</velocity>
+					<acceleration>0 0 0 0 -0 0</acceleration>
+					<wrench>0 0 0 0 -0 0</wrench>
+				</link>
+			</model>
+			<model name="bush_1_nc_88">
+				<pose>4.0 1.0 0.171977 0 -0 0</pose>
+				<scale>1 1 1</scale>
+				<link name="link">
+					<pose>4.0 1.0 0.171977 0 -0 0</pose>
+					<velocity>0 0 0 0 -0 0</velocity>
+					<acceleration>0 0 0 0 -0 0</acceleration>
+					<wrench>0 0 0 0 -0 0</wrench>
+				</link>
+			</model>
+			<model name="bush_1_nc_89">
+				<pose>4.5 1.0 0.171977 0 -0 0</pose>
+				<scale>1 1 1</scale>
+				<link name="link">
+					<pose>4.5 1.0 0.171977 0 -0 0</pose>
+					<velocity>0 0 0 0 -0 0</velocity>
+					<acceleration>0 0 0 0 -0 0</acceleration>
+					<wrench>0 0 0 0 -0 0</wrench>
+				</link>
+			</model>
+			<model name="bush_1_nc_90">
+				<pose>5.0 1.0 0.171977 0 -0 0</pose>
+				<scale>1 1 1</scale>
+				<link name="link">
+					<pose>5.0 1.0 0.171977 0 -0 0</pose>
+					<velocity>0 0 0 0 -0 0</velocity>
+					<acceleration>0 0 0 0 -0 0</acceleration>
+					<wrench>0 0 0 0 -0 0</wrench>
+				</link>
+			</model>
+			<model name="bush_1_nc_91">
+				<pose>5.5 1.0 0.171977 0 -0 0</pose>
+				<scale>1 1 1</scale>
+				<link name="link">
+					<pose>5.5 1.0 0.171977 0 -0 0</pose>
+					<velocity>0 0 0 0 -0 0</velocity>
+					<acceleration>0 0 0 0 -0 0</acceleration>
+					<wrench>0 0 0 0 -0 0</wrench>
+				</link>
+			</model>
+			<model name="bush_1_nc_92">
+				<pose>6.0 1.0 0.171977 0 -0 0</pose>
+				<scale>1 1 1</scale>
+				<link name="link">
+					<pose>6.0 1.0 0.171977 0 -0 0</pose>
+					<velocity>0 0 0 0 -0 0</velocity>
+					<acceleration>0 0 0 0 -0 0</acceleration>
+					<wrench>0 0 0 0 -0 0</wrench>
+				</link>
+			</model>
+			<model name="bush_1_nc_93">
+				<pose>6.5 1.0 0.171977 0 -0 0</pose>
+				<scale>1 1 1</scale>
+				<link name="link">
+					<pose>6.5 1.0 0.171977 0 -0 0</pose>
+					<velocity>0 0 0 0 -0 0</velocity>
+					<acceleration>0 0 0 0 -0 0</acceleration>
+					<wrench>0 0 0 0 -0 0</wrench>
+				</link>
+			</model>
+			<model name="bush_1_nc_94">
+				<pose>7.0 1.0 0.171977 0 -0 0</pose>
+				<scale>1 1 1</scale>
+				<link name="link">
+					<pose>7.0 1.0 0.171977 0 -0 0</pose>
+					<velocity>0 0 0 0 -0 0</velocity>
+					<acceleration>0 0 0 0 -0 0</acceleration>
+					<wrench>0 0 0 0 -0 0</wrench>
+				</link>
+			</model>
+			<model name="bush_1_nc_95">
+				<pose>7.5 1.0 0.171977 0 -0 0</pose>
+				<scale>1 1 1</scale>
+				<link name="link">
+					<pose>7.5 1.0 0.171977 0 -0 0</pose>
+					<velocity>0 0 0 0 -0 0</velocity>
+					<acceleration>0 0 0 0 -0 0</acceleration>
+					<wrench>0 0 0 0 -0 0</wrench>
+				</link>
+			</model>
+			<model name="bush_1_nc_96">
+				<pose>8.0 1.0 0.171977 0 -0 0</pose>
+				<scale>1 1 1</scale>
+				<link name="link">
+					<pose>8.0 1.0 0.171977 0 -0 0</pose>
+					<velocity>0 0 0 0 -0 0</velocity>
+					<acceleration>0 0 0 0 -0 0</acceleration>
+					<wrench>0 0 0 0 -0 0</wrench>
+				</link>
+			</model>
+			<model name="bush_1_nc_97">
+				<pose>8.5 1.0 0.171977 0 -0 0</pose>
+				<scale>1 1 1</scale>
+				<link name="link">
+					<pose>8.5 1.0 0.171977 0 -0 0</pose>
+					<velocity>0 0 0 0 -0 0</velocity>
+					<acceleration>0 0 0 0 -0 0</acceleration>
+					<wrench>0 0 0 0 -0 0</wrench>
+				</link>
+			</model>
+			<model name="bush_1_nc_98">
+				<pose>9.0 1.0 0.171977 0 -0 0</pose>
+				<scale>1 1 1</scale>
+				<link name="link">
+					<pose>9.0 1.0 0.171977 0 -0 0</pose>
+					<velocity>0 0 0 0 -0 0</velocity>
+					<acceleration>0 0 0 0 -0 0</acceleration>
+					<wrench>0 0 0 0 -0 0</wrench>
+				</link>
+			</model>
+			<model name="bush_1_nc_99">
+				<pose>9.5 1.0 0.171977 0 -0 0</pose>
+				<scale>1 1 1</scale>
+				<link name="link">
+					<pose>9.5 1.0 0.171977 0 -0 0</pose>
+					<velocity>0 0 0 0 -0 0</velocity>
+					<acceleration>0 0 0 0 -0 0</acceleration>
+					<wrench>0 0 0 0 -0 0</wrench>
+				</link>
+			</model>
+			<model name="bush_1_nc_100">
+				<pose>10.0 1.0 0.171977 0 -0 0</pose>
+				<scale>1 1 1</scale>
+				<link name="link">
+					<pose>10.0 1.0 0.171977 0 -0 0</pose>
+					<velocity>0 0 0 0 -0 0</velocity>
+					<acceleration>0 0 0 0 -0 0</acceleration>
+					<wrench>0 0 0 0 -0 0</wrench>
+				</link>
+			</model>
+			<model name="bush_1_nc_101">
+				<pose>10.5 1.0 0.171977 0 -0 0</pose>
+				<scale>1 1 1</scale>
+				<link name="link">
+					<pose>10.5 1.0 0.171977 0 -0 0</pose>
+					<velocity>0 0 0 0 -0 0</velocity>
+					<acceleration>0 0 0 0 -0 0</acceleration>
+					<wrench>0 0 0 0 -0 0</wrench>
+				</link>
+			</model>
+			<model name="bush_1_nc_102">
+				<pose>11.0 1.0 0.171977 0 -0 0</pose>
+				<scale>1 1 1</scale>
+				<link name="link">
+					<pose>11.0 1.0 0.171977 0 -0 0</pose>
+					<velocity>0 0 0 0 -0 0</velocity>
+					<acceleration>0 0 0 0 -0 0</acceleration>
+					<wrench>0 0 0 0 -0 0</wrench>
+				</link>
+			</model>
+			<model name="bush_1_nc_103">
+				<pose>11.5 1.0 0.171977 0 -0 0</pose>
+				<scale>1 1 1</scale>
+				<link name="link">
+					<pose>11.5 1.0 0.171977 0 -0 0</pose>
+					<velocity>0 0 0 0 -0 0</velocity>
+					<acceleration>0 0 0 0 -0 0</acceleration>
+					<wrench>0 0 0 0 -0 0</wrench>
+				</link>
+			</model>
+			<model name="bush_1_nc_104">
+				<pose>12.0 1.0 0.171977 0 -0 0</pose>
+				<scale>1 1 1</scale>
+				<link name="link">
+					<pose>12.0 1.0 0.171977 0 -0 0</pose>
+					<velocity>0 0 0 0 -0 0</velocity>
+					<acceleration>0 0 0 0 -0 0</acceleration>
+					<wrench>0 0 0 0 -0 0</wrench>
+				</link>
+			</model>
+			<model name="bush_1_nc_105">
+				<pose>12.5 1.0 0.171977 0 -0 0</pose>
+				<scale>1 1 1</scale>
+				<link name="link">
+					<pose>12.5 1.0 0.171977 0 -0 0</pose>
+					<velocity>0 0 0 0 -0 0</velocity>
+					<acceleration>0 0 0 0 -0 0</acceleration>
+					<wrench>0 0 0 0 -0 0</wrench>
+				</link>
+			</model>
+			<model name="bush_1_nc_106">
+				<pose>13.0 1.0 0.171977 0 -0 0</pose>
+				<scale>1 1 1</scale>
+				<link name="link">
+					<pose>13.0 1.0 0.171977 0 -0 0</pose>
+					<velocity>0 0 0 0 -0 0</velocity>
+					<acceleration>0 0 0 0 -0 0</acceleration>
+					<wrench>0 0 0 0 -0 0</wrench>
+				</link>
+			</model>
+			<model name="bush_1_nc_107">
+				<pose>13.5 1.0 0.171977 0 -0 0</pose>
+				<scale>1 1 1</scale>
+				<link name="link">
+					<pose>13.5 1.0 0.171977 0 -0 0</pose>
+					<velocity>0 0 0 0 -0 0</velocity>
+					<acceleration>0 0 0 0 -0 0</acceleration>
+					<wrench>0 0 0 0 -0 0</wrench>
+				</link>
+			</model>
+			<model name="bush_1_nc_108">
+				<pose>14.0 1.0 0.171977 0 -0 0</pose>
+				<scale>1 1 1</scale>
+				<link name="link">
+					<pose>14.0 1.0 0.171977 0 -0 0</pose>
+					<velocity>0 0 0 0 -0 0</velocity>
+					<acceleration>0 0 0 0 -0 0</acceleration>
+					<wrench>0 0 0 0 -0 0</wrench>
+				</link>
+			</model>
+			<model name="bush_1_nc_109">
+				<pose>14.5 1.0 0.171977 0 -0 0</pose>
+				<scale>1 1 1</scale>
+				<link name="link">
+					<pose>14.5 1.0 0.171977 0 -0 0</pose>
+					<velocity>0 0 0 0 -0 0</velocity>
+					<acceleration>0 0 0 0 -0 0</acceleration>
+					<wrench>0 0 0 0 -0 0</wrench>
+				</link>
+			</model>
+			<model name="bush_1_nc_110">
+				<pose>15.0 1.0 0.171977 0 -0 0</pose>
+				<scale>1 1 1</scale>
+				<link name="link">
+					<pose>15.0 1.0 0.171977 0 -0 0</pose>
+					<velocity>0 0 0 0 -0 0</velocity>
+					<acceleration>0 0 0 0 -0 0</acceleration>
+					<wrench>0 0 0 0 -0 0</wrench>
+				</link>
+			</model>
+			<model name="bush_1_nc_111">
+				<pose>15.5 1.0 0.171977 0 -0 0</pose>
+				<scale>1 1 1</scale>
+				<link name="link">
+					<pose>15.5 1.0 0.171977 0 -0 0</pose>
+					<velocity>0 0 0 0 -0 0</velocity>
+					<acceleration>0 0 0 0 -0 0</acceleration>
+					<wrench>0 0 0 0 -0 0</wrench>
+				</link>
+			</model>
+			<model name="bush_1_nc_112">
+				<pose>16.0 1.0 0.171977 0 -0 0</pose>
+				<scale>1 1 1</scale>
+				<link name="link">
+					<pose>16.0 1.0 0.171977 0 -0 0</pose>
+					<velocity>0 0 0 0 -0 0</velocity>
+					<acceleration>0 0 0 0 -0 0</acceleration>
+					<wrench>0 0 0 0 -0 0</wrench>
+				</link>
+			</model>
+			<model name="bush_1_nc_113">
+				<pose>16.5 1.0 0.171977 0 -0 0</pose>
+				<scale>1 1 1</scale>
+				<link name="link">
+					<pose>16.5 1.0 0.171977 0 -0 0</pose>
+					<velocity>0 0 0 0 -0 0</velocity>
+					<acceleration>0 0 0 0 -0 0</acceleration>
+					<wrench>0 0 0 0 -0 0</wrench>
+				</link>
+			</model>
+			<model name="bush_1_nc_114">
+				<pose>17.0 1.0 0.171977 0 -0 0</pose>
+				<scale>1 1 1</scale>
+				<link name="link">
+					<pose>17.0 1.0 0.171977 0 -0 0</pose>
+					<velocity>0 0 0 0 -0 0</velocity>
+					<acceleration>0 0 0 0 -0 0</acceleration>
+					<wrench>0 0 0 0 -0 0</wrench>
+				</link>
+			</model>
+			<model name="bush_1_nc_115">
+				<pose>17.5 1.0 0.171977 0 -0 0</pose>
+				<scale>1 1 1</scale>
+				<link name="link">
+					<pose>17.5 1.0 0.171977 0 -0 0</pose>
+					<velocity>0 0 0 0 -0 0</velocity>
+					<acceleration>0 0 0 0 -0 0</acceleration>
+					<wrench>0 0 0 0 -0 0</wrench>
+				</link>
+			</model>
+			<model name="bush_1_nc_116">
+				<pose>18.0 1.0 0.171977 0 -0 0</pose>
+				<scale>1 1 1</scale>
+				<link name="link">
+					<pose>18.0 1.0 0.171977 0 -0 0</pose>
+					<velocity>0 0 0 0 -0 0</velocity>
+					<acceleration>0 0 0 0 -0 0</acceleration>
+					<wrench>0 0 0 0 -0 0</wrench>
+				</link>
+			</model>
+			<model name="bush_1_nc_117">
+				<pose>18.5 1.0 0.171977 0 -0 0</pose>
+				<scale>1 1 1</scale>
+				<link name="link">
+					<pose>18.5 1.0 0.171977 0 -0 0</pose>
+					<velocity>0 0 0 0 -0 0</velocity>
+					<acceleration>0 0 0 0 -0 0</acceleration>
+					<wrench>0 0 0 0 -0 0</wrench>
+				</link>
+			</model>
+			<model name="bush_1_nc_118">
+				<pose>19.0 1.0 0.171977 0 -0 0</pose>
+				<scale>1 1 1</scale>
+				<link name="link">
+					<pose>19.0 1.0 0.171977 0 -0 0</pose>
+					<velocity>0 0 0 0 -0 0</velocity>
+					<acceleration>0 0 0 0 -0 0</acceleration>
+					<wrench>0 0 0 0 -0 0</wrench>
+				</link>
+			</model>
+			<model name="bush_1_nc_119">
+				<pose>19.5 1.0 0.171977 0 -0 0</pose>
+				<scale>1 1 1</scale>
+				<link name="link">
+					<pose>19.5 1.0 0.171977 0 -0 0</pose>
+					<velocity>0 0 0 0 -0 0</velocity>
+					<acceleration>0 0 0 0 -0 0</acceleration>
+					<wrench>0 0 0 0 -0 0</wrench>
+				</link>
+			</model>
+			<model name="bush_1_nc_120">
+				<pose>0.0 1.5 0.171977 0 -0 0</pose>
+				<scale>1 1 1</scale>
+				<link name="link">
+					<pose>0.0 1.5 0.171977 0 -0 0</pose>
+					<velocity>0 0 0 0 -0 0</velocity>
+					<acceleration>0 0 0 0 -0 0</acceleration>
+					<wrench>0 0 0 0 -0 0</wrench>
+				</link>
+			</model>
+			<model name="bush_1_nc_121">
+				<pose>0.5 1.5 0.171977 0 -0 0</pose>
+				<scale>1 1 1</scale>
+				<link name="link">
+					<pose>0.5 1.5 0.171977 0 -0 0</pose>
+					<velocity>0 0 0 0 -0 0</velocity>
+					<acceleration>0 0 0 0 -0 0</acceleration>
+					<wrench>0 0 0 0 -0 0</wrench>
+				</link>
+			</model>
+			<model name="bush_1_nc_122">
+				<pose>1.0 1.5 0.171977 0 -0 0</pose>
+				<scale>1 1 1</scale>
+				<link name="link">
+					<pose>1.0 1.5 0.171977 0 -0 0</pose>
+					<velocity>0 0 0 0 -0 0</velocity>
+					<acceleration>0 0 0 0 -0 0</acceleration>
+					<wrench>0 0 0 0 -0 0</wrench>
+				</link>
+			</model>
+			<model name="bush_1_nc_123">
+				<pose>1.5 1.5 0.171977 0 -0 0</pose>
+				<scale>1 1 1</scale>
+				<link name="link">
+					<pose>1.5 1.5 0.171977 0 -0 0</pose>
+					<velocity>0 0 0 0 -0 0</velocity>
+					<acceleration>0 0 0 0 -0 0</acceleration>
+					<wrench>0 0 0 0 -0 0</wrench>
+				</link>
+			</model>
+			<model name="bush_1_nc_124">
+				<pose>2.0 1.5 0.171977 0 -0 0</pose>
+				<scale>1 1 1</scale>
+				<link name="link">
+					<pose>2.0 1.5 0.171977 0 -0 0</pose>
+					<velocity>0 0 0 0 -0 0</velocity>
+					<acceleration>0 0 0 0 -0 0</acceleration>
+					<wrench>0 0 0 0 -0 0</wrench>
+				</link>
+			</model>
+			<model name="bush_1_nc_125">
+				<pose>2.5 1.5 0.171977 0 -0 0</pose>
+				<scale>1 1 1</scale>
+				<link name="link">
+					<pose>2.5 1.5 0.171977 0 -0 0</pose>
+					<velocity>0 0 0 0 -0 0</velocity>
+					<acceleration>0 0 0 0 -0 0</acceleration>
+					<wrench>0 0 0 0 -0 0</wrench>
+				</link>
+			</model>
+			<model name="bush_1_nc_126">
+				<pose>3.0 1.5 0.171977 0 -0 0</pose>
+				<scale>1 1 1</scale>
+				<link name="link">
+					<pose>3.0 1.5 0.171977 0 -0 0</pose>
+					<velocity>0 0 0 0 -0 0</velocity>
+					<acceleration>0 0 0 0 -0 0</acceleration>
+					<wrench>0 0 0 0 -0 0</wrench>
+				</link>
+			</model>
+			<model name="bush_1_nc_127">
+				<pose>3.5 1.5 0.171977 0 -0 0</pose>
+				<scale>1 1 1</scale>
+				<link name="link">
+					<pose>3.5 1.5 0.171977 0 -0 0</pose>
+					<velocity>0 0 0 0 -0 0</velocity>
+					<acceleration>0 0 0 0 -0 0</acceleration>
+					<wrench>0 0 0 0 -0 0</wrench>
+				</link>
+			</model>
+			<model name="bush_1_nc_128">
+				<pose>4.0 1.5 0.171977 0 -0 0</pose>
+				<scale>1 1 1</scale>
+				<link name="link">
+					<pose>4.0 1.5 0.171977 0 -0 0</pose>
+					<velocity>0 0 0 0 -0 0</velocity>
+					<acceleration>0 0 0 0 -0 0</acceleration>
+					<wrench>0 0 0 0 -0 0</wrench>
+				</link>
+			</model>
+			<model name="bush_1_nc_129">
+				<pose>4.5 1.5 0.171977 0 -0 0</pose>
+				<scale>1 1 1</scale>
+				<link name="link">
+					<pose>4.5 1.5 0.171977 0 -0 0</pose>
+					<velocity>0 0 0 0 -0 0</velocity>
+					<acceleration>0 0 0 0 -0 0</acceleration>
+					<wrench>0 0 0 0 -0 0</wrench>
+				</link>
+			</model>
+			<model name="bush_1_nc_130">
+				<pose>5.0 1.5 0.171977 0 -0 0</pose>
+				<scale>1 1 1</scale>
+				<link name="link">
+					<pose>5.0 1.5 0.171977 0 -0 0</pose>
+					<velocity>0 0 0 0 -0 0</velocity>
+					<acceleration>0 0 0 0 -0 0</acceleration>
+					<wrench>0 0 0 0 -0 0</wrench>
+				</link>
+			</model>
+			<model name="bush_1_nc_131">
+				<pose>5.5 1.5 0.171977 0 -0 0</pose>
+				<scale>1 1 1</scale>
+				<link name="link">
+					<pose>5.5 1.5 0.171977 0 -0 0</pose>
+					<velocity>0 0 0 0 -0 0</velocity>
+					<acceleration>0 0 0 0 -0 0</acceleration>
+					<wrench>0 0 0 0 -0 0</wrench>
+				</link>
+			</model>
+			<model name="bush_1_nc_132">
+				<pose>6.0 1.5 0.171977 0 -0 0</pose>
+				<scale>1 1 1</scale>
+				<link name="link">
+					<pose>6.0 1.5 0.171977 0 -0 0</pose>
+					<velocity>0 0 0 0 -0 0</velocity>
+					<acceleration>0 0 0 0 -0 0</acceleration>
+					<wrench>0 0 0 0 -0 0</wrench>
+				</link>
+			</model>
+			<model name="bush_1_nc_133">
+				<pose>6.5 1.5 0.171977 0 -0 0</pose>
+				<scale>1 1 1</scale>
+				<link name="link">
+					<pose>6.5 1.5 0.171977 0 -0 0</pose>
+					<velocity>0 0 0 0 -0 0</velocity>
+					<acceleration>0 0 0 0 -0 0</acceleration>
+					<wrench>0 0 0 0 -0 0</wrench>
+				</link>
+			</model>
+			<model name="bush_1_nc_134">
+				<pose>7.0 1.5 0.171977 0 -0 0</pose>
+				<scale>1 1 1</scale>
+				<link name="link">
+					<pose>7.0 1.5 0.171977 0 -0 0</pose>
+					<velocity>0 0 0 0 -0 0</velocity>
+					<acceleration>0 0 0 0 -0 0</acceleration>
+					<wrench>0 0 0 0 -0 0</wrench>
+				</link>
+			</model>
+			<model name="bush_1_nc_135">
+				<pose>7.5 1.5 0.171977 0 -0 0</pose>
+				<scale>1 1 1</scale>
+				<link name="link">
+					<pose>7.5 1.5 0.171977 0 -0 0</pose>
+					<velocity>0 0 0 0 -0 0</velocity>
+					<acceleration>0 0 0 0 -0 0</acceleration>
+					<wrench>0 0 0 0 -0 0</wrench>
+				</link>
+			</model>
+			<model name="bush_1_nc_136">
+				<pose>8.0 1.5 0.171977 0 -0 0</pose>
+				<scale>1 1 1</scale>
+				<link name="link">
+					<pose>8.0 1.5 0.171977 0 -0 0</pose>
+					<velocity>0 0 0 0 -0 0</velocity>
+					<acceleration>0 0 0 0 -0 0</acceleration>
+					<wrench>0 0 0 0 -0 0</wrench>
+				</link>
+			</model>
+			<model name="bush_1_nc_137">
+				<pose>8.5 1.5 0.171977 0 -0 0</pose>
+				<scale>1 1 1</scale>
+				<link name="link">
+					<pose>8.5 1.5 0.171977 0 -0 0</pose>
+					<velocity>0 0 0 0 -0 0</velocity>
+					<acceleration>0 0 0 0 -0 0</acceleration>
+					<wrench>0 0 0 0 -0 0</wrench>
+				</link>
+			</model>
+			<model name="bush_1_nc_138">
+				<pose>9.0 1.5 0.171977 0 -0 0</pose>
+				<scale>1 1 1</scale>
+				<link name="link">
+					<pose>9.0 1.5 0.171977 0 -0 0</pose>
+					<velocity>0 0 0 0 -0 0</velocity>
+					<acceleration>0 0 0 0 -0 0</acceleration>
+					<wrench>0 0 0 0 -0 0</wrench>
+				</link>
+			</model>
+			<model name="bush_1_nc_139">
+				<pose>9.5 1.5 0.171977 0 -0 0</pose>
+				<scale>1 1 1</scale>
+				<link name="link">
+					<pose>9.5 1.5 0.171977 0 -0 0</pose>
+					<velocity>0 0 0 0 -0 0</velocity>
+					<acceleration>0 0 0 0 -0 0</acceleration>
+					<wrench>0 0 0 0 -0 0</wrench>
+				</link>
+			</model>
+			<model name="bush_1_nc_140">
+				<pose>10.0 1.5 0.171977 0 -0 0</pose>
+				<scale>1 1 1</scale>
+				<link name="link">
+					<pose>10.0 1.5 0.171977 0 -0 0</pose>
+					<velocity>0 0 0 0 -0 0</velocity>
+					<acceleration>0 0 0 0 -0 0</acceleration>
+					<wrench>0 0 0 0 -0 0</wrench>
+				</link>
+			</model>
+			<model name="bush_1_nc_141">
+				<pose>10.5 1.5 0.171977 0 -0 0</pose>
+				<scale>1 1 1</scale>
+				<link name="link">
+					<pose>10.5 1.5 0.171977 0 -0 0</pose>
+					<velocity>0 0 0 0 -0 0</velocity>
+					<acceleration>0 0 0 0 -0 0</acceleration>
+					<wrench>0 0 0 0 -0 0</wrench>
+				</link>
+			</model>
+			<model name="bush_1_nc_142">
+				<pose>11.0 1.5 0.171977 0 -0 0</pose>
+				<scale>1 1 1</scale>
+				<link name="link">
+					<pose>11.0 1.5 0.171977 0 -0 0</pose>
+					<velocity>0 0 0 0 -0 0</velocity>
+					<acceleration>0 0 0 0 -0 0</acceleration>
+					<wrench>0 0 0 0 -0 0</wrench>
+				</link>
+			</model>
+			<model name="bush_1_nc_143">
+				<pose>11.5 1.5 0.171977 0 -0 0</pose>
+				<scale>1 1 1</scale>
+				<link name="link">
+					<pose>11.5 1.5 0.171977 0 -0 0</pose>
+					<velocity>0 0 0 0 -0 0</velocity>
+					<acceleration>0 0 0 0 -0 0</acceleration>
+					<wrench>0 0 0 0 -0 0</wrench>
+				</link>
+			</model>
+			<model name="bush_1_nc_144">
+				<pose>12.0 1.5 0.171977 0 -0 0</pose>
+				<scale>1 1 1</scale>
+				<link name="link">
+					<pose>12.0 1.5 0.171977 0 -0 0</pose>
+					<velocity>0 0 0 0 -0 0</velocity>
+					<acceleration>0 0 0 0 -0 0</acceleration>
+					<wrench>0 0 0 0 -0 0</wrench>
+				</link>
+			</model>
+			<model name="bush_1_nc_145">
+				<pose>12.5 1.5 0.171977 0 -0 0</pose>
+				<scale>1 1 1</scale>
+				<link name="link">
+					<pose>12.5 1.5 0.171977 0 -0 0</pose>
+					<velocity>0 0 0 0 -0 0</velocity>
+					<acceleration>0 0 0 0 -0 0</acceleration>
+					<wrench>0 0 0 0 -0 0</wrench>
+				</link>
+			</model>
+			<model name="bush_1_nc_146">
+				<pose>13.0 1.5 0.171977 0 -0 0</pose>
+				<scale>1 1 1</scale>
+				<link name="link">
+					<pose>13.0 1.5 0.171977 0 -0 0</pose>
+					<velocity>0 0 0 0 -0 0</velocity>
+					<acceleration>0 0 0 0 -0 0</acceleration>
+					<wrench>0 0 0 0 -0 0</wrench>
+				</link>
+			</model>
+			<model name="bush_1_nc_147">
+				<pose>13.5 1.5 0.171977 0 -0 0</pose>
+				<scale>1 1 1</scale>
+				<link name="link">
+					<pose>13.5 1.5 0.171977 0 -0 0</pose>
+					<velocity>0 0 0 0 -0 0</velocity>
+					<acceleration>0 0 0 0 -0 0</acceleration>
+					<wrench>0 0 0 0 -0 0</wrench>
+				</link>
+			</model>
+			<model name="bush_1_nc_148">
+				<pose>14.0 1.5 0.171977 0 -0 0</pose>
+				<scale>1 1 1</scale>
+				<link name="link">
+					<pose>14.0 1.5 0.171977 0 -0 0</pose>
+					<velocity>0 0 0 0 -0 0</velocity>
+					<acceleration>0 0 0 0 -0 0</acceleration>
+					<wrench>0 0 0 0 -0 0</wrench>
+				</link>
+			</model>
+			<model name="bush_1_nc_149">
+				<pose>14.5 1.5 0.171977 0 -0 0</pose>
+				<scale>1 1 1</scale>
+				<link name="link">
+					<pose>14.5 1.5 0.171977 0 -0 0</pose>
+					<velocity>0 0 0 0 -0 0</velocity>
+					<acceleration>0 0 0 0 -0 0</acceleration>
+					<wrench>0 0 0 0 -0 0</wrench>
+				</link>
+			</model>
+			<model name="bush_1_nc_150">
+				<pose>15.0 1.5 0.171977 0 -0 0</pose>
+				<scale>1 1 1</scale>
+				<link name="link">
+					<pose>15.0 1.5 0.171977 0 -0 0</pose>
+					<velocity>0 0 0 0 -0 0</velocity>
+					<acceleration>0 0 0 0 -0 0</acceleration>
+					<wrench>0 0 0 0 -0 0</wrench>
+				</link>
+			</model>
+			<model name="bush_1_nc_151">
+				<pose>15.5 1.5 0.171977 0 -0 0</pose>
+				<scale>1 1 1</scale>
+				<link name="link">
+					<pose>15.5 1.5 0.171977 0 -0 0</pose>
+					<velocity>0 0 0 0 -0 0</velocity>
+					<acceleration>0 0 0 0 -0 0</acceleration>
+					<wrench>0 0 0 0 -0 0</wrench>
+				</link>
+			</model>
+			<model name="bush_1_nc_152">
+				<pose>16.0 1.5 0.171977 0 -0 0</pose>
+				<scale>1 1 1</scale>
+				<link name="link">
+					<pose>16.0 1.5 0.171977 0 -0 0</pose>
+					<velocity>0 0 0 0 -0 0</velocity>
+					<acceleration>0 0 0 0 -0 0</acceleration>
+					<wrench>0 0 0 0 -0 0</wrench>
+				</link>
+			</model>
+			<model name="bush_1_nc_153">
+				<pose>16.5 1.5 0.171977 0 -0 0</pose>
+				<scale>1 1 1</scale>
+				<link name="link">
+					<pose>16.5 1.5 0.171977 0 -0 0</pose>
+					<velocity>0 0 0 0 -0 0</velocity>
+					<acceleration>0 0 0 0 -0 0</acceleration>
+					<wrench>0 0 0 0 -0 0</wrench>
+				</link>
+			</model>
+			<model name="bush_1_nc_154">
+				<pose>17.0 1.5 0.171977 0 -0 0</pose>
+				<scale>1 1 1</scale>
+				<link name="link">
+					<pose>17.0 1.5 0.171977 0 -0 0</pose>
+					<velocity>0 0 0 0 -0 0</velocity>
+					<acceleration>0 0 0 0 -0 0</acceleration>
+					<wrench>0 0 0 0 -0 0</wrench>
+				</link>
+			</model>
+			<model name="bush_1_nc_155">
+				<pose>17.5 1.5 0.171977 0 -0 0</pose>
+				<scale>1 1 1</scale>
+				<link name="link">
+					<pose>17.5 1.5 0.171977 0 -0 0</pose>
+					<velocity>0 0 0 0 -0 0</velocity>
+					<acceleration>0 0 0 0 -0 0</acceleration>
+					<wrench>0 0 0 0 -0 0</wrench>
+				</link>
+			</model>
+			<model name="bush_1_nc_156">
+				<pose>18.0 1.5 0.171977 0 -0 0</pose>
+				<scale>1 1 1</scale>
+				<link name="link">
+					<pose>18.0 1.5 0.171977 0 -0 0</pose>
+					<velocity>0 0 0 0 -0 0</velocity>
+					<acceleration>0 0 0 0 -0 0</acceleration>
+					<wrench>0 0 0 0 -0 0</wrench>
+				</link>
+			</model>
+			<model name="bush_1_nc_157">
+				<pose>18.5 1.5 0.171977 0 -0 0</pose>
+				<scale>1 1 1</scale>
+				<link name="link">
+					<pose>18.5 1.5 0.171977 0 -0 0</pose>
+					<velocity>0 0 0 0 -0 0</velocity>
+					<acceleration>0 0 0 0 -0 0</acceleration>
+					<wrench>0 0 0 0 -0 0</wrench>
+				</link>
+			</model>
+			<model name="bush_1_nc_158">
+				<pose>19.0 1.5 0.171977 0 -0 0</pose>
+				<scale>1 1 1</scale>
+				<link name="link">
+					<pose>19.0 1.5 0.171977 0 -0 0</pose>
+					<velocity>0 0 0 0 -0 0</velocity>
+					<acceleration>0 0 0 0 -0 0</acceleration>
+					<wrench>0 0 0 0 -0 0</wrench>
+				</link>
+			</model>
+			<model name="bush_1_nc_159">
+				<pose>19.5 1.5 0.171977 0 -0 0</pose>
+				<scale>1 1 1</scale>
+				<link name="link">
+					<pose>19.5 1.5 0.171977 0 -0 0</pose>
+					<velocity>0 0 0 0 -0 0</velocity>
+					<acceleration>0 0 0 0 -0 0</acceleration>
+					<wrench>0 0 0 0 -0 0</wrench>
+				</link>
+			</model>
+			<model name="ground_plane">
+				<pose>0 0 0 0 -0 0</pose>
+				<scale>1 1 1</scale>
+				<link name="link">
+					<pose>0 0 0 0 -0 0</pose>
+					<velocity>0 0 0 0 -0 0</velocity>
+					<acceleration>0 0 0 0 -0 0</acceleration>
+					<wrench>0 0 0 0 -0 0</wrench>
+				</link>
+			</model>
+			<light name="sun">
+				<pose>0 0 10 0 -0 0</pose>
+			</light>
+		</state>
+		<gui fullscreen="0">
+			<camera name="user_camera">
+				<pose>4.26149 0.036101 4.2799 -0 0.711644 3.02819</pose>
+				<view_controller>orbit</view_controller>
+				<projection_type>perspective</projection_type>
+			</camera>
+		</gui>
+	</world>
+</sdf>

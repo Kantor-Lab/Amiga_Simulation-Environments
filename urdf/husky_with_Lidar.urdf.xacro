@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<robot name="my_robot" xmlns:xacro="http://www.ros.org/wiki/xacro">
+  <!-- Include the Husky URDF description -->
+  <xacro:arg name="gpu" default="false"/>
+  <xacro:property name="gpu" value="$(arg gpu)" />
+  <xacro:include filename="$(find husky_description)/urdf/husky.urdf.xacro" />
+
+  <!-- Include the Velodyne LiDAR URDF description -->
+ 
+
+  <!-- Define the relative position and orientation of the LiDAR -->
+  <link name="velodyne_link">
+    <visual>
+      <!-- Specify visual properties for the LiDAR -->
+    </visual>
+    <collision>
+      <!-- Specify collision properties for the LiDAR -->
+    </collision>
+    <inertial>
+      <!-- Specify inertial properties for the LiDAR -->
+    </inertial>
+  </link>
+
+  <joint name="velodyne_joint" type="fixed">
+    <origin xyz="0 0 0.0" rpy="0 0 0"/>
+    <parent link="base_link"/>
+    <child link="velodyne_link"/>
+  </joint>
+  
+  <xacro:include filename="$(find velodyne_description)/urdf/VLP-16.urdf.xacro"/>
+  <xacro:VLP-16 parent="base_link" name="velodyne" topic="/velodyne_points" hz="10" samples="440" gpu="${gpu}">
+    <origin xyz="0 -3 0.7" rpy="0 0.5 0" />
+  </xacro:VLP-16>
+</robot>
