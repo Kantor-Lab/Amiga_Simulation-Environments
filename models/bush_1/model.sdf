@@ -1,0 +1,40 @@
+<?xml version= "1.0" ?>
+<sdf version= "1.6">
+	<model name= "bush_1">
+		<static>true</static>
+		<link name= "link" >
+			<collision name = "collision">
+				<geometry>
+					<mesh>
+						<uri>model://bush_1/meshes/Bush_31.obj</uri>
+						<scale>0.0001 0.0001 0.0001</scale>
+					</mesh>
+				</geometry>
+				<surface>
+					<friction>
+						<ode>
+							<mu>100</mu>
+							<mu2>50</mu2>
+						</ode>
+					</friction>
+				</surface>
+			</collision>
+			<visual name= "visual">
+				<geometry>
+					<mesh>
+						<uri>model://bush_1/meshes/Bush_31.obj</uri>
+						<scale>0.0001 0.0001 0.0001</scale>
+					</mesh>
+				</geometry>
+				<material>
+					<script>
+						<uri>file://media/materials/scripts/gazebo.material</uri>
+						<name>Gazebo/Green </name>
+					</script>
+				</material>
+
+			</visual>
+		</link>
+	</model>
+</sdf>
+				
