@@ -1,0 +1,42 @@
+<?xml version= "1.0" ?>
+<sdf version= "1.6">
+	<model name= "bush_1">
+		<static>true</static>
+		<link name= "link" >
+			<collision name = "collision">
+				<geometry>
+					<mesh>
+						<uri>model://corn_stalk/meshes/corn_1.obj</uri>
+						<scale>0.002 0.002 0.002</scale>
+					</mesh>
+				</geometry>
+				<surface>
+					<friction>
+						<ode>
+							<mu>0</mu>
+							<mu2>0</mu2>
+						</ode>
+					</friction>
+					<contact>
+      						<collide_without_contact>true</collide_without_contact>
+    					</contact>
+				</surface>
+			</collision>
+			<visual name= "visual">
+				<geometry>
+					<mesh>
+						<uri>model://corn_stalk/meshes/corn_1.obj</uri>
+						<scale>0.002 0.002 0.002</scale>
+					</mesh>
+				</geometry>
+				<material>
+					<script>
+						<uri>file://media/materials/scripts/gazebo.material</uri>
+						<name>Gazebo/Green </name>
+					</script>
+				</material>
+			</visual>
+		</link>
+	</model>
+</sdf>
+				
