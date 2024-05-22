@@ -1,0 +1,61 @@
+<?xml version="1.0" ?>
+<sdf version="1.7">
+  <model name="corn2">
+    <static>true</static>
+    <link name="ground">
+      <visual name="ground">
+        <geometry>
+          <mesh>
+            <uri>model://corn2/meshes/ground.obj</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <uri>model://corn2/materials/ground.material</uri>
+            <name>ground</name>
+          </script>
+        </material>
+      </visual>
+      <collision name="collision">
+        <geometry>
+          <mesh>
+            <uri>model://corn2/meshes/ground.obj</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact/>
+        </surface>
+        <laser_retro>0.0</laser_retro>
+      </collision>
+    </link>
+    <link name="swath1">
+      <visual name="swath1">
+        <geometry>
+          <mesh>
+            <uri>model://corn2/meshes/swath1.obj</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <uri>model://corn2/materials/swath1.material</uri>
+            <name>swath1</name>
+          </script>
+        </material>
+      </visual>
+      <collision name="collision">
+        <geometry>
+          <mesh>
+            <uri>model://corn2/meshes/swath1.obj</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <collide_without_contact>true</collide_without_contact>
+            <collide_bitmask>0x00</collide_bitmask>
+          </contact>
+        </surface>
+        <laser_retro>1.0</laser_retro>
+      </collision>
+    </link>
+  </model>
+</sdf>

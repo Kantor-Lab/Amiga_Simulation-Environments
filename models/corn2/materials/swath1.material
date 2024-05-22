@@ -1,0 +1,17 @@
+material swath1
+{
+  technique
+  {
+    pass
+    {
+      cull_hardware none
+      cull_software none
+
+      texture_unit
+      {
+        texture maize_leaf.jpg
+      }
+    }
+  }
+}
+
