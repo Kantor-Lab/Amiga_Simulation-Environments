@@ -9,11 +9,18 @@ cd ~/catkin_ws/src
 git clone https://github.com/Kantor-Lab/Amiga_Simulation-Environments
 cd ~/catkin_ws && catkin_make
 ```
-### [Installation of Amiga robot URDF description from branch "ruiji"](https://github.com/Kantor-Lab/amiga_cmu_description/tree/ruiji) 
-Follow the instructions in README.md file
+### Installation of Amiga robot URDF description [from branch "ruiji"](https://github.com/Kantor-Lab/amiga_cmu_description/tree/ruiji) 
+Follow the instructions in that repo README.md file
 
 ## Add Gazebo Models
 ```
 cd ~/.gazebo/models
 ```
 Move every model in [models file](https://github.com/Kantor-Lab/Amiga_Simulation-Environments/tree/main/models) to this path. 
+
+## Launch Simulation
+```
+cd ~/catkin_ws
+source devel/setup.bash
+roslaunch iowa_navigation husky_playen.launch
+```
