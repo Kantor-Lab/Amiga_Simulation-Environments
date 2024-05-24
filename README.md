@@ -24,3 +24,4 @@ cd ~/catkin_ws
 source devel/setup.bash
 roslaunch iowa_navigation husky_playen.launch
 ```
+![Screenshot from 2024-05-24 12-25-07](https://github.com/Kantor-Lab/Amiga_Simulation-Environments/assets/78890103/ab9237cd-536f-40e0-8a37-5a73b460de1d)
