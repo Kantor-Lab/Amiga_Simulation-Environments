@@ -26,7 +26,7 @@ roslaunch iowa_navigation amiga_playen.launch
 ```
 ![Screenshot from 2024-05-24 12-25-07](https://github.com/Kantor-Lab/Amiga_Simulation-Environments/assets/78890103/ab9237cd-536f-40e0-8a37-5a73b460de1d)
 ## Citation 
-if you use this project in your recent works please refernce to it by:
+if you have used this project in your recent works please reference to it:
 
 ```bash
 
