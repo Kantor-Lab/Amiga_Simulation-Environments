@@ -2,7 +2,19 @@
 
 We perform simulation in Gazebo simulator and utilize [cropcraft tool](https://github.com/Romea/cropcraft) to generate the crop field environments.
 
-## Installation
+## Installation (tested in ros noetic)
+### Install the Husky package
+#### Add the Clearpath Robotics repository (if not already added):
+```
+sudo sh -c 'echo "deb http://packages.clearpathrobotics.com/public/$(lsb_release -sc) $(lsb_release -cs) main" > /etc/apt/sources.list.d/clearpath-latest.list'
+wget https://packages.clearpathrobotics.com/public.key -O - | sudo apt-key add -
+```
+#### install Husky package
+```
+sudo apt update
+sudo apt install ros-noetic-husky-desktop
+sudo apt install ros-noetic-husky-control
+```
 ### Installation of Gazebo environment package
 ```
 cd ~/catkin_ws/src
