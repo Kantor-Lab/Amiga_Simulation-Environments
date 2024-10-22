@@ -78,7 +78,7 @@ ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSI
     </group-->
     <!-- $(find iowa_navigation)/urdf/husky_with_Lidar.urdf.xacro"/-->
     <!-- $(find amiga_cmu_description)/urdf/amiga_with_Lidar.urdf.xacro amiga_Lidar_realsense"/-->
-    <param name="robot_description" command="$(find xacro)/xacro --inorder $(find amiga_cmu_description)/urdf/amiga_Lidar_realsense.urdf.xacro" />
+    <param name="robot_description" command="$(find xacro)/xacro --inorder $(find amiga_cmu_description)/urdf/amiga_with_Lidar.urdf.xacro" />
     <!-- Spawn robot in gazebo -->
     <node name="spawn_amiga_model" pkg="gazebo_ros" type="spawn_model"
         args="-x $(arg x)
