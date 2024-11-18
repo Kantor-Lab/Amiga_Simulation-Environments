@@ -1,7 +1,7 @@
 # Amiga Simulation Using ROS2-Foxy
 
 ## Try it
-Download the [ros2 foxy](https://docs.ros.org/en/foxy/Installation.html) first.
+Download and set up the [ros2 foxy](https://docs.ros.org/en/foxy/Installation.html) first.
 
 ### Install the package
 ```
