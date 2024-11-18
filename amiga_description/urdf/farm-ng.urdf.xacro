@@ -1,0 +1,359 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="amiga">
+<!-- <robot xmlns:xacro="http://ros.org/wiki/xacro"> -->
+<xacro:include filename="$(find amiga_description)/urdf/wheel.urdf.xacro" />
+
+<!-- <xacro:macro name="amiga" params="prefix">
+<xacro:property name="wheelbase" value="1.2192" />
+<xacro:property name="track" value="1.524" />
+<xacro:property name="wheel_vertical_offset" value="0.0" /> -->
+<link name="base_footprint"/>
+
+<link name="base_link">
+    
+    <visual name="">
+        <origin xyz="0.0 0.0 0.22" rpy="0.0 0.0 0.0"/>
+        <!--geometry-->
+            <!-- <mesh filename="package://amiga_description/meshes/body_zeroed.stl" scale="1.0 1.0 1.0"/> -->
+            <!--mesh filename="package://amiga_description/meshes/body-object/body-object-zeroed.obj" scale="1.0 1.0 1.0"/!-->
+        <!--/geometry-->
+        <material name="">
+            <color rgba="1.0 0.0 0.0 1.0"/>
+            <texture filename=""/>
+        </material>
+    </visual>
+    <collision>
+        <origin xyz="0.0 0.0 0.22" rpy="0.0 0.0 0.0"/>
+        <geometry>
+            <!-- <mesh filename="package://amiga_description/meshes/body_zeroed.stl" scale="1.0 1.0 1.0"/> -->
+            <!--mesh filename="package://amiga_description/meshes/body-object/body-object-zeroed.obj" scale="1.0 1.0 1.0"/!-->
+        </geometry>
+        <surface>
+		<contact>
+      			<collide_without_contact>true</collide_without_contact>
+    		</contact>
+	</surface>
+    </collision>
+</link>
+
+<joint name="base_joint" type="fixed">
+    <origin xyz="0.0 0.0 -0.22" rpy="0.0 0.0 0.0"/>
+    <parent link="base_link"/>
+    <child link="base_footprint"/>
+    <axis xyz="0.0 0.0 0.0"/>
+</joint>
+
+<!-- All Wheel links and joints -->
+<link name="inertial_link">
+    <inertial>
+        <origin xyz="0.0 0.0 0.22" rpy="0.0 0.0 0.0"/>
+        <mass value="158.0"/>
+        <inertia ixx="294.935" ixy="0.0" ixz="0.0"
+                 iyy="380.351" iyz="0.0"
+                 izz="167.104"/>
+    </inertial>
+  </link>
+
+  <joint name="inertial_joint" type="fixed">
+    <origin xyz="0 0 0" rpy="0 0 0" />
+    <parent link="base_link" />
+    <child link="inertial_link" />
+  </joint>
+  
+  <link name="imu_link"/>
+  <joint name="imu_joint" type="fixed">
+    <origin xyz="0 0 0" rpy="0 0 0" />
+    <parent link="base_link" />
+    <child link="imu_link" />
+  </joint>
+  <gazebo reference="imu_link">
+  </gazebo>
+<xacro:macro name="wheel" params="name x y yaw">
+
+    <link name="wheel_${name}_link">
+        <inertial>
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 ${yaw}"/>
+            <mass value="0.5"/>
+            <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
+        </inertial>
+        <visual name="">
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 ${yaw}"/>
+            <geometry>
+                <mesh filename="package://amiga_description/meshes/test_hub/test_hub.obj" scale="1.0 1.0 1.0"/>
+            </geometry>
+            <material name="black">
+                <color rgba=".0 .0 0.0 1.0"/>
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 ${yaw}"/>
+            <geometry>
+                <mesh filename="package://amiga_description/meshes/test_hub/test_hub.obj" scale="1.0 1.0 1.0"/>
+            </geometry>
+        </collision>
+    </link>
+
+    <joint name="wheel_${name}_joint" type="fixed">
+        <origin xyz="${x} ${y} .0" rpy="0 0.0 0.0"/>
+        <parent link="base_link"/>
+        <child link="wheel_${name}_link"/>
+        <axis xyz="0.0 0.0 0.0"/>
+    </joint>
+
+</xacro:macro>
+
+
+<!-- Wheel Creating using macros -->
+<xacro:wheel name="front_left"  x="0.6096" y =" 0.762" yaw = "3.141"/>
+<xacro:wheel name="front_right" x="0.6096" y =" -0.762" yaw = "3.141"/>
+<xacro:wheel name="rear_right"  x="-0.6096" y =" -0.762" yaw = "0.0"/>
+<xacro:wheel name="rear_left"   x="-0.6096" y =" 0.762" yaw = "0.0"/>
+
+<xacro:macro name="clamp" params="name">
+	<link name="clamp_${name}_link">
+        <inertial>
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            <mass value="0.5"/>
+            <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
+        </inertial>
+        <visual name="">
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            <geometry>
+                <mesh filename="package://amiga_description/meshes/clamp/clamp.obj" scale="1.0 1.0 1.0"/>
+            </geometry>
+            <material name="black">
+                <color rgba=".0 .0 0.0 1.0"/>
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            <geometry>
+                <mesh filename="package://amiga_description/meshes/clamp/clamp.obj" scale="1.0 1.0 1.0"/>
+            </geometry>
+        </collision>
+    </link>
+
+    <joint name="clamp_${name}_joint" type="fixed">
+        <origin xyz="0.0 0.0 .395" rpy="0 0.0 0.0"/>
+        <parent link="wheel_${name}_link"/>
+        <child link="clamp_${name}_link"/>
+        <axis xyz="0.0 0.0 0.0"/>
+    </joint>
+</xacro:macro>
+
+<xacro:clamp name="rear_right" />
+<xacro:clamp name="front_right"/>
+<xacro:clamp name="front_left" />
+<xacro:clamp name="rear_left"  />
+
+<xacro:macro name="multiclamp" params="name x y z raw pitch yaw">
+	<link name="multiclamp_${name}_link">
+        <inertial>
+            <origin xyz="0.0 0.0 0.0" rpy="${raw} ${pitch} ${yaw}"/>
+            <mass value="0.5"/>
+            <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
+        </inertial>
+        <visual name="">
+            <origin xyz="0.0 0.0 0.0" rpy="${raw} ${pitch} ${yaw}"/>
+            <geometry>
+                <mesh filename="package://amiga_description/meshes/MultiClamp/MultiClamp.obj" scale="1.2 1.2 1.2"/>
+            </geometry>
+            <material name="black">
+                <color rgba=".0 .0 0.0 1.0"/>
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            <geometry>
+                <mesh filename="package://amiga_description/meshes/MultiClamp/MultiClamp.obj" scale="1.2 1.2 1.2"/>
+            </geometry>
+        </collision>
+    </link>
+
+    <joint name="multiclamp_${name}_joint" type="fixed">
+        <origin xyz="${x} ${y} ${z}" rpy="0 0.0 0.0"/>
+        <parent link="base_link"/>
+        <child link="multiclamp_${name}_link"/>
+        <axis xyz="0.0 0.0 0.0"/>
+    </joint>
+</xacro:macro>
+<xacro:multiclamp name="multi1" x="0.6096" y =" 0.18" z = ".435" raw = "-1.571" pitch ="0.0" yaw = "0"/>
+<xacro:multiclamp name="multi2" x="0.6096" y =" 0.18" z = ".435" raw = "-1.571" pitch ="3.14" yaw = "1.571"/>
+<xacro:multiclamp name="multi3" x="0.6096" y =" -0.18" z = ".435" raw = "-1.571" pitch ="0.0" yaw = "0"/>
+<xacro:multiclamp name="multi4" x="0.6096" y =" -0.18" z = ".435" raw = "-1.571" pitch ="3.14" yaw = "1.571"/>
+<xacro:multiclamp name="multi5" x="-0.6096" y =" 0.18" z = ".435" raw = "-1.571" pitch ="0.0" yaw = "0"/>
+<xacro:multiclamp name="multi6" x="-0.6096" y =" 0.18" z = ".435" raw = "-1.571" pitch ="3.14" yaw = "1.571"/>
+<xacro:multiclamp name="multi7" x="-0.6096" y =" -0.18" z = ".435" raw = "-1.571" pitch ="0.0" yaw = "0"/>
+<xacro:multiclamp name="multi8" x="-0.6096" y =" -0.18" z = ".435" raw = "-1.571" pitch ="3.14" yaw = "1.571"/>
+<xacro:multiclamp name="multi9" x="-0.43" y =" 0.20" z = ".46" raw = "0.0" pitch ="0.0" yaw = "0.0"/>
+<xacro:multiclamp name="multi10" x="-0.43" y =" 0.20" z = ".46" raw = "0.0" pitch ="1.571" yaw = "3.14"/>
+<xacro:multiclamp name="multi11" x="-0.43" y =" -0.20" z = ".46" raw = "0.0" pitch ="0.0" yaw = "3.14"/>
+<xacro:multiclamp name="multi12" x="-0.43" y =" -0.20" z = ".46" raw = "0.0" pitch ="1.571" yaw = "0.0"/>
+<!-- All crossbeams links and joints -->
+<xacro:macro name="crossbeam" params="name x y z yaw ">
+
+    <link name="crossbeam_${name}_link">
+        <inertial>
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 ${yaw}"/>
+            <mass value="0.5"/>
+            <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
+        </inertial>
+        <visual name="">
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 ${yaw}"/>
+            <geometry>
+                <mesh filename="package://amiga_description/meshes/LCrossbeam/LCrossbeam.obj" scale="1.0 1.3 1.0"/>
+            </geometry>
+            <material name="black">
+                <color rgba=".0 .0 0.0 1.0"/>
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 ${yaw}"/>
+            <geometry>
+                <mesh filename="package://amiga_description/meshes/LCrossbeam/LCrossbeam.obj" scale="1.0 1.3 1.0"/>
+            </geometry>
+        </collision>
+    </link>
+
+    <joint name="crossbeam_${name}_joint" type="fixed">
+        <origin xyz="${x} ${y} ${z}" rpy="0 0.0 0.0"/>
+        <parent link="base_link"/>
+        <child link="crossbeam_${name}_link"/>
+        <axis xyz="0.0 0.0 0.0"/>
+    </joint>
+
+</xacro:macro>
+<xacro:crossbeam name="back"  x="0.6096" y =" 0.0" z = "0.417" yaw = "0.0" />
+<xacro:crossbeam name="front"  x="-0.6096" y =" 0.0" z = "0.417" yaw = "0.0" />
+<xacro:crossbeam name="left1"  x="0.0" y =" 0.70" z = "0.36" yaw = "1.571" />
+<xacro:crossbeam name="left2"  x="0.0" y =" 0.824" z = "0.36" yaw = "1.571" />
+<xacro:crossbeam name="right1"  x="0.0" y =" -0.70" z = "0.36" yaw = "1.571" />
+<xacro:crossbeam name="right2"  x="0.0" y =" -0.824" z = "0.36" yaw = "1.571" />
+<xacro:crossbeam name="middle1"  x="0.0" y =" 0.18" z = "0.455" yaw = "1.571" />
+<xacro:crossbeam name="middle2"  x="0.0" y =" -0.18" z = "0.455" yaw = "1.571" />
+
+<xacro:macro name="tire" params="name x y z">
+	<link name="tire_${name}_link">
+        <inertial>
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            <mass value="10"/>
+            <inertia ixx="0.13975" ixy="0.0" ixz="0.0" iyy="0.242" iyz="0.0" izz="0.13975"/>
+        </inertial>
+        <visual name="">
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            <geometry>
+                <mesh filename="package://amiga_description/meshes/tire/tire.obj" scale="1.0 1.0 1.0"/>
+            </geometry>
+            <material name="black">
+                <color rgba=".0 .0 0.0 1.0"/>
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            <geometry>
+                <mesh filename="package://amiga_description/meshes/tire/tire.obj" scale="1.0 1.0 1.0"/>
+            </geometry>
+        </collision>
+    </link>
+    <gazebo reference="tire_${name}_link">
+      <mu1 value="1.0"/>
+      <mu2 value="0.5"/>
+      <kp value="1000000.0" />
+      <kd value="1.0" />
+      <fdir1 value="1 0 0"/>
+    </gazebo>
+
+    <joint name="tire_${name}_joint" type="continuous">
+        <origin xyz="${x} ${y} ${z}" rpy="0 0.0 0.0"/>
+        <parent link="base_link"/>
+        <child link="tire_${name}_link"/>
+        <axis xyz="0.0 1.0 0.0"/>
+    </joint>
+</xacro:macro>
+
+<xacro:tire name="rear_right" x="-0.6096" y="-0.762" z="0.00" />
+<xacro:tire name="front_right" x="0.6096" y="-0.762" z="0.00" />
+<xacro:tire name="front_left" x="0.6096" y="0.762" z="0.00" />
+<xacro:tire name="rear_left" x="-0.6096" y="0.762" z="0.00" />
+<!-- <xacro:amiga_wheel wheel_prefix="${prefix}front_left">
+    <origin xyz="${wheelbase/2} ${track/2} ${wheel_vertical_offset}" rpy="0 0 0" />
+</xacro:amiga_wheel>
+<xacro:amiga_wheel wheel_prefix="${prefix}front_right">
+    <origin xyz="${wheelbase/2} ${-track/2} ${wheel_vertical_offset}" rpy="0 0 0" />
+</xacro:amiga_wheel>
+<xacro:amiga_wheel wheel_prefix="${prefix}rear_left">
+    <origin xyz="${-wheelbase/2} ${track/2} ${wheel_vertical_offset}" rpy="0 0 0" />
+</xacro:amiga_wheel>
+<xacro:amiga_wheel wheel_prefix="${prefix}rear_right">
+    <origin xyz="${-wheelbase/2} ${-track/2} ${wheel_vertical_offset}" rpy="0 0 0" />
+</xacro:amiga_wheel> -->
+
+<ros2_control name="GazeboSystem" type="system">
+  <hardware>
+    <plugin>gazebo_ros2_control/GazeboSystem</plugin>
+  </hardware>
+  <joint name="tire_front_left_joint">
+        <command_interface name="velocity">
+          <param name="min">-1</param>
+          <param name="max">1</param>
+        </command_interface>
+        <state_interface name="position"/>
+        <state_interface name="velocity"/>
+      </joint>
+      <joint name="tire_rear_left_joint">
+        <command_interface name="velocity">
+          <param name="min">-1</param>
+          <param name="max">1</param>
+        </command_interface>
+        <state_interface name="position"/>
+        <state_interface name="velocity"/>
+      </joint>
+      <joint name="tire_front_right_joint">
+        <command_interface name="velocity">
+          <param name="min">-1</param>
+          <param name="max">1</param>
+        </command_interface>
+        <state_interface name="position"/>
+        <state_interface name="velocity"/>
+      </joint>
+      <joint name="tire_rear_right_joint">
+        <command_interface name="velocity">
+          <param name="min">-1</param>
+          <param name="max">1</param>
+        </command_interface>
+        <state_interface name="position"/>
+        <state_interface name="velocity"/>
+      </joint>
+</ros2_control>
+<!-- Ebox -->
+<link name="Ebox_link">
+    <inertial>
+        <origin xyz="-.8 -0.31 0.0" rpy="0.0 0.0 0.0"/>
+        <mass value="0.5"/>
+        <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
+    </inertial>
+    <visual name="">
+        <origin xyz="-.8 -0.31 0.0" rpy="-1.571 0 -1.571"/>
+        <geometry>
+            <mesh filename="package://amiga_description/meshes/Ebox/Ebox.obj" scale="1.0 1.0 1.0"/>
+        </geometry>
+        <material name="black">
+            <color rgba=".0 .0 0.0 1.0"/>
+        </material>
+    </visual>
+    <collision>
+        <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+        <geometry>
+            <mesh filename="package://amiga_description/meshes/Ebox/Ebox.obj" scale="1.0 1.0 1.0"/>
+        </geometry>
+    </collision>
+</link>
+
+<joint name="Ebox_joint" type="fixed">
+    <origin xyz="0.0 0.0 0.05" rpy="0 0.0 0.0"/>
+    <parent link="base_link"/>
+    <child link="Ebox_link"/>
+    <axis xyz="0.0 0.0 0.0"/>
+</joint>
+<!-- </xacro:macro> -->
+</robot>

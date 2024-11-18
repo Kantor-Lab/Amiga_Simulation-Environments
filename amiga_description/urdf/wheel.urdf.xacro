@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+
+<robot xmlns:xacro="http://ros.org/wiki/xacro" name="amiga_wheel">
+
+  <xacro:macro name="husky_wheel" params="wheel_prefix *joint_pose">
+    <link name="tire_${wheel_prefix}_link">
+      <inertial>
+        <mass value="10.0" />
+        <origin xyz="0 0 0" />
+        <inertia ixx="0.13975" ixy="0.0" ixz="0.0" iyy="0.242" iyz="0.0" izz="0.13975"/>
+      </inertial>
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+          <mesh filename="package://amiga_description/meshes/tire/tire.obj" scale="1.0 1.0 1.0"/>
+        </geometry>
+      </visual>
+      <collision>
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            <geometry>
+                <mesh filename="package://amiga_description/meshes/tire/tire.obj" scale="1.0 1.0 1.0"/>
+            </geometry>
+        </collision>
+    </link>
+
+    <gazebo reference="tire_${wheel_prefix}_link">
+      <mu1 value="1.0"/>
+      <mu2 value="0.5"/>
+      <kp value="10000000.0" />
+      <kd value="1.0" />
+      <fdir1 value="1 0 0"/>
+    </gazebo>
+
+    <joint name="tire_${wheel_prefix}_joint" type="continuous">
+      <parent link="base_link"/>
+      <child link="tire_${wheel_prefix}_link"/>
+      <xacro:insert_block name="joint_pose"/>
+      <axis xyz="0 1 0" rpy="0 0 0" />
+    </joint>
+
+  </xacro:macro>
+</robot>

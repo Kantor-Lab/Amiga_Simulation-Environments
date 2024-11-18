@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="rover">
+
+
+
+<link name="base_footprint"/>
+
+<link name="base_link">
+    <inertial>
+        <origin xyz="0.0 0.0 0.270" rpy="0.0 0.0 0.0"/>
+        <mass value="1.0"/>
+        <inertia ixx="0.4" ixy="0.0" ixz="0.0"
+                 iyy="0.4" iyz="0.0"
+                 izz="0.2"/>
+    </inertial>
+    <visual name="">
+        <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+        <geometry>
+            <!-- <mesh filename="package://amiga_cmu_description/meshes/body_zeroed.stl" scale="1.0 1.0 1.0"/> -->
+            <mesh filename="package://amiga_cmu_description/meshes/base/base.obj" scale="1.0 1.0 1.0"/>
+        </geometry>
+        <material name="black">
+                <color rgba=".0 .0 0.0 1.0"/>
+            </material>
+    </visual>
+    <collision>
+        <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+        <geometry>
+            <!-- <mesh filename="package://amiga_cmu_description/meshes/body_zeroed.stl" scale="1.0 1.0 1.0"/> -->
+            <mesh filename="package://amiga_cmu_description/meshes/base/base.obj" scale="1.0 1.0 1.0"/>
+        </geometry>
+    </collision>
+</link>
+
+<joint name="base_joint" type="fixed">
+    <origin xyz="0.0 0.0 0.135" rpy="0.0 0.0 0.0"/>
+    <parent link="base_footprint"/>
+    <child link="base_link"/>
+    <axis xyz="0.0 0.0 0.0"/>
+</joint>
+</robot>
