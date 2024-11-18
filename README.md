@@ -1,4 +1,4 @@
-# Amiga Simulation Using ROS2-Foxy
+# Amiga Simulation In ROS2-Foxy
 
 ## Try it
 Download and set up the [ros2 foxy](https://docs.ros.org/en/foxy/Installation.html) first.
