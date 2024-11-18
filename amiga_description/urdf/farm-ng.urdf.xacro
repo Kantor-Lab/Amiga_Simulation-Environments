@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="amiga">
 <!-- <robot xmlns:xacro="http://ros.org/wiki/xacro"> -->
-<xacro:include filename="$(find amiga_description)/urdf/wheel.urdf.xacro" />
+<!-- <xacro:include filename="$(find amiga_description)/urdf/wheel.urdf.xacro" /> -->
 
 <!-- <xacro:macro name="amiga" params="prefix">
 <xacro:property name="wheelbase" value="1.2192" />
@@ -10,30 +10,6 @@
 <link name="base_footprint"/>
 
 <link name="base_link">
-    
-    <visual name="">
-        <origin xyz="0.0 0.0 0.22" rpy="0.0 0.0 0.0"/>
-        <!--geometry-->
-            <!-- <mesh filename="package://amiga_description/meshes/body_zeroed.stl" scale="1.0 1.0 1.0"/> -->
-            <!--mesh filename="package://amiga_description/meshes/body-object/body-object-zeroed.obj" scale="1.0 1.0 1.0"/!-->
-        <!--/geometry-->
-        <material name="">
-            <color rgba="1.0 0.0 0.0 1.0"/>
-            <texture filename=""/>
-        </material>
-    </visual>
-    <collision>
-        <origin xyz="0.0 0.0 0.22" rpy="0.0 0.0 0.0"/>
-        <geometry>
-            <!-- <mesh filename="package://amiga_description/meshes/body_zeroed.stl" scale="1.0 1.0 1.0"/> -->
-            <!--mesh filename="package://amiga_description/meshes/body-object/body-object-zeroed.obj" scale="1.0 1.0 1.0"/!-->
-        </geometry>
-        <surface>
-		<contact>
-      			<collide_without_contact>true</collide_without_contact>
-    		</contact>
-	</surface>
-    </collision>
 </link>
 
 <joint name="base_joint" type="fixed">
@@ -46,11 +22,14 @@
 <!-- All Wheel links and joints -->
 <link name="inertial_link">
     <inertial>
-        <origin xyz="0.0 0.0 0.22" rpy="0.0 0.0 0.0"/>
-        <mass value="158.0"/>
-        <inertia ixx="294.935" ixy="0.0" ixz="0.0"
+        <!-- <origin xyz="0.0 0.0 0.22" rpy="0.0 0.0 0.0"/>
+        <mass value="158.0"/> -->
+        <!-- <inertia ixx="294.935" ixy="0.0" ixz="0.0"
                  iyy="380.351" iyz="0.0"
-                 izz="167.104"/>
+                 izz="167.104"/> -->
+        <mass value="46.034" />
+        <origin xyz="-0.00065 -0.0 0.22" />
+        <inertia ixx="0.6022" ixy="-0.02364" ixz="-0.1197" iyy="1.7386" iyz="-0.001544" izz="2.0296" />
     </inertial>
   </link>
 
@@ -288,43 +267,7 @@
     <origin xyz="${-wheelbase/2} ${-track/2} ${wheel_vertical_offset}" rpy="0 0 0" />
 </xacro:amiga_wheel> -->
 
-<ros2_control name="GazeboSystem" type="system">
-  <hardware>
-    <plugin>gazebo_ros2_control/GazeboSystem</plugin>
-  </hardware>
-  <joint name="tire_front_left_joint">
-        <command_interface name="velocity">
-          <param name="min">-1</param>
-          <param name="max">1</param>
-        </command_interface>
-        <state_interface name="position"/>
-        <state_interface name="velocity"/>
-      </joint>
-      <joint name="tire_rear_left_joint">
-        <command_interface name="velocity">
-          <param name="min">-1</param>
-          <param name="max">1</param>
-        </command_interface>
-        <state_interface name="position"/>
-        <state_interface name="velocity"/>
-      </joint>
-      <joint name="tire_front_right_joint">
-        <command_interface name="velocity">
-          <param name="min">-1</param>
-          <param name="max">1</param>
-        </command_interface>
-        <state_interface name="position"/>
-        <state_interface name="velocity"/>
-      </joint>
-      <joint name="tire_rear_right_joint">
-        <command_interface name="velocity">
-          <param name="min">-1</param>
-          <param name="max">1</param>
-        </command_interface>
-        <state_interface name="position"/>
-        <state_interface name="velocity"/>
-      </joint>
-</ros2_control>
+
 <!-- Ebox -->
 <link name="Ebox_link">
     <inertial>
@@ -356,4 +299,44 @@
     <axis xyz="0.0 0.0 0.0"/>
 </joint>
 <!-- </xacro:macro> -->
+<ros2_control name="GazeboSystem" type="system">
+
+  <hardware>
+    <xacro:if value="$(arg is_sim)">
+          <plugin>gazebo_ros2_control/GazeboSystem</plugin>
+    </xacro:if>
+  </hardware>
+  <joint name="tire_front_left_joint">
+        <command_interface name="velocity">
+          <param name="min">-100</param>
+          <param name="max">100</param>
+        </command_interface>
+        <state_interface name="position"/>
+        <state_interface name="velocity"/>
+      </joint>
+      <joint name="tire_rear_left_joint">
+        <command_interface name="velocity">
+          <param name="min">-100</param>
+          <param name="max">100</param>
+        </command_interface>
+        <state_interface name="position"/>
+        <state_interface name="velocity"/>
+      </joint>
+      <joint name="tire_front_right_joint">
+        <command_interface name="velocity">
+          <param name="min">-100</param>
+          <param name="max">100</param>
+        </command_interface>
+        <state_interface name="position"/>
+        <state_interface name="velocity"/>
+      </joint>
+      <joint name="tire_rear_right_joint">
+        <command_interface name="velocity">
+          <param name="min">-100</param>
+          <param name="max">100</param>
+        </command_interface>
+        <state_interface name="position"/>
+        <state_interface name="velocity"/>
+      </joint>
+</ros2_control>
 </robot>

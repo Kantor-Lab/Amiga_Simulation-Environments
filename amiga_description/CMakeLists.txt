@@ -13,7 +13,7 @@ endif()
 find_package(ament_cmake REQUIRED)
 find_package(urdf REQUIRED)
 
-install(DIRECTORY launch meshes config urdf
+install(DIRECTORY meshes config urdf
   DESTINATION share/${PROJECT_NAME}
 )
 
