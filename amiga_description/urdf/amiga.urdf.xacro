@@ -11,8 +11,32 @@
 
   <!-- Load amiga description -->
   <!-- <xacro:amiga prefix="$(arg prefix)" /> -->
+  <xacro:arg name="gpu" default="true"/>
+  <xacro:property name="gpu" value="$(arg gpu)" />
+  <xacro:if value="$(arg lidar)">
+    <link name="velodyne_link">
+    <visual>
+      <!-- Specify visual properties for the LiDAR -->
+    </visual>
+    <collision>
+      <!-- Specify collision properties for the LiDAR -->
+    </collision>
+    <inertial>
+      <!-- Specify inertial properties for the LiDAR -->
+    </inertial>
+  </link>
 
-
+  <joint name="velodyne_joint" type="fixed">
+    <origin xyz="0 0 0.0" rpy="0 0 0"/>
+    <parent link="base_link"/>
+    <child link="velodyne_link"/>
+  </joint>
+    <xacro:include filename="$(find velodyne_description)/urdf/VLP-16.urdf.xacro" />
+    <xacro:VLP-16 parent="base_link" name="velodyne" topic="/velodyne_points" hz="10" samples="8000" gpu="${gpu}">
+      <origin xyz="1 0 1.5" rpy="0 0.7 0" />
+    </xacro:VLP-16>
+  </xacro:if>
+  
   <xacro:if value="$(arg is_sim)">
 
     <gazebo>

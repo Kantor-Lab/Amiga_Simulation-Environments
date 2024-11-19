@@ -16,7 +16,7 @@ find_package(xacro REQUIRED)
 
 install(
   DIRECTORY
-    launch worlds
+    launch worlds rviz
   DESTINATION
     share/${PROJECT_NAME}
 )

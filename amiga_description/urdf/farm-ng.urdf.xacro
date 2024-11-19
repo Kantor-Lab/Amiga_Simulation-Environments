@@ -1,5 +1,6 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="amiga">
+<xacro:arg name="is_sim" default="true" />
 <!-- <robot xmlns:xacro="http://ros.org/wiki/xacro"> -->
 <!-- <xacro:include filename="$(find amiga_description)/urdf/wheel.urdf.xacro" /> -->
 
@@ -22,15 +23,16 @@
 <!-- All Wheel links and joints -->
 <link name="inertial_link">
     <inertial>
-        <!-- <origin xyz="0.0 0.0 0.22" rpy="0.0 0.0 0.0"/>
-        <mass value="158.0"/> -->
-        <!-- <inertia ixx="294.935" ixy="0.0" ixz="0.0"
-                 iyy="380.351" iyz="0.0"
-                 izz="167.104"/> -->
-        <mass value="46.034" />
+        <origin xyz="0.0 0.0 0.22" rpy="0.0 0.0 0.0"/>
+        <mass value="158.0"/>
+        <inertia ixx="43.75" ixy="0.0" ixz="0.0"
+                 iyy="32.74" iyz="0.0"
+                 izz="50.15"/>
+        </inertial>
+        <!-- <mass value="46.034" />
         <origin xyz="-0.00065 -0.0 0.22" />
         <inertia ixx="0.6022" ixy="-0.02364" ixz="-0.1197" iyy="1.7386" iyz="-0.001544" izz="2.0296" />
-    </inertial>
+    </inertial> -->
   </link>
 
   <joint name="inertial_joint" type="fixed">
@@ -234,13 +236,13 @@
             </geometry>
         </collision>
     </link>
-    <gazebo reference="tire_${name}_link">
-      <mu1 value="1.0"/>
+    <!-- <gazebo reference="tire_${name}_link">
+      <mu1 value=".5"/>
       <mu2 value="0.5"/>
       <kp value="1000000.0" />
       <kd value="1.0" />
       <fdir1 value="1 0 0"/>
-    </gazebo>
+    </gazebo> -->
 
     <joint name="tire_${name}_joint" type="continuous">
         <origin xyz="${x} ${y} ${z}" rpy="0 0.0 0.0"/>
@@ -298,6 +300,18 @@
     <child link="Ebox_link"/>
     <axis xyz="0.0 0.0 0.0"/>
 </joint>
+
+<!-- <link name="velodyne_link">
+</link>
+<joint name="velodyne_joint" type="fixed">
+    <origin xyz="0 0 0.0" rpy="0 0 0" />
+    <parent link="base_link" />
+    <child link="velodyne_link" />
+</joint> -->
+<!--<xacro:include filename="$(find amiga_description)/urdf/VLP-16.urdf.xacro" />
+<xacro:VLP-16 parent="base_link" name="velodyne" topic="/velodyne_points" hz="10" samples="8000" gpu="true">
+    <origin xyz="1 0 1.5" rpy="0 0.7 0" />
+</xacro:VLP-16> -->
 <!-- </xacro:macro> -->
 <ros2_control name="GazeboSystem" type="system">
 

@@ -15,7 +15,7 @@ amiga_velocity_controller:
     left_wheel_names: [ "tire_front_left_joint", "tire_rear_left_joint" ]
     right_wheel_names: [ "tire_front_right_joint", "tire_rear_right_joint" ]
     wheel_separation: 1.2192  #0.1  # 0.256  # 0.512
-    wheels_per_side: 2  # actually 2, but both are controlled by 1 signal
+    wheels_per_side: 1  # actually 2, but both are controlled by 1 signal
     wheel_radius: 0.22  # 0.015
 
     wheel_separation_multiplier: 1.0

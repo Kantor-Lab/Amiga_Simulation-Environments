@@ -46,6 +46,8 @@ def generate_launch_description():
             " ",
             "prefix:=''",
             " ",
+            "lidar:=true",
+            " ",
             "is_sim:=true",
             " ",
             "gazebo_controllers:=",
