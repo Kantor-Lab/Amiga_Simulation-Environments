@@ -2,7 +2,13 @@
 
 ## Try it
 Download and set up the [ros2 foxy](https://docs.ros.org/en/foxy/Installation.html) first.
-
+### Install Foxy dependent packages
+```
+sudo apt update
+sudo apt install ros-foxy-husky-*
+sudo apt install ros-foxy-gazebo-*
+sudo apt install ros-foxy-velodyne-*
+```
 ### Install the package
 ```
 mkdir -p amiga_ws/src
