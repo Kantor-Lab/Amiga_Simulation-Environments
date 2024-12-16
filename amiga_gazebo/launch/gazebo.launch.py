@@ -7,7 +7,7 @@ from launch_ros.actions import Node
 from launch_ros.substitutions import FindPackageShare
 
 from ament_index_python.packages import get_package_share_directory
-
+import os
 from pathlib import Path
 
 ARGUMENTS = [
@@ -58,9 +58,10 @@ def generate_launch_description():
 
     spawn_amiga_velocity_controller = Node(
         package='controller_manager',
-        executable='spawner.py',
+        executable='spawner',
         arguments=['amiga_velocity_controller', '-c', '/controller_manager'],
         output='screen',
+        parameters=[{'use_sim_time': True}],
     )
 
     node_robot_state_publisher = Node(
@@ -69,12 +70,18 @@ def generate_launch_description():
         output="screen",
         parameters=[{'use_sim_time': True}, robot_description],
     )
-
+    # robot_state_publisher_cmd = IncludeLaunchDescription(
+    #     PythonLaunchDescriptionSource(
+    #         os.path.join(os.path.join(get_package_share_directory('amiga_gazebo'), 'launch'), 'robot_state_publisher.launch.py')
+    #     ),
+    #     launch_arguments={'use_sim_time': LaunchConfiguration('use_sim_time', default='true')}.items()
+    # )
     spawn_joint_state_broadcaster = Node(
         package='controller_manager',
-        executable='spawner.py',
+        executable='spawner',
         arguments=['joint_state_broadcaster', '-c', '/controller_manager'],
         output='screen',
+        parameters=[{'use_sim_time': True}],
     )
 
     # Make sure spawn_amiga_velocity_controller starts after spawn_joint_state_broadcaster
@@ -132,6 +139,7 @@ def generate_launch_description():
     ld = LaunchDescription(ARGUMENTS)
     ld.add_action(gz_resource_path)
     ld.add_action(node_robot_state_publisher)
+    # ld.add_action(robot_state_publisher_cmd)
     ld.add_action(spawn_joint_state_broadcaster)
     ld.add_action(diffdrive_controller_spawn_callback)
     ld.add_action(gzserver)
