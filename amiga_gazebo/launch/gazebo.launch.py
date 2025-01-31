@@ -116,8 +116,8 @@ def generate_launch_description():
                    'amiga',
                    '-topic',
                    'robot_description',
-                   '-x', '0',  # Replace with desired x-coordinate
-                   '-y', '5',  # Replace with desired y-coordinate
+                   '-x', '-1.00',  # Replace with desired x-coordinate
+                   '-y', '0.00',  # Replace with desired y-coordinate
                    '-z', '0.5',  # Replace with desired z-coordinate
                    '-R', '0.0',  # Replace with desired roll
                    '-P', '0',  # Replace with desired pitch
